@@ -38,57 +38,65 @@
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(117, 155);
+            this.btnDangNhap.Location = new System.Drawing.Point(156, 191);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(75, 23);
+            this.btnDangNhap.Size = new System.Drawing.Size(100, 28);
             this.btnDangNhap.TabIndex = 0;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(216, 155);
+            this.btnThoat.Location = new System.Drawing.Point(288, 191);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 23);
+            this.btnThoat.Size = new System.Drawing.Size(100, 28);
             this.btnThoat.TabIndex = 1;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // lblTenDangNhap
             // 
             this.lblTenDangNhap.AutoSize = true;
-            this.lblTenDangNhap.Location = new System.Drawing.Point(46, 34);
+            this.lblTenDangNhap.Location = new System.Drawing.Point(61, 42);
+            this.lblTenDangNhap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTenDangNhap.Name = "lblTenDangNhap";
-            this.lblTenDangNhap.Size = new System.Drawing.Size(81, 13);
+            this.lblTenDangNhap.Size = new System.Drawing.Size(105, 17);
             this.lblTenDangNhap.TabIndex = 2;
             this.lblTenDangNhap.Text = "Tên đăng nhập";
             // 
             // lblMatKhau
             // 
             this.lblMatKhau.AutoSize = true;
-            this.lblMatKhau.Location = new System.Drawing.Point(46, 80);
+            this.lblMatKhau.Location = new System.Drawing.Point(61, 98);
+            this.lblMatKhau.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMatKhau.Name = "lblMatKhau";
-            this.lblMatKhau.Size = new System.Drawing.Size(52, 13);
+            this.lblMatKhau.Size = new System.Drawing.Size(66, 17);
             this.lblMatKhau.TabIndex = 3;
             this.lblMatKhau.Text = "Mật khẩu";
             // 
             // txtTenDangNhap
             // 
-            this.txtTenDangNhap.Location = new System.Drawing.Point(162, 34);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(216, 42);
+            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(149, 20);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(197, 22);
             this.txtTenDangNhap.TabIndex = 4;
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(162, 80);
+            this.txtMatKhau.Location = new System.Drawing.Point(216, 98);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(149, 20);
+            this.txtMatKhau.Size = new System.Drawing.Size(197, 22);
             this.txtMatKhau.TabIndex = 5;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.txtTenDangNhap);
@@ -96,8 +104,9 @@
             this.Controls.Add(this.lblTenDangNhap);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
-            this.Size = new System.Drawing.Size(425, 221);
+            this.Size = new System.Drawing.Size(567, 272);
             this.ResumeLayout(false);
             this.PerformLayout();
 

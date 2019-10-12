@@ -5,3 +5,4 @@ D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\NguoiDung\obj\Debug\NguoiDung.Lo
 D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\NguoiDung\obj\Debug\NguoiDung.csproj.GenerateResource.Cache
 D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\NguoiDung\obj\Debug\NguoiDung.dll
 D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\NguoiDung\obj\Debug\NguoiDung.pdb
+D:\Công Nghệ Phần Mềm\DoAnWin\QuanLiTour\NguoiDung\obj\Debug\NguoiDung.csprojResolveAssemblyReference.cache

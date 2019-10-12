@@ -27,6 +27,7 @@ namespace NguoiDung
                 return 2;// Chuỗi cấu hình không phù hợp.
             }
         }
+        
         public int Check_User(string pUser, string pPass)
         {
             SqlDataAdapter daUser = new SqlDataAdapter("select * from QL_NguoiDung where TenDangNhap='" + pUser + "' and MatKhau ='" + pPass + "'", Properties.Settings.Default.TravelConnectionString);
@@ -73,7 +74,6 @@ namespace NguoiDung
         {
             Properties.Settings.Default["TravelConnectionString"] = "Data Source=" + pServerName + ";Initial Catalog=" + pDataBase + ";User ID=" + pUser + ";pwd = " + pPass + "";
             Properties.Settings.Default.Save();
-
         }
     }
 }
