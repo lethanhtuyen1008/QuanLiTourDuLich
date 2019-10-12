@@ -33,20 +33,19 @@
             // 
             // login1
             // 
-            this.login1.Location = new System.Drawing.Point(70, 22);
-            this.login1.Margin = new System.Windows.Forms.Padding(4);
+            this.login1.Location = new System.Drawing.Point(0, 0);
             this.login1.Name = "login1";
-            this.login1.Size = new System.Drawing.Size(567, 272);
+            this.login1.Size = new System.Drawing.Size(425, 221);
             this.login1.TabIndex = 0;
             // 
-            // Login
+            // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 320);
+            this.ClientSize = new System.Drawing.Size(536, 317);
             this.Controls.Add(this.login1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Login";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "FormMain";
             this.Text = "Form1";
             this.ResumeLayout(false);
 
@@ -55,6 +54,8 @@
         #endregion
 
         private NguoiDung.Login login1;
+
+
 
 
     }
