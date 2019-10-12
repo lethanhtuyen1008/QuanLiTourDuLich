@@ -6,3 +6,4 @@ D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\obj\Debug\QuanLiTour.Properties.
 D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\obj\Debug\QuanLiTour.csproj.GenerateResource.cache
 D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\obj\Debug\QuanLiTour.exe
 D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\obj\Debug\QuanLiTour.pdb
+D:\Công Nghệ Phần Mềm\DoAnWin\QuanLiTour\obj\Debug\QuanLiTour.Form1.resources
