@@ -1,6 +1,6 @@
 ﻿namespace QuanLiTour
 {
-    partial class Login
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.

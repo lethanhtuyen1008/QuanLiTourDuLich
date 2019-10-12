@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLiTour
 {
-    public partial class Login : Form
+    public partial class FormMain : Form
     {
-        public Login()
+        public FormMain()
         {
             InitializeComponent();
         }
