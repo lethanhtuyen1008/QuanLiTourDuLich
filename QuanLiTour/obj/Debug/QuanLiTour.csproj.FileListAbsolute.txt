@@ -10,3 +10,6 @@ D:\Công Nghệ Phần Mềm\DoAnWin\QuanLiTour\obj\Debug\QuanLiTour.Form3.resou
 D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\bin\Debug\NguoiDung.dll
 D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\bin\Debug\NguoiDung.pdb
 D:\Công Nghệ Phần Mềm\DoAnWin\QuanLiTour\obj\Debug\QuanLiTour.FormMain.resources
+C:\Users\ASUS\Documents\QuanLiTourDuLich\QuanLiTour\bin\Debug\QuanLiTour.exe.config
+C:\Users\ASUS\Documents\QuanLiTourDuLich\QuanLiTour\obj\Debug\QuanLiTour.exe
+C:\Users\ASUS\Documents\QuanLiTourDuLich\QuanLiTour\obj\Debug\QuanLiTour.pdb

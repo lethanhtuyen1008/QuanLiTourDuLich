@@ -26,8 +26,8 @@ namespace NguoiDung.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-PQL0J0M\\SQLEX;Initial Catalog=Travel;User ID=sa;Password=thuy" +
-            "ngan98")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LETHANHTUYEN\\SQLEXPRESS;Initial Catalog=Travel;User ID=sa;Password=th" +
+            "uyngan98")]
         public string TravelConnectionString {
             get {
                 return ((string)(this["TravelConnectionString"]));
