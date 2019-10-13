@@ -1,7 +1,0 @@
-D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\NguoiDung\bin\Debug\NguoiDung.dll.config
-D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\NguoiDung\bin\Debug\NguoiDung.dll
-D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\NguoiDung\bin\Debug\NguoiDung.pdb
-D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\NguoiDung\obj\Debug\NguoiDung.Login.resources
-D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\NguoiDung\obj\Debug\NguoiDung.csproj.GenerateResource.Cache
-D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\NguoiDung\obj\Debug\NguoiDung.dll
-D:\Công nghệ phần mềm\DoAnWin\QuanLiTour\NguoiDung\obj\Debug\NguoiDung.pdb
