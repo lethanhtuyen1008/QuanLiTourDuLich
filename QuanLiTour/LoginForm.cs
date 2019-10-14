@@ -17,5 +17,15 @@ namespace QuanLiTour
         {
             InitializeComponent();
         }
+
+        private void btn_DangNhap_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
