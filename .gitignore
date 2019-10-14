@@ -12,6 +12,8 @@
 .vs/
 /App.config
 App
+*.config
+App.config
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 Properties/
