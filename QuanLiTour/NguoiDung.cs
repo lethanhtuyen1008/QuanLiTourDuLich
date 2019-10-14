@@ -7,9 +7,9 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Data.Sql;
 
-namespace NguoiDung
+namespace QuanLiTour
 {
-    class QLNguoiDung
+    class NguoiDung
     {
         public int Check_Config()
         {
@@ -27,7 +27,7 @@ namespace NguoiDung
                 return 2;// Chuỗi cấu hình không phù hợp.
             }
         }
-        
+
         public int Check_User(string pUser, string pPass)
         {
             SqlDataAdapter daUser = new SqlDataAdapter("select * from QL_NguoiDung where TenDangNhap='" + pUser + "' and MatKhau ='" + pPass + "'", Properties.Settings.Default.TravelConnectionString);
@@ -36,7 +36,7 @@ namespace NguoiDung
             if (dt.Rows.Count == 0)
                 return 0;// User không tồn tại
             else
-                if (dt.Rows[0][3] == null || int.Parse(dt.Rows[0][3].ToString()) == 2)
+                if (dt.Rows[0][2] == null || int.Parse(dt.Rows[0][2].ToString()) == 2)
                 {
                     return 2;// Không hoạt động
                 }
