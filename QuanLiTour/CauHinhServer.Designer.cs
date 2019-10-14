@@ -32,10 +32,11 @@
             // 
             // CauHinhServer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CauHinhServer";
-            this.Size = new System.Drawing.Size(512, 208);
+            this.Size = new System.Drawing.Size(726, 340);
             this.ResumeLayout(false);
 
         }

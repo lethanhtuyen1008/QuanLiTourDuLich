@@ -1,6 +1,6 @@
 ﻿namespace QuanLiTour
 {
-    partial class FormMain
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,26 +30,17 @@
         {
             this.SuspendLayout();
             // 
-            // FormMain
+            // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 390);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "FormMain";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.FormMain_Load);
+            this.ClientSize = new System.Drawing.Size(1040, 455);
+            this.Name = "LoginForm";
+            this.Text = "LoginForm";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-
-
-
-
-
     }
 }
-
