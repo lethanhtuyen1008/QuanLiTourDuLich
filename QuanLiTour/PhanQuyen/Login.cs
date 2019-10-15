@@ -8,38 +8,43 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLiTour
+namespace PhanQuyen
 {
     public partial class Login : UserControl
     {
-        NguoiDung CauHinh = new NguoiDung();
+        XuLi CauHinh = new XuLi();
         public Login()
         {
             InitializeComponent();
         }
 
-        private void btnDangNhap_Click(object sender, EventArgs e)
+        private void btn_DangNhap_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTenDangNhap.Text.Trim()))
+            if (string.IsNullOrEmpty(txt_TenDangNhap.Text.Trim()))
             {
-                MessageBox.Show("Không được bỏ trống " + lblTenDangNhap.Text.ToLower());
-                this.txtTenDangNhap.Focus();
+                MessageBox.Show("Không được bỏ trống " + lbl_TenDangNhap.Text.ToLower());
+                this.txt_TenDangNhap.Focus();
                 return;
             }
 
-            if (string.IsNullOrEmpty(this.txtMatKhau.Text))
+            if (string.IsNullOrEmpty(this.txt_MatKhau.Text))
             {
-                MessageBox.Show("Không được bỏ trống " + lblMatKhau.Text.ToLower());
-                this.txtMatKhau.Focus();
+                MessageBox.Show("Không được bỏ trống " + lbl_MatKhau.Text.ToLower());
+                this.txt_MatKhau.Focus();
                 return;
             }
             if (CauHinh.Check_Config() == 0)
             {
-                int n = CauHinh.Check_User(txtTenDangNhap.Text, txtMatKhau.Text);
+                int n = CauHinh.Check_User(txt_TenDangNhap.Text, txt_MatKhau.Text);
                 if (n == 0)
                     MessageBox.Show("Tên đăng nhập không tồn tại !");
                 if (n == 1)
+                {
                     MessageBox.Show("Đăng nhâp thành công !");
+                    XuLi xl = new XuLi();
+                    List<string> a = xl.getDatatable(txt_TenDangNhap.Text);
+                    this.Hide();
+                }
                 if (n == 2)
                     MessageBox.Show("Tài khoản không hoạt động !");
             }
@@ -55,36 +60,6 @@ namespace QuanLiTour
             //    XuLiCauHinh a = new XuLiCauHinh();
             //    a.Show();
             //}
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMatKhau_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTenDangNhap_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblMatKhau_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTenDangNhap_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
