@@ -42,6 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CauHinhServer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CauHinhServer.Designer.cs">
+      <DependentUpon>CauHinhServer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="XuLi.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CauHinhServer.resx">
+      <DependentUpon>CauHinhServer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

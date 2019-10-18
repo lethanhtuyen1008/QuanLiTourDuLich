@@ -19,6 +19,7 @@ namespace QuanLiTour
 
     public partial class FormMain : DevExpress.XtraEditors.XtraForm
     {
+        List<string> b = new List<string>();
         NguoiDung CauHinh = new NguoiDung();
         public FormMain()
         {
@@ -28,12 +29,27 @@ namespace QuanLiTour
         {
             
         }
-
+        private void barButtonItem_DanhSachTourMo_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DanhSachTourMo frm = new DanhSachTourMo();
+            frm.Dock = DockStyle.Fill;
+            frm.Width = this.Width;
+            frm.MdiParent = this;
+            frm.Show();
+        }
         private void btn_ThongTin_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
+            ThongTinTaiKhoan frm = new ThongTinTaiKhoan();
+            frm.Dock = DockStyle.Fill;
+            frm.MdiParent = this;
+            frm.Show();
         }
-
+        private void btn_Admin_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ThongTinTaiKhoan frm = new ThongTinTaiKhoan();
+            frm.MdiParent = this;
+            frm.Show();
+        }
         private void btn_DangNhap_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txt_TenDangNhap.Text.Trim()))
@@ -59,29 +75,7 @@ namespace QuanLiTour
                     MessageBox.Show("Đăng nhâp thành công !");
                     List<string> a = CauHinh.getDatatable(txt_TenDangNhap.Text.Trim());
                     panel1.Hide();
-                    List<string> b = new List<string>();
-                    b = CauHinh.getoutMaManHinh();
-                    foreach (RibbonPage item in ribbonControl_menu.Pages)
-                    {
-                        foreach (string t in b)
-                        {
-                            string c = t.Trim();
-                           // MessageBox.Show(c);
-                            if (item.Tag.ToString().CompareTo(c)==0 && item.Tag!=null)
-                                    item.Visible = true;
-                            foreach (RibbonPageGroup item2 in item.Groups)
-                            {
-                                if (item2.Tag.ToString().CompareTo(c) == 0 && item2.Tag !=null)
-                                    item2.Visible = true;
-                                foreach (BarButtonItemLink x in item2.ItemLinks)
-                                {
-                                    if (x.Item.Tag.ToString().CompareTo(c) == 0 && x.Item.Tag != null)
-                                        x.Item.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                                }
-                            }
-                        }
-                    }
-
+                    CauHinh.PhanQuyen(ribbonControl_menu);
                 }
                 if (n == 2)
                     MessageBox.Show("Tài khoản không hoạt động !");
@@ -100,19 +94,39 @@ namespace QuanLiTour
             //}
         }
 
-        private void barButtonItem_DanhSachTourMo_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            DanhSachTourMo frm = new DanhSachTourMo();
-            frm.Dock = DockStyle.Fill;
-            frm.Width = this.Width;
-            frm.MdiParent = this;
-            frm.Show();
-        }
 
         private void btn_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            CauHinh.resetMaManHinh();
+            CauHinh.DongPhanQuyen(ribbonControl_menu);
+            b = null;
             panel1.Show();
         }
+
+        private void btn_Thoat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_MatKhau_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_MatKhau_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_TenDangNhap_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_TenDangNhap_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

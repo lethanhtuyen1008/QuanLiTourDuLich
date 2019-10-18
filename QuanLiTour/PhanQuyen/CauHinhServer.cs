@@ -8,11 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLiTour
+namespace PhanQuyen
 {
     public partial class CauHinhServer : UserControl
     {
-        NguoiDung CauHinh = new NguoiDung();
         public CauHinhServer()
         {
             InitializeComponent();
@@ -20,7 +19,7 @@ namespace QuanLiTour
 
         private void btn_DangNhapServer_Click(object sender, EventArgs e)
         {
-            CauHinh.ChangeConnectionString(cbo_TenServer.Text, txt_TenDangNhap.Text, txt_Password.Text, cbo_TenData.Text);
+
         }
     }
 }

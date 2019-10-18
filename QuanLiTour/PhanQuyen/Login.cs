@@ -12,6 +12,7 @@ namespace PhanQuyen
 {
     public partial class Login : UserControl
     {
+        public delegate Login getForm(Login a);
         XuLi CauHinh = new XuLi();
         public Login()
         {

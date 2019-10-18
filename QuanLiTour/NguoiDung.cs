@@ -7,6 +7,11 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Data.Sql;
 using System.Windows.Forms;
+using DevComponents;
+using DevExpress.DXBinding;
+using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraBars;
+using DevExpress.XtraBars.Controls;
 
 namespace QuanLiTour
 {
@@ -75,11 +80,13 @@ namespace QuanLiTour
         }
         public void ChangeConnectionString(string pServerName, string pDataBase, string pUser, string pPass)
         {
+            MessageBox.Show(pServerName);
             Properties.Settings.Default["TravelConnectionString"] = "Data Source=" + pServerName + ";Initial Catalog=" + pDataBase + ";User ID=" + pUser + ";pwd = " + pPass + "";
             Properties.Settings.Default.Save();
         }
         public List<string> getDatatable(string TenDangNhap)
         {
+            //MessageBox.Show(TenDangNhap);
             DataTable dt = new DataTable();
             List<string> _list = new List<string>();
             try
@@ -110,6 +117,49 @@ namespace QuanLiTour
         public void resetMaManHinh()
         {
             mamh.Clear();
+        }
+        public void DongPhanQuyen(RibbonControl a){
+            foreach (RibbonPage item in a.Pages){
+                item.Visible = false;
+                foreach (RibbonPageGroup item2 in item.Groups) {
+                    item2.Visible = false;
+                    foreach (BarButtonItemLink x in item2.ItemLinks){
+                        x.Item.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    }
+                }
+            }
+            resetMaManHinh();
+            if(mamh != null){
+            foreach(string x in mamh){
+                MessageBox.Show(x);
+            }
+            }
+        }
+        List<string> b = new List<string>();
+        public void PhanQuyen(RibbonControl a){
+            b = getoutMaManHinh();
+            foreach (RibbonPage item in a.Pages)
+            {
+                foreach (string t in b)
+                {
+                    string c = t.Trim();
+                    if (item.Tag.ToString().CompareTo(c) == 0 && item.Tag != null){
+                        item.Visible = true;
+                        foreach (RibbonPageGroup item2 in item.Groups)
+                        {
+                            if (item2.Tag.ToString().CompareTo(c) == 0 && item2.Tag != null)
+                            {
+                                item2.Visible = true;
+                                foreach (BarButtonItemLink item3 in item2.ItemLinks)
+                                {
+                                    if (item3.Item.Tag.ToString().CompareTo(c) == 0 && item3.Item.Tag != null)
+                                        item3.Item.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
