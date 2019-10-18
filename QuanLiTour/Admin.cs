@@ -22,6 +22,12 @@ namespace QuanLiTour
         {
             DataTable x = xuli.getDatatable("SELECT TenDangNhap, TinhTrang FROM QL_NguoiDung");
             xuli.LoadDataToGirdView(dataGridView_NguoiDung, x);
+            loaddataToText();
+        }
+        private void loaddataToText()
+        {
+            txt_TenDangNhap.DataBindings.Clear();
+            txt_TenDangNhap.DataBindings.Add("Text", dataGridView_NguoiDung.DataSource, "TenDangNhap");
         }
     }
 }

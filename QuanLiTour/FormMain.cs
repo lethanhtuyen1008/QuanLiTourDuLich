@@ -29,24 +29,25 @@ namespace QuanLiTour
         {
             
         }
+        public void showForm(Form a){
+            a.Dock = DockStyle.Fill;
+            a.MdiParent = this;
+            a.Show();
+        }
         private void barButtonItem_DanhSachTourMo_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DanhSachTourMo frm = new DanhSachTourMo();
-            frm.Dock = DockStyle.Fill;
-            frm.Width = this.Width;
-            frm.MdiParent = this;
-            frm.Show();
+            DanhSachTourMo a = new DanhSachTourMo();
+            showForm(a);
         }
         private void btn_ThongTin_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ThongTinTaiKhoan frm = new ThongTinTaiKhoan();
-            frm.Dock = DockStyle.Fill;
-            frm.MdiParent = this;
-            frm.Show();
+            ThongTinTaiKhoan a = new ThongTinTaiKhoan();
+            showForm(a);
         }
+
         private void btn_Admin_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ThongTinTaiKhoan frm = new ThongTinTaiKhoan();
+            Admin frm = new Admin();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -80,18 +81,16 @@ namespace QuanLiTour
                 if (n == 2)
                     MessageBox.Show("Tài khoản không hoạt động !");
             }
-            //if (CauHinh.Check_Config() == 1)
-            //{
-            //    MessageBox.Show("Chuỗi cấu hình không tồn tại");// Xử lý cấu hình
-            //    XuLiCauHinh a = new XuLiCauHinh();
-            //    a.Show();
-            //}
-            //if (CauHinh.Check_Config() == 2)
-            //{
-            //    MessageBox.Show("Chuỗi cấu hình không phù hợp");// Xử lý cấu hình
-            //    XuLiCauHinh a = new XuLiCauHinh();
-            //    a.Show();
-            //}
+            if (CauHinh.Check_Config() == 1)
+            {
+                CauHinhServer a = new CauHinhServer();
+                a.Show();
+            }
+            if (CauHinh.Check_Config() == 2)
+            {
+                CauHinhServer a = new CauHinhServer();
+                a.Show();
+            }
         }
 
 
@@ -106,27 +105,5 @@ namespace QuanLiTour
         {
 
         }
-
-        private void txt_MatKhau_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_MatKhau_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_TenDangNhap_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_TenDangNhap_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }

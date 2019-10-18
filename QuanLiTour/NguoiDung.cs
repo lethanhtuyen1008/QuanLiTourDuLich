@@ -129,11 +129,6 @@ namespace QuanLiTour
                 }
             }
             resetMaManHinh();
-            if(mamh != null){
-            foreach(string x in mamh){
-                MessageBox.Show(x);
-            }
-            }
         }
         List<string> b = new List<string>();
         public void PhanQuyen(RibbonControl a){
@@ -149,17 +144,14 @@ namespace QuanLiTour
                     {
                         if (item2.Tag.ToString().CompareTo(c) == 0 && item2.Tag != null)
                             item2.Visible = true;
-                            
-                            foreach (BarButtonItemLink item3 in item2.ItemLinks)
-                            {
-                                if (item3.Item.Tag.ToString().CompareTo(c) == 0 && item3.Item.Tag != null)
-                                    item3.Item.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                            }
+                        foreach (BarButtonItemLink item3 in item2.ItemLinks)
+                        {
+                            if (item3.Item.Tag.ToString().CompareTo(c) == 0 && item3.Item.Tag != null)
+                                item3.Item.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        }
                     }
                 }
             }
         }
-
-
     }
 }

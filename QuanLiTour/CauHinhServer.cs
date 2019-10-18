@@ -21,6 +21,7 @@ namespace QuanLiTour
         private void btn_DangNhapServer_Click(object sender, EventArgs e)
         {
             CauHinh.ChangeConnectionString(cbo_TenServer.Text, txt_TenDangNhap.Text, txt_Password.Text, cbo_TenData.Text);
+            this.Hide();
         }
     }
 }
