@@ -143,23 +143,23 @@ namespace QuanLiTour
                 foreach (string t in b)
                 {
                     string c = t.Trim();
-                    if (item.Tag.ToString().CompareTo(c) == 0 && item.Tag != null){
+                    if (item.Tag.ToString().CompareTo(c) == 0 && item.Tag != null)
                         item.Visible = true;
-                        foreach (RibbonPageGroup item2 in item.Groups)
-                        {
-                            if (item2.Tag.ToString().CompareTo(c) == 0 && item2.Tag != null)
+                    foreach (RibbonPageGroup item2 in item.Groups)
+                    {
+                        if (item2.Tag.ToString().CompareTo(c) == 0 && item2.Tag != null)
+                            item2.Visible = true;
+                            
+                            foreach (BarButtonItemLink item3 in item2.ItemLinks)
                             {
-                                item2.Visible = true;
-                                foreach (BarButtonItemLink item3 in item2.ItemLinks)
-                                {
-                                    if (item3.Item.Tag.ToString().CompareTo(c) == 0 && item3.Item.Tag != null)
-                                        item3.Item.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                                }
+                                if (item3.Item.Tag.ToString().CompareTo(c) == 0 && item3.Item.Tag != null)
+                                    item3.Item.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                             }
-                        }
                     }
                 }
             }
         }
+
+
     }
 }
