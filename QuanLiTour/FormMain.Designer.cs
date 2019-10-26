@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
             this.tabFormPage2 = new DevExpress.XtraBars.TabFormPage();
@@ -57,6 +58,7 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_PhanQuyen = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Admin = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_NhomNguoiDung = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage_HeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup_TacVuTour = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -163,9 +165,10 @@
             this.barButtonItem_Admin,
             this.barButtonItem6,
             this.btn_PhanQuyen,
-            this.btn_Admin});
+            this.btn_Admin,
+            this.btn_NhomNguoiDung});
             this.ribbonControl_menu.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl_menu.MaxItemId = 24;
+            this.ribbonControl_menu.MaxItemId = 27;
             this.ribbonControl_menu.Name = "ribbonControl_menu";
             this.ribbonControl_menu.PageHeaderItemLinks.Add(this.btn_DangXuat);
             this.ribbonControl_menu.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -177,7 +180,7 @@
             this.ribbonPage_NhanSu,
             this.ribbonPage_BaoCao});
             this.ribbonControl_menu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl_menu.Size = new System.Drawing.Size(1502, 177);
+            this.ribbonControl_menu.Size = new System.Drawing.Size(1370, 144);
             // 
             // btn_ThongTin
             // 
@@ -367,6 +370,17 @@
             this.btn_Admin.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btn_Admin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Admin_ItemClick);
             // 
+            // btn_NhomNguoiDung
+            // 
+            this.btn_NhomNguoiDung.Caption = "Nhóm người dùng";
+            this.btn_NhomNguoiDung.Id = 26;
+            this.btn_NhomNguoiDung.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_NhomNguoiDung.ImageOptions.Image")));
+            this.btn_NhomNguoiDung.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_NhomNguoiDung.ImageOptions.LargeImage")));
+            this.btn_NhomNguoiDung.Name = "btn_NhomNguoiDung";
+            this.btn_NhomNguoiDung.Tag = "MH001";
+            this.btn_NhomNguoiDung.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btn_NhomNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_NhomNguoiDung_ItemClick_1);
+            // 
             // ribbonPage_HeThong
             // 
             this.ribbonPage_HeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -391,8 +405,9 @@
             // 
             this.ribbonPageGroup_TacVuTour.ItemLinks.Add(this.btn_PhanQuyen);
             this.ribbonPageGroup_TacVuTour.ItemLinks.Add(this.btn_Admin);
+            this.ribbonPageGroup_TacVuTour.ItemLinks.Add(this.btn_NhomNguoiDung);
             this.ribbonPageGroup_TacVuTour.Name = "ribbonPageGroup_TacVuTour";
-            this.ribbonPageGroup_TacVuTour.Tag = "MH002";
+            this.ribbonPageGroup_TacVuTour.Tag = "MH001";
             this.ribbonPageGroup_TacVuTour.Text = "Quản trị viên";
             // 
             // ribbonPage_QuanLiTour
@@ -612,7 +627,7 @@
             // 
             this.label_BannerLogin.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.label_BannerLogin.ForeColor = System.Drawing.Color.Black;
-            this.label_BannerLogin.Location = new System.Drawing.Point(159, 33);
+            this.label_BannerLogin.Location = new System.Drawing.Point(155, 19);
             this.label_BannerLogin.Name = "label_BannerLogin";
             this.label_BannerLogin.Size = new System.Drawing.Size(395, 45);
             this.label_BannerLogin.TabIndex = 16;
@@ -630,7 +645,7 @@
             this.panel1.Controls.Add(this.lbl_MatKhau);
             this.panel1.Controls.Add(this.txt_TenDangNhap);
             this.panel1.Controls.Add(this.lbl_TenDangNhap);
-            this.panel1.Location = new System.Drawing.Point(266, 221);
+            this.panel1.Location = new System.Drawing.Point(405, 214);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(703, 364);
             this.panel1.TabIndex = 2;
@@ -662,9 +677,9 @@
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseFont = true;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1502, 738);
+            this.ClientSize = new System.Drawing.Size(1370, 738);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ribbonControl_menu);
             this.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
@@ -672,6 +687,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMain";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl_menu)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -739,6 +755,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem btn_PhanQuyen;
         private DevExpress.XtraBars.BarButtonItem btn_Admin;
+        private DevExpress.XtraBars.BarButtonItem btn_NhomNguoiDung;
 
 
 

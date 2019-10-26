@@ -15,13 +15,12 @@ namespace QuanLiTour {
             InitializeComponent ();
         }
         public void LoadData () {
-            DataTable x = xuli.getDatatable ("SELECT TenDangNhap, Ho, Ten, NamSinh, GioiTinh, TinhTrang, Luong FROM QL_NguoiDung");
+            DataTable x = xuli.getDatatable ("EXEC SHOW_USER1");
             xuli.LoadDataToGirdView (dataGridView_NguoiDung, x);
             loaddataToText ();
         }
         private void Admin_Load (object sender, EventArgs e) {
             LoadData ();
-            dataGridView_NguoiDung.Enabled = false;
         }
         private void loaddataToText () {
             txt_TenDangNhap.DataBindings.Clear ();
@@ -44,25 +43,25 @@ namespace QuanLiTour {
         }
 
         private void btn_Tim_Click (object sender, EventArgs e) {
-            DataTable x = xuli.getDatatable ("SELECT * FROM QL_NguoiDung WHERE TenDangNhap = '" + txt_Tim.Text + "'");
+            DataTable x = xuli.getDatatable ("SELECT * FROM QL_NguoiDung WHERE TenDangNhap like '%" + txt_Tim.Text.Trim () + "%'");
             xuli.LoadDataToGirdView (dataGridView_NguoiDung, x);
             loaddataToText ();
         }
 
         private void btn_ThemNguoiDung_Click (object sender, EventArgs e) {
             xuli.MoVaXoaTextBox (tableLayoutPanel_TTNguoiDung);
-            dataGridView_NguoiDung.Enabled = true;
+            dataGridView_NguoiDung.Enabled = false;
         }
-
         private void btn_Luu_Click (object sender, EventArgs e) {
             try {
-                string sqlinsert = "INSERT INTO QL_NguoiDung(TenDangNhap, Ho, Ten, NamSinh, Luong, GioiTinh) VALUES('" + txt_TenDangNhap.Text.Trim () + "', '" + txt_Ho.Text.Trim () + "', '" + txt_Ten.Text.Trim () + "', '" + txt_NamSinh.Text.Trim () + "', '" + txt_Luong.Text.Trim () + "', '" + cbo_GioiTinh.Text.Trim () + "')";
+                string sqlinsert = "EXEC ADD_USER '" + txt_TenDangNhap.Text.Trim () + "','" + txt_Ho.Text.Trim () + "','" + txt_Ten.Text.Trim () + "','" + txt_NamSinh.Text.Trim () + "','" + txt_Luong.Text.Trim () + "','" + cbo_GioiTinh.Text.Trim () + "'";
                 xuli.RunCommand (sqlinsert);
             } catch {
-                MessageBox.Show ("vao roi");
-                string sqlinsert = "Update QL_NguoiDung SET Ho='" + txt_Ho.Text.Trim () + "' , Ten='" + txt_Ten.Text.Trim () + "', NamSinh='" + txt_NamSinh.Text.Trim () + "', Luong = '" + txt_Luong.Text.Trim () + "', GioiTinh='" + cbo_GioiTinh.Text.Trim () + "' where TenDangNhap ='" + txt_TenDangNhap.Text.Trim () + "'";
+                MessageBox.Show ("Sửa");
+                string sqlinsert = "EXEC  UPDATE_USER '" + txt_TenDangNhap.Text.Trim () + "','" + txt_Ho.Text.Trim () + "','" + txt_Ten.Text.Trim () + "','" + txt_NamSinh.Text.Trim () + "','" + txt_Luong.Text.Trim () + "','" + cbo_GioiTinh.Text.Trim () + "' ";
                 xuli.RunCommand (sqlinsert);
             }
+            dataGridView_NguoiDung.Enabled = true;
             xuli.DongTextBox (tableLayoutPanel_TTNguoiDung);
             LoadData ();
         }
@@ -70,7 +69,7 @@ namespace QuanLiTour {
         private void btn_XoaNguoiDung_Click (object sender, EventArgs e) {
             DialogResult dlr = MessageBox.Show ("Bạn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlr == DialogResult.Yes) {
-                string delete = "delete QL_NguoiDung where TenDangNhap = '" + txt_TenDangNhap.Text.ToString () + "'";
+                string delete = "EXEC DELETE_USER '" + txt_TenDangNhap.Text.ToString () + "'";
                 xuli.RunCommand (delete);
                 LoadData ();
                 //Application.Exit();
@@ -80,6 +79,14 @@ namespace QuanLiTour {
         private void btn_SuaNguoiDung_Click (object sender, EventArgs e) {
             xuli.MoTextBox (tableLayoutPanel_TTNguoiDung);
             txt_TenDangNhap.Enabled = false;
+            dataGridView_NguoiDung.Enabled = false;
+
+        }
+
+        private void txt_Tim_KeyPress (object sender, KeyPressEventArgs e) {
+            DataTable x = xuli.getDatatable ("SELECT * FROM QL_NguoiDung WHERE TenDangNhap like '%" + txt_Tim.Text.Trim () + "%'");
+            xuli.LoadDataToGirdView (dataGridView_NguoiDung, x);
+            loaddataToText ();
         }
     }
 }

@@ -23,5 +23,10 @@ namespace QuanLiTour {
         private void cbo_TenServer_DropDown (object sender, EventArgs e) {
 
         }
+
+        private void cbo_TenServer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
