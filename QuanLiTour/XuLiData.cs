@@ -13,6 +13,7 @@ namespace QuanLiTour {
     public class XuLiData {
         SqlConnection conn = new SqlConnection (Properties.Settings.Default.TravelConnectionString);
         SqlCommand cmd;
+
         private void DongConnect () {
             if (conn.State == ConnectionState.Open)
                 conn.Close ();
@@ -54,43 +55,17 @@ namespace QuanLiTour {
                 if (item.Tag != null)
                     item.Enabled = true;
         }
-        public void MoVaXoaTextBox (Panel a) { // đối tượng truyền vào ở đây là panel.. nên mình bỏ hết mấy cái txt vào 1 cái panel
-            foreach (Control item in a.Controls) { // anh xet tag cái nào != null.. nghĩ là no là txt
-                //MessageBox.Show(item.Name.ToString());
+        public void MoVaXoaTextBox (Panel a) {
+            foreach (Control item in a.Controls)
                 if (item.Tag != null) {
                     item.Text = null;
                     item.Enabled = true;
                 }
-            }
         }
         public void DongTextBox (Panel a) {
             foreach (Control item in a.Controls)
                 if (item.Tag != null)
                     item.Enabled = false;
-        }
-        public string GetCountRowData(DataGridView a, int cotlay)
-        {
-            int count = 0;
-            //vd truyền vào cai dât này sẽ ra số 5....
-            count = a.Rows.Count;//dem all cac dong datagrid roi dem gan cho count
-            // dòng này trả ra số bn số 0 à
-             // 6 - 2
-            int dongcuoi = count - 2;
-            string iddongcuoi = a.Rows[dongcuoi].Cells[cotlay].Value.ToString().Trim(); //row là dong cell là cột
-            MessageBox.Show(iddongcuoi);
-            String Str = a.Rows[dongcuoi].Cells[0].Value.ToString().Trim();
-            string Str3 = Str.Substring(Str.Length - 1, 1);
-            String id;
-            if (Str3.Length < 10)
-            {
-                id = "NH00" + Str3;
-            }
-            else
-            {
-                id = "NH0" + Str3;
-            }
-            return id;
-            
         }
     }
 }

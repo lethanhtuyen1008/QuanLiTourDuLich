@@ -56,7 +56,7 @@ namespace QuanLiTour {
                 return;
             }
             if (CauHinh.Check_Config () == 0) {
-                int n = CauHinh.Check_User (txt_TenDangNhap.Text, txt_MatKhau.Text);
+                int n = CauHinh.Check_User(txt_TenDangNhap.Text, txt_MatKhau.Text);
                 if (n == 0)
                     MessageBox.Show ("Tên đăng nhập không tồn tại !");
                 if (n == 1) {
@@ -89,16 +89,9 @@ namespace QuanLiTour {
         }
 
         private void btn_PhanQuyen_ItemClick (object sender, ItemClickEventArgs e) {
-            MH_PhanQuyen frm = new MH_PhanQuyen ();
+            MH_NhomNguoiDung frm = new MH_NhomNguoiDung ();
             frm.MdiParent = this;
             frm.Show ();
-        }
-
-        private void btn_NhomNguoiDung_ItemClick_1(object sender, ItemClickEventArgs e)
-        {
-            MH_NhomNguoiDung frm = new MH_NhomNguoiDung();
-            frm.MdiParent = this;
-            frm.Show();
         }
     }
 }

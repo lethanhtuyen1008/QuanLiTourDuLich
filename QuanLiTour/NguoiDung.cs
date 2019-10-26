@@ -76,7 +76,7 @@ namespace QuanLiTour {
             daNhom.Fill (dtNhom);
             foreach (System.Data.DataRow row in dtNhom.Rows) {
                 foreach (System.Data.DataColumn col in dtNhom.Columns) {
-                    //MessageBox.Show (row[col].ToString ());
+                    MessageBox.Show (row[col].ToString ());
                     ListMaNhom.Add (row[col].ToString ());
                 }
             }
@@ -88,7 +88,7 @@ namespace QuanLiTour {
                     da.Fill (dt);
                     foreach (System.Data.DataRow row in dt.Rows) {
                         foreach (System.Data.DataColumn col in dt.Columns) {
-                            //MessageBox.Show (row[col].ToString ());
+                            MessageBox.Show (row[col].ToString ());
                             _list.Add (row[col].ToString ());
                             mamh.Add (row[col].ToString ());
                         }

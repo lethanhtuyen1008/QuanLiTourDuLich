@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
             this.tabFormPage2 = new DevExpress.XtraBars.TabFormPage();
@@ -58,7 +57,6 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_PhanQuyen = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Admin = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_NhomNguoiDung = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage_HeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup_TacVuTour = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -87,9 +85,6 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btn_NhaHang = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btn_KhachSan = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl_menu)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -168,12 +163,9 @@
             this.barButtonItem_Admin,
             this.barButtonItem6,
             this.btn_PhanQuyen,
-            this.btn_Admin,
-            this.btn_NhomNguoiDung,
-            this.btn_NhaHang,
-            this.btn_KhachSan});
+            this.btn_Admin});
             this.ribbonControl_menu.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl_menu.MaxItemId = 30;
+            this.ribbonControl_menu.MaxItemId = 24;
             this.ribbonControl_menu.Name = "ribbonControl_menu";
             this.ribbonControl_menu.PageHeaderItemLinks.Add(this.btn_DangXuat);
             this.ribbonControl_menu.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -185,7 +177,7 @@
             this.ribbonPage_NhanSu,
             this.ribbonPage_BaoCao});
             this.ribbonControl_menu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl_menu.Size = new System.Drawing.Size(1370, 144);
+            this.ribbonControl_menu.Size = new System.Drawing.Size(1502, 177);
             // 
             // btn_ThongTin
             // 
@@ -289,8 +281,6 @@
             this.btn_HuongDanVien.Id = 13;
             this.btn_HuongDanVien.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.btn_HuongDanVien.ImageOptions.AllowStubGlyph = DevExpress.Utils.DefaultBoolean.True;
-            this.btn_HuongDanVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_HuongDanVien.ImageOptions.Image")));
-            this.btn_HuongDanVien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_HuongDanVien.ImageOptions.LargeImage")));
             this.btn_HuongDanVien.ImageOptions.SvgImage = global::QuanLiTour.Properties.Resources.user;
             this.btn_HuongDanVien.Name = "btn_HuongDanVien";
             this.btn_HuongDanVien.Tag = "MH002";
@@ -371,24 +361,11 @@
             // 
             this.btn_Admin.Caption = "Admin";
             this.btn_Admin.Id = 23;
-            this.btn_Admin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Admin.ImageOptions.Image")));
-            this.btn_Admin.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Admin.ImageOptions.LargeImage")));
             this.btn_Admin.ImageOptions.SvgImage = global::QuanLiTour.Properties.Resources.admin;
             this.btn_Admin.Name = "btn_Admin";
             this.btn_Admin.Tag = "MH001";
             this.btn_Admin.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btn_Admin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Admin_ItemClick);
-            // 
-            // btn_NhomNguoiDung
-            // 
-            this.btn_NhomNguoiDung.Caption = "Nhóm người dùng";
-            this.btn_NhomNguoiDung.Id = 26;
-            this.btn_NhomNguoiDung.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_NhomNguoiDung.ImageOptions.Image")));
-            this.btn_NhomNguoiDung.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_NhomNguoiDung.ImageOptions.LargeImage")));
-            this.btn_NhomNguoiDung.Name = "btn_NhomNguoiDung";
-            this.btn_NhomNguoiDung.Tag = "MH001";
-            this.btn_NhomNguoiDung.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.btn_NhomNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_NhomNguoiDung_ItemClick_1);
             // 
             // ribbonPage_HeThong
             // 
@@ -414,9 +391,8 @@
             // 
             this.ribbonPageGroup_TacVuTour.ItemLinks.Add(this.btn_PhanQuyen);
             this.ribbonPageGroup_TacVuTour.ItemLinks.Add(this.btn_Admin);
-            this.ribbonPageGroup_TacVuTour.ItemLinks.Add(this.btn_NhomNguoiDung);
             this.ribbonPageGroup_TacVuTour.Name = "ribbonPageGroup_TacVuTour";
-            this.ribbonPageGroup_TacVuTour.Tag = "MH001";
+            this.ribbonPageGroup_TacVuTour.Tag = "MH002";
             this.ribbonPageGroup_TacVuTour.Text = "Quản trị viên";
             // 
             // ribbonPage_QuanLiTour
@@ -471,8 +447,7 @@
             // ribbonPage_DichVu
             // 
             this.ribbonPage_DichVu.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup4,
-            this.ribbonPageGroup9});
+            this.ribbonPageGroup4});
             this.ribbonPage_DichVu.ImageUri.Uri = "Clear";
             this.ribbonPage_DichVu.Name = "ribbonPage_DichVu";
             this.ribbonPage_DichVu.Tag = "MH002";
@@ -481,7 +456,6 @@
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.btn_NhaHang);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Tag = "MH002";
             this.ribbonPageGroup4.Text = "Nhà hàng";
@@ -638,7 +612,7 @@
             // 
             this.label_BannerLogin.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.label_BannerLogin.ForeColor = System.Drawing.Color.Black;
-            this.label_BannerLogin.Location = new System.Drawing.Point(155, 19);
+            this.label_BannerLogin.Location = new System.Drawing.Point(159, 33);
             this.label_BannerLogin.Name = "label_BannerLogin";
             this.label_BannerLogin.Size = new System.Drawing.Size(395, 45);
             this.label_BannerLogin.TabIndex = 16;
@@ -656,7 +630,7 @@
             this.panel1.Controls.Add(this.lbl_MatKhau);
             this.panel1.Controls.Add(this.txt_TenDangNhap);
             this.panel1.Controls.Add(this.lbl_TenDangNhap);
-            this.panel1.Location = new System.Drawing.Point(405, 214);
+            this.panel1.Location = new System.Drawing.Point(266, 221);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(703, 364);
             this.panel1.TabIndex = 2;
@@ -683,42 +657,14 @@
             this.ribbonPageGroup8.Text = "Admin";
             this.ribbonPageGroup8.Visible = false;
             // 
-            // btn_NhaHang
-            // 
-            this.btn_NhaHang.Caption = "Nhà hàng";
-            this.btn_NhaHang.Id = 27;
-            this.btn_NhaHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_NhaHang.ImageOptions.Image")));
-            this.btn_NhaHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_NhaHang.ImageOptions.LargeImage")));
-            this.btn_NhaHang.Name = "btn_NhaHang";
-            this.btn_NhaHang.Tag = "MH001";
-            this.btn_NhaHang.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // ribbonPageGroup9
-            // 
-            this.ribbonPageGroup9.ItemLinks.Add(this.btn_KhachSan);
-            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            this.ribbonPageGroup9.Tag = "MH002";
-            this.ribbonPageGroup9.Text = "khách sạn";
-            this.ribbonPageGroup9.Visible = false;
-            // 
-            // btn_KhachSan
-            // 
-            this.btn_KhachSan.Caption = "Khách sạn";
-            this.btn_KhachSan.Id = 29;
-            this.btn_KhachSan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_KhachSan.ImageOptions.Image")));
-            this.btn_KhachSan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_KhachSan.ImageOptions.LargeImage")));
-            this.btn_KhachSan.Name = "btn_KhachSan";
-            this.btn_KhachSan.Tag = "MH001";
-            this.btn_KhachSan.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
             // FormMain
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseFont = true;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 738);
+            this.ClientSize = new System.Drawing.Size(1502, 738);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ribbonControl_menu);
             this.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
@@ -793,10 +739,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem btn_PhanQuyen;
         private DevExpress.XtraBars.BarButtonItem btn_Admin;
-        private DevExpress.XtraBars.BarButtonItem btn_NhomNguoiDung;
-        private DevExpress.XtraBars.BarButtonItem btn_NhaHang;
-        private DevExpress.XtraBars.BarButtonItem btn_KhachSan;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
 
 
 
