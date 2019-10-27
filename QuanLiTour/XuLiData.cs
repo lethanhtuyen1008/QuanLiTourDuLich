@@ -63,6 +63,26 @@ namespace QuanLiTour {
                 }
             }
         }
+        public bool checktxt(Control a)
+        {
+            if(a.Text != "")
+                return true;
+            else
+                return false;
+        }
+        public void checkkInput(Panel a)
+        {
+            foreach (Control item in a.Controls)
+            {
+                while (checktxt(item) == false)
+                {
+                    MessageBox.Show("nhập vào nhóc con");
+                    item.Focus();
+                    break;
+                }
+            }
+                    
+        }
         public void DongTextBox (Panel a) {
             foreach (Control item in a.Controls)
                 if (item.Tag != null)

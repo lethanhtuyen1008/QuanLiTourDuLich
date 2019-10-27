@@ -53,6 +53,7 @@ namespace QuanLiTour {
             dataGridView_NguoiDung.Enabled = false;
         }
         private void btn_Luu_Click (object sender, EventArgs e) {
+            xuli.checkkInput(tableLayoutPanel_TTNguoiDung);
             try {
                 string sqlinsert = "EXEC ADD_USER '" + txt_TenDangNhap.Text.Trim () + "','" + txt_Ho.Text.Trim () + "','" + txt_Ten.Text.Trim () + "','" + txt_NamSinh.Text.Trim () + "','" + txt_Luong.Text.Trim () + "','" + cbo_GioiTinh.Text.Trim () + "'";
                 xuli.RunCommand (sqlinsert);
