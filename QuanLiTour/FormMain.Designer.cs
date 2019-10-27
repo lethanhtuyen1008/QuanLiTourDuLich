@@ -180,7 +180,7 @@
             this.ribbonPage_NhanSu,
             this.ribbonPage_BaoCao});
             this.ribbonControl_menu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl_menu.Size = new System.Drawing.Size(1370, 144);
+            this.ribbonControl_menu.Size = new System.Drawing.Size(1370, 177);
             // 
             // btn_ThongTin
             // 
@@ -596,7 +596,7 @@
             // 
             this.btn_DangNhap.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_DangNhap.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_DangNhap.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.btn_DangNhap.ColorTable = DevComponents.DotNetBar.eButtonColor.Magenta;
             this.btn_DangNhap.Location = new System.Drawing.Point(105, 276);
             this.btn_DangNhap.Name = "btn_DangNhap";
             this.btn_DangNhap.Size = new System.Drawing.Size(280, 49);
@@ -677,7 +677,7 @@
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseFont = true;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 738);
             this.Controls.Add(this.panel1);
