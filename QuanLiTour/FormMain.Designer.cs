@@ -200,6 +200,7 @@
             this.btn_DoiMatKhau.Name = "btn_DoiMatKhau";
             this.btn_DoiMatKhau.Tag = "MH002";
             this.btn_DoiMatKhau.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btn_DoiMatKhau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DoiMatKhau_ItemClick);
             // 
             // btn_DanhSachTourMo
             // 
