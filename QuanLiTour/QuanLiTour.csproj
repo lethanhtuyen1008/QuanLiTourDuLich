@@ -124,6 +124,12 @@
     <Compile Include="MH_PhanQuyen.Designer.cs">
       <DependentUpon>MH_PhanQuyen.cs</DependentUpon>
     </Compile>
+    <Compile Include="MH_QuanLyTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MH_QuanLyTour.Designer.cs">
+      <DependentUpon>MH_QuanLyTour.cs</DependentUpon>
+    </Compile>
     <Compile Include="NguoiDung.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MH_PhanQuyen.resx">
       <DependentUpon>MH_PhanQuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MH_QuanLyTour.resx">
+      <DependentUpon>MH_QuanLyTour.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -208,6 +217,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\admin.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\67466851_914901082190179_9047205316030103552_n.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -31,7 +31,7 @@ namespace QuanLiTour {
             a.Show ();
         }
         private void barButtonItem_DanhSachTourMo_ItemClick (object sender, ItemClickEventArgs e) {
-            MH_DanhSachTourMo a = new MH_DanhSachTourMo ();
+            MH_QuanLyTour a = new MH_QuanLyTour ();
             showForm (a);
         }
         private void btn_ThongTin_ItemClick (object sender, ItemClickEventArgs e) {
@@ -107,6 +107,11 @@ namespace QuanLiTour {
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             btn_Thoat_Click(sender, e);
+        }
+
+        private void btn_DoiMatKhau_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

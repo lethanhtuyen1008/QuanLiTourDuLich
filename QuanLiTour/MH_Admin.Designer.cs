@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel_TacVuNguoiDung = new System.Windows.Forms.TableLayoutPanel();
             this.btn_XoaNguoiDung = new DevComponents.DotNetBar.ButtonX();
@@ -93,7 +93,7 @@
             this.tableLayoutPanel_TacVuNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
             this.tableLayoutPanel_TacVuNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
             this.tableLayoutPanel_TacVuNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel_TacVuNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 199F));
+            this.tableLayoutPanel_TacVuNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel_TacVuNguoiDung.Controls.Add(this.btn_XoaNguoiDung, 0, 0);
             this.tableLayoutPanel_TacVuNguoiDung.Controls.Add(this.btn_SuaNguoiDung, 0, 0);
             this.tableLayoutPanel_TacVuNguoiDung.Controls.Add(this.btn_ThemNguoiDung, 0, 0);
@@ -116,7 +116,7 @@
             this.btn_XoaNguoiDung.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btn_XoaNguoiDung.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             this.btn_XoaNguoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_XoaNguoiDung.Location = new System.Drawing.Point(256, 2);
+            this.btn_XoaNguoiDung.Location = new System.Drawing.Point(255, 2);
             this.btn_XoaNguoiDung.Margin = new System.Windows.Forms.Padding(2);
             this.btn_XoaNguoiDung.Name = "btn_XoaNguoiDung";
             this.btn_XoaNguoiDung.Size = new System.Drawing.Size(114, 34);
@@ -138,7 +138,7 @@
             this.btn_SuaNguoiDung.Location = new System.Drawing.Point(131, 2);
             this.btn_SuaNguoiDung.Margin = new System.Windows.Forms.Padding(2);
             this.btn_SuaNguoiDung.Name = "btn_SuaNguoiDung";
-            this.btn_SuaNguoiDung.Size = new System.Drawing.Size(121, 34);
+            this.btn_SuaNguoiDung.Size = new System.Drawing.Size(120, 34);
             this.btn_SuaNguoiDung.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_SuaNguoiDung.Symbol = "";
             this.btn_SuaNguoiDung.SymbolColor = System.Drawing.Color.DodgerBlue;
@@ -171,12 +171,13 @@
             this.btn_Tim.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Tim.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btn_Tim.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.btn_Tim.Location = new System.Drawing.Point(480, 2);
+            this.btn_Tim.Location = new System.Drawing.Point(479, 2);
             this.btn_Tim.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Tim.Name = "btn_Tim";
             this.btn_Tim.Size = new System.Drawing.Size(95, 33);
             this.btn_Tim.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_Tim.Symbol = "";
+            this.btn_Tim.SymbolColor = System.Drawing.Color.Aqua;
             this.btn_Tim.SymbolSize = 14F;
             this.btn_Tim.TabIndex = 22;
             this.btn_Tim.Text = "     Tìm";
@@ -188,7 +189,7 @@
             this.btn_Luu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Luu.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btn_Luu.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.btn_Luu.Location = new System.Drawing.Point(374, 2);
+            this.btn_Luu.Location = new System.Drawing.Point(373, 2);
             this.btn_Luu.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Luu.Name = "btn_Luu";
             this.btn_Luu.Size = new System.Drawing.Size(101, 33);
@@ -206,7 +207,7 @@
             // 
             this.txt_Tim.Border.Class = "TextBoxBorder";
             this.txt_Tim.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_Tim.Location = new System.Drawing.Point(580, 2);
+            this.txt_Tim.Location = new System.Drawing.Point(579, 2);
             this.txt_Tim.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Tim.Multiline = true;
             this.txt_Tim.Name = "txt_Tim";
@@ -221,7 +222,7 @@
             this.tableLayoutPanel_TTNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.42484F));
             this.tableLayoutPanel_TTNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.57516F));
             this.tableLayoutPanel_TTNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel_TTNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 224F));
+            this.tableLayoutPanel_TTNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
             this.tableLayoutPanel_TTNguoiDung.Controls.Add(this.lbl_NamSinh, 2, 0);
             this.tableLayoutPanel_TTNguoiDung.Controls.Add(this.txt_TenDangNhap, 1, 0);
             this.tableLayoutPanel_TTNguoiDung.Controls.Add(this.txt_Ho, 1, 1);
@@ -251,7 +252,7 @@
             // 
             // 
             this.lbl_NamSinh.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_NamSinh.Location = new System.Drawing.Point(435, 2);
+            this.lbl_NamSinh.Location = new System.Drawing.Point(434, 2);
             this.lbl_NamSinh.Margin = new System.Windows.Forms.Padding(2);
             this.lbl_NamSinh.Name = "lbl_NamSinh";
             this.lbl_NamSinh.Size = new System.Drawing.Size(74, 26);
@@ -267,7 +268,7 @@
             this.txt_TenDangNhap.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_TenDangNhap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_TenDangNhap.Enabled = false;
-            this.txt_TenDangNhap.Location = new System.Drawing.Point(199, 2);
+            this.txt_TenDangNhap.Location = new System.Drawing.Point(198, 2);
             this.txt_TenDangNhap.Margin = new System.Windows.Forms.Padding(2);
             this.txt_TenDangNhap.Multiline = true;
             this.txt_TenDangNhap.Name = "txt_TenDangNhap";
@@ -285,7 +286,7 @@
             this.txt_Ho.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_Ho.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_Ho.Enabled = false;
-            this.txt_Ho.Location = new System.Drawing.Point(199, 32);
+            this.txt_Ho.Location = new System.Drawing.Point(198, 32);
             this.txt_Ho.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Ho.Multiline = true;
             this.txt_Ho.Name = "txt_Ho";
@@ -326,7 +327,7 @@
             // 
             // 
             this.lbl_Luong.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Luong.Location = new System.Drawing.Point(435, 32);
+            this.lbl_Luong.Location = new System.Drawing.Point(434, 32);
             this.lbl_Luong.Margin = new System.Windows.Forms.Padding(2);
             this.lbl_Luong.Name = "lbl_Luong";
             this.lbl_Luong.Size = new System.Drawing.Size(74, 24);
@@ -339,7 +340,7 @@
             // 
             // 
             this.lbl_GioiTinh.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_GioiTinh.Location = new System.Drawing.Point(435, 63);
+            this.lbl_GioiTinh.Location = new System.Drawing.Point(434, 63);
             this.lbl_GioiTinh.Margin = new System.Windows.Forms.Padding(2);
             this.lbl_GioiTinh.Name = "lbl_GioiTinh";
             this.lbl_GioiTinh.Size = new System.Drawing.Size(74, 27);
@@ -355,12 +356,12 @@
             this.txt_NamSinh.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_NamSinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_NamSinh.Enabled = false;
-            this.txt_NamSinh.Location = new System.Drawing.Point(555, 2);
+            this.txt_NamSinh.Location = new System.Drawing.Point(554, 2);
             this.txt_NamSinh.Margin = new System.Windows.Forms.Padding(2);
             this.txt_NamSinh.Multiline = true;
             this.txt_NamSinh.Name = "txt_NamSinh";
             this.txt_NamSinh.PreventEnterBeep = true;
-            this.txt_NamSinh.Size = new System.Drawing.Size(221, 26);
+            this.txt_NamSinh.Size = new System.Drawing.Size(222, 26);
             this.txt_NamSinh.TabIndex = 11;
             this.txt_NamSinh.Tag = "1";
             // 
@@ -373,12 +374,12 @@
             this.txt_Luong.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_Luong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_Luong.Enabled = false;
-            this.txt_Luong.Location = new System.Drawing.Point(555, 32);
+            this.txt_Luong.Location = new System.Drawing.Point(554, 32);
             this.txt_Luong.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Luong.Multiline = true;
             this.txt_Luong.Name = "txt_Luong";
             this.txt_Luong.PreventEnterBeep = true;
-            this.txt_Luong.Size = new System.Drawing.Size(221, 27);
+            this.txt_Luong.Size = new System.Drawing.Size(222, 27);
             this.txt_Luong.TabIndex = 12;
             this.txt_Luong.Tag = "1";
             // 
@@ -391,7 +392,7 @@
             this.txt_Ten.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_Ten.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_Ten.Enabled = false;
-            this.txt_Ten.Location = new System.Drawing.Point(199, 63);
+            this.txt_Ten.Location = new System.Drawing.Point(198, 63);
             this.txt_Ten.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Ten.Multiline = true;
             this.txt_Ten.Name = "txt_Ten";
@@ -423,7 +424,7 @@
             this.cbo_GioiTinh.Items.AddRange(new object[] {
             this.Nam,
             this.Nu});
-            this.cbo_GioiTinh.Location = new System.Drawing.Point(555, 63);
+            this.cbo_GioiTinh.Location = new System.Drawing.Point(554, 63);
             this.cbo_GioiTinh.Margin = new System.Windows.Forms.Padding(2);
             this.cbo_GioiTinh.Name = "cbo_GioiTinh";
             this.cbo_GioiTinh.Size = new System.Drawing.Size(218, 23);
@@ -451,14 +452,14 @@
             this.GioiTinh,
             this.Luong,
             this.TinhTrang});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_NguoiDung.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_NguoiDung.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_NguoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_NguoiDung.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridView_NguoiDung.Location = new System.Drawing.Point(147, 146);
