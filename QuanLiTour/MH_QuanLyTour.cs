@@ -104,5 +104,10 @@ namespace QuanLiTour
              // cái j muốn sài vueets kaij cho nhớ...KONHOAAAAAAAAAAAAAAAAA
             xuli.loadComboBox(cbo_MaLoai,"SELECT * FROM LOAITOUR","TENLOAI","MALOAI");
         }
+
+        private void cbo_MaLoai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

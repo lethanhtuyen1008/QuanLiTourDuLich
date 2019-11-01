@@ -59,6 +59,7 @@
             this.btn_PhanQuyen = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Admin = new DevExpress.XtraBars.BarButtonItem();
             this.btn_NhomNguoiDung = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_DatTour1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage_HeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup_TacVuTour = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -67,6 +68,7 @@
             this.ribbonPageGroup_TacVu = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage_DatTour = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup_QLDatTour = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage_DichVu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage_ThongKe = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -166,9 +168,10 @@
             this.barButtonItem6,
             this.btn_PhanQuyen,
             this.btn_Admin,
-            this.btn_NhomNguoiDung});
+            this.btn_NhomNguoiDung,
+            this.btn_DatTour1});
             this.ribbonControl_menu.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl_menu.MaxItemId = 27;
+            this.ribbonControl_menu.MaxItemId = 30;
             this.ribbonControl_menu.Name = "ribbonControl_menu";
             this.ribbonControl_menu.PageHeaderItemLinks.Add(this.btn_DangXuat);
             this.ribbonControl_menu.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -382,6 +385,17 @@
             this.btn_NhomNguoiDung.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btn_NhomNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_NhomNguoiDung_ItemClick_1);
             // 
+            // btn_DatTour1
+            // 
+            this.btn_DatTour1.Caption = "Đặt Tour";
+            this.btn_DatTour1.Id = 29;
+            this.btn_DatTour1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DatTour1.ImageOptions.Image")));
+            this.btn_DatTour1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_DatTour1.ImageOptions.LargeImage")));
+            this.btn_DatTour1.Name = "btn_DatTour1";
+            this.btn_DatTour1.Tag = "MH002";
+            this.btn_DatTour1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btn_DatTour1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DatTour1_ItemClick);
+            // 
             // ribbonPage_HeThong
             // 
             this.ribbonPage_HeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -445,7 +459,8 @@
             // ribbonPage_DatTour
             // 
             this.ribbonPage_DatTour.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup_QLDatTour});
+            this.ribbonPageGroup_QLDatTour,
+            this.ribbonPageGroup9});
             this.ribbonPage_DatTour.ImageUri.Uri = "SnapToCells";
             this.ribbonPage_DatTour.Name = "ribbonPage_DatTour";
             this.ribbonPage_DatTour.Tag = "MH002";
@@ -459,6 +474,13 @@
             this.ribbonPageGroup_QLDatTour.Tag = "MH002";
             this.ribbonPageGroup_QLDatTour.Text = "Tour đặt gần đây";
             this.ribbonPageGroup_QLDatTour.Visible = false;
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.btn_DatTour1);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Tag = "MH002";
+            this.ribbonPageGroup9.Text = "Đặt tour";
             // 
             // ribbonPage_DichVu
             // 
@@ -757,6 +779,9 @@
         private DevExpress.XtraBars.BarButtonItem btn_PhanQuyen;
         private DevExpress.XtraBars.BarButtonItem btn_Admin;
         private DevExpress.XtraBars.BarButtonItem btn_NhomNguoiDung;
+     
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.BarButtonItem btn_DatTour1;
 
 
 

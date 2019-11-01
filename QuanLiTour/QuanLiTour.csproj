@@ -112,6 +112,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="MH_DatTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MH_DatTour.Designer.cs">
+      <DependentUpon>MH_DatTour.cs</DependentUpon>
+    </Compile>
     <Compile Include="MH_NhomNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MH_DatTour.resx">
+      <DependentUpon>MH_DatTour.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MH_NhomNguoiDung.resx">
       <DependentUpon>MH_NhomNguoiDung.cs</DependentUpon>

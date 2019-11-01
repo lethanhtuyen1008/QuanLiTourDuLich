@@ -89,5 +89,10 @@ namespace QuanLiTour {
             xuli.LoadDataToGirdView (dataGridView_NguoiDung, x);
             loaddataToText ();
         }
+
+        private void dataGridView_NguoiDung_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
