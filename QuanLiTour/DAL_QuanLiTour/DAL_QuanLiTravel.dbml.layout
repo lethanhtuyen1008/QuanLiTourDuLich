@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataQLNguoiDung">
+  <DataContextMoniker Name="/DataQLNguoiDungDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1fe87f2d-4f04-49b9-8278-9d5c6f1592b7" absoluteBounds="1.75, 1.875, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DataQLNguoiDungDataContext/QL_NguoiDung" />
+      <nestedChildShapes>
+        <elementListCompartment Id="201aa04f-7a75-420a-a491-ece4996a3a29" absoluteBounds="1.7650000000000001, 2.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -29,7 +29,7 @@ namespace QuanLiTour {
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter (com);
             DongConnect ();
-            da.Fill (a);
+            da.Fill(a);
             return a;
         }
         public void LoadDataToGirdView (DataGridView data, DataTable a) {
@@ -54,8 +54,8 @@ namespace QuanLiTour {
                 if (item.Tag != null)
                     item.Enabled = true;
         }
-        public void MoVaXoaTextBox (Panel a) { // đối tượng truyền vào ở đây là panel.. nên mình bỏ hết mấy cái txt vào 1 cái panel
-            foreach (Control item in a.Controls) { // anh xet tag cái nào != null.. nghĩ là no là txt
+        public void MoVaXoaTextBox (Panel a) {
+            foreach (Control item in a.Controls) { 
                 //MessageBox.Show(item.Name.ToString());
                 if (item.Tag != null) {
                     item.Text = null;
@@ -63,44 +63,19 @@ namespace QuanLiTour {
                 }
             }
         }
-        public bool checktxt(Control a)
-        {
-            if(a.Text != "")
-                return true;
-            else
-                return false;
-        }
-        public void checkkInput(Panel a)
-        {
-            foreach (Control item in a.Controls)
-            {
-                while (checktxt(item) == false)
-                {
-                    MessageBox.Show("nhập vào nhóc con");
-                    item.Focus();
-                    break;
-                }
-            }
-                    
-        }
         public void DongTextBox (Panel a) {
             foreach (Control item in a.Controls)
                 if (item.Tag != null)
                     item.Enabled = false;
         }
-        public string GetCountRowData(DataGridView a, int cotlay)
-        {
+        public string GetCountRowData(DataGridView a, int cotlay){
             int count = 0;
-            //vd truyền vào cai dât này sẽ ra số 5....
             count = a.Rows.Count;//dem all cac dong datagrid roi dem gan cho count
-            // dòng này trả ra số bn số 0 à
-             // 6 - 2
             int dongcuoi = count - 2;
             string iddongcuoi = a.Rows[dongcuoi].Cells[cotlay].Value.ToString().Trim(); //row là dong cell là cột
             String Str = a.Rows[dongcuoi].Cells[0].Value.ToString().Trim(); //row là dong cell là cột;
             string Str3 = (int.Parse(Str.Substring(Str.Length - 1, 1)) + 1).ToString();
             return Str3;
-            
         }
     }
 }

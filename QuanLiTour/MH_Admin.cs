@@ -7,15 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS_QuanLiTour;
+using DTO_QuanLiTour;
+using DAL_QuanLiTour;
 
 namespace QuanLiTour {
     public partial class MH_Admin : Form {
         XuLiData xuli = new XuLiData ();
+
+        BUS_QLNguoiDung busNguoiDung = new BUS_QLNguoiDung();
         public MH_Admin () {
             InitializeComponent ();
         }
         public void LoadData () {
-            DataTable x = xuli.getDatatable ("EXEC SHOW_USER1");
+            DataTable x = busNguoiDung.getListNguoiDung();
             xuli.LoadDataToGirdView (dataGridView_NguoiDung, x);
             loaddataToText ();
         }
@@ -53,14 +58,17 @@ namespace QuanLiTour {
             dataGridView_NguoiDung.Enabled = false;
         }
         private void btn_Luu_Click (object sender, EventArgs e) {
-            xuli.checkkInput(tableLayoutPanel_TTNguoiDung);
             try {
                 string sqlinsert = "EXEC ADD_USER '" + txt_TenDangNhap.Text.Trim () + "','" + txt_Ho.Text.Trim () + "','" + txt_Ten.Text.Trim () + "','" + txt_NamSinh.Text.Trim () + "','" + txt_Luong.Text.Trim () + "','" + cbo_GioiTinh.Text.Trim () + "'";
                 xuli.RunCommand (sqlinsert);
             } catch {
-                MessageBox.Show ("Sửa");
-                string sqlinsert = "EXEC  UPDATE_USER '" + txt_TenDangNhap.Text.Trim () + "','" + txt_Ho.Text.Trim () + "','" + txt_Ten.Text.Trim () + "','" + txt_NamSinh.Text.Trim () + "','" + txt_Luong.Text.Trim () + "','" + cbo_GioiTinh.Text.Trim () + "' ";
-                xuli.RunCommand (sqlinsert);
+                string[] a = { txt_TenDangNhap.Text, "123", "1", txt_Ho.Text, txt_Ten.Text, txt_NamSinh.Text, cbo_GioiTinh.Text, txt_Luong.Text };
+                if (busNguoiDung.UpdateNguoiDung(a))
+                {
+                    MessageBox.Show("Cập nhật thành công");
+                }
+                else
+                    MessageBox.Show("Cập nhật không thành công");
             }
             dataGridView_NguoiDung.Enabled = true;
             xuli.DongTextBox (tableLayoutPanel_TTNguoiDung);
@@ -70,10 +78,15 @@ namespace QuanLiTour {
         private void btn_XoaNguoiDung_Click (object sender, EventArgs e) {
             DialogResult dlr = MessageBox.Show ("Bạn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlr == DialogResult.Yes) {
-                string delete = "EXEC DELETE_USER '" + txt_TenDangNhap.Text.ToString () + "'";
-                xuli.RunCommand (delete);
+                bool check = busNguoiDung.deleteNguoiDung(txt_TenDangNhap.Text);
+                if (check)
+                {
+                    MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+                }
+                else {
+                    MessageBox.Show("Xóa không thành công!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                }
                 LoadData ();
-                //Application.Exit();
             }
         }
 
@@ -81,18 +94,12 @@ namespace QuanLiTour {
             xuli.MoTextBox (tableLayoutPanel_TTNguoiDung);
             txt_TenDangNhap.Enabled = false;
             dataGridView_NguoiDung.Enabled = false;
-
         }
 
         private void txt_Tim_KeyPress (object sender, KeyPressEventArgs e) {
             DataTable x = xuli.getDatatable ("SELECT * FROM QL_NguoiDung WHERE TenDangNhap like '%" + txt_Tim.Text.Trim () + "%'");
             xuli.LoadDataToGirdView (dataGridView_NguoiDung, x);
             loaddataToText ();
-        }
-
-        private void dataGridView_NguoiDung_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

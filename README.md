@@ -1,9 +1,1 @@
-PHẦN MỀM QUẢN LÍ TOUR DU LỊCH
-
-DANH SÁCH TÀNH VIÊN NHÓM
-1 : Nguyễn Thị Thùy Ngân 
-	MSSV 	: 2001160289 
-	LỚP 	: 07DHTH4
-2 : Lê Thanh Tuyên 	
-	MSSV 	: 2001160382
-	LỚP 	: 07DHTH5
+# QuanLiTourDuLich

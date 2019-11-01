@@ -16,8 +16,7 @@ namespace QuanLiTour {
         }
 
         private void cbo_NhomNguoiDung_DropDown (object sender, EventArgs e) {
-            // load cai này cho anh...........AAAAAAAAAAAAAA
-            xuli.loadComboBox(cbo_NhomNguoiDung,"SELECT * FROM QL_NhomNguoiDung","TenNhom","MaNhom");
+            xuli.loadComboBox (cbo_NhomNguoiDung, "SELECT * FROM QL_NhomNguoiDung", "TenNhom", "MaNhom");
         }
 
         private void MH_NhomNguoiDung_Load (object sender, EventArgs e) {

@@ -113,12 +113,5 @@ namespace QuanLiTour {
         {
 
         }
-
-      
-        private void btn_DatTour1_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            MH_DatTour a = new MH_DatTour();
-            showForm(a);
-        }
     }
 }
