@@ -11,7 +11,7 @@ namespace DAL_QuanLiTour
 {
     public class ActionsDAL
     {
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-BGAMJEE;Initial Catalog=Travel;User ID=sa;Password=sa2012");
+        SqlConnection conn = new SqlConnection(Properties.Settings.Default.TravelConnectionString);
         SqlCommand cmd;
         private void DongConnect()
         {

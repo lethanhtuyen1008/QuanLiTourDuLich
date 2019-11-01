@@ -9,6 +9,6 @@ namespace DAL_QuanLiTour
 {
     public class DBConnect
     {
-        protected SqlConnection _conn = new SqlConnection("Data Source=DESKTOP-BGAMJEE;Initial Catalog=Travel;User ID=sa;Password=sa2012");
+        protected SqlConnection _conn = new SqlConnection(Properties.Settings.Default.TravelConnectionString);
     }
 }
