@@ -54,13 +54,14 @@ namespace DAL_QuanLiTour
         {
             try
             {
+               // string[] a = { txt_TenDangNhap.Text, "123", "1", txt_Ho.Text, txt_Ten.Text, txt_NamSinh.Text, cbo_GioiTinh.Text, txt_Luong.Text };
                 QL_NguoiDung edit = db.QL_NguoiDungs.Where(p => p.TenDangNhap.Equals(a[0])).SingleOrDefault();
                 edit.TinhTrang = int.Parse(a[2]);
                 edit.Ho = a[3];
                 edit.Ten = a[4];
                 edit.NamSinh = int.Parse(a[5]);
                 edit.GioiTinh = a[6];
-                edit.Luong = int.Parse(a[7]);
+                edit.Luong = decimal.Parse(a[7]);
                 db.SubmitChanges();
                 return true;
             }
