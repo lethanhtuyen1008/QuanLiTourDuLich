@@ -272,6 +272,7 @@
             this.btn_TourDatGanDay.Name = "btn_TourDatGanDay";
             this.btn_TourDatGanDay.Tag = "MH002";
             this.btn_TourDatGanDay.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btn_TourDatGanDay.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_TourDatGanDay_ItemClick);
             // 
             // barMdiChildrenListItem1
             // 
