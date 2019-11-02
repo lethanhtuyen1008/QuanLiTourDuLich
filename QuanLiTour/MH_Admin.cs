@@ -14,14 +14,12 @@ using DAL_QuanLiTour;
 namespace QuanLiTour {
     public partial class MH_Admin : Form {
         XuLiData xuli = new XuLiData ();
-
         BUS_QLNguoiDung busNguoiDung = new BUS_QLNguoiDung();
         public MH_Admin () {
             InitializeComponent ();
         }
         public void LoadData () {
-            DataTable x = busNguoiDung.getListNguoiDung();
-            xuli.LoadDataToGirdView (dataGridView_NguoiDung, x);
+            xuli.LoadDataToGirdView(dataGridView_NguoiDung,busNguoiDung.getListNguoiDung() );
             loaddataToText ();
         }
         private void Admin_Load (object sender, EventArgs e) {
@@ -30,6 +28,9 @@ namespace QuanLiTour {
         private void loaddataToText () {
             txt_TenDangNhap.DataBindings.Clear ();
             txt_TenDangNhap.DataBindings.Add ("Text", dataGridView_NguoiDung.DataSource, "TenDangNhap");
+
+            txt_MatKhau.DataBindings.Clear();
+            txt_MatKhau.DataBindings.Add("Text", dataGridView_NguoiDung.DataSource, "MatKhau");
 
             txt_Ho.DataBindings.Clear ();
             txt_Ho.DataBindings.Add ("Text", dataGridView_NguoiDung.DataSource, "Ho");
@@ -52,29 +53,41 @@ namespace QuanLiTour {
             xuli.LoadDataToGirdView (dataGridView_NguoiDung, x);
             loaddataToText ();
         }
-
+        bool check = true;
         private void btn_ThemNguoiDung_Click (object sender, EventArgs e) {
             xuli.MoVaXoaTextBox (tableLayoutPanel_TTNguoiDung);
             dataGridView_NguoiDung.Enabled = false;
+            check = true;
         }
         private void btn_Luu_Click (object sender, EventArgs e) {
             try {
-                string sqlinsert = "EXEC ADD_USER '" + txt_TenDangNhap.Text.Trim () + "','" + txt_Ho.Text.Trim () + "','" + txt_Ten.Text.Trim () + "','" + txt_NamSinh.Text.Trim () + "','" + txt_Luong.Text.Trim () + "','" + cbo_GioiTinh.Text.Trim () + "'";
-                xuli.RunCommand (sqlinsert);
-            } catch {
-                string[] a = { txt_TenDangNhap.Text, "123", "1", txt_Ho.Text, txt_Ten.Text, txt_NamSinh.Text, cbo_GioiTinh.Text, txt_Luong.Text };
-                if (busNguoiDung.UpdateNguoiDung(a))
+                if (check)
                 {
-                    MessageBox.Show("Cập nhật thành công");
+                    DTO_QLNguoiDung ndadd = new DTO_QLNguoiDung(txt_TenDangNhap.Text, 1, txt_Ho.Text, txt_Ten.Text, int.Parse(txt_NamSinh.Text), cbo_GioiTinh.Text, decimal.Parse(txt_Luong.Text));
+                    if (busNguoiDung.AddNguoiDung(ndadd))
+                    {
+                        MessageBox.Show("Thêm người dùng thành công");
+                    }
+                    else
+                        MessageBox.Show("Thêm người dùng không thành công");
                 }
-                else
-                    MessageBox.Show("Cập nhật không thành công");
+                else {
+                    DTO_QLNguoiDung ndupdate = new DTO_QLNguoiDung(txt_TenDangNhap.Text, int.Parse(cbo_TinhTrang.Text), txt_Ho.Text, txt_Ten.Text, int.Parse(txt_NamSinh.Text), cbo_GioiTinh.Text, decimal.Parse(txt_Luong.Text));
+                    if (busNguoiDung.UpdateNguoiDung(ndupdate))
+                    {
+                        MessageBox.Show("Cập nhật thành công");
+                    }
+                    else
+                        MessageBox.Show("Cập nhật không thành công");
+                }
+            } catch {
+                    MessageBox.Show("Lưu thất bại");
             }
             dataGridView_NguoiDung.Enabled = true;
             xuli.DongTextBox (tableLayoutPanel_TTNguoiDung);
             LoadData ();
+            check = true;
         }
-
         private void btn_XoaNguoiDung_Click (object sender, EventArgs e) {
             DialogResult dlr = MessageBox.Show ("Bạn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlr == DialogResult.Yes) {
@@ -93,6 +106,7 @@ namespace QuanLiTour {
         private void btn_SuaNguoiDung_Click (object sender, EventArgs e) {
             xuli.MoTextBox (tableLayoutPanel_TTNguoiDung);
             txt_TenDangNhap.Enabled = false;
+            check = false;
             dataGridView_NguoiDung.Enabled = false;
         }
 

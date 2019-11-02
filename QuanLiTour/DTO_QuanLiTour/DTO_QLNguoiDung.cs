@@ -15,7 +15,7 @@ namespace DTO_QuanLiTour
         private string _Ten;
         private int _NamSinh;
         private string _GioiTinh;
-        private string _Luong;
+        private decimal _Luong;
 
         public string TenDangNhap {
             get { return _TenDangNhap; }
@@ -51,7 +51,7 @@ namespace DTO_QuanLiTour
             get { return _GioiTinh; }
             set { _GioiTinh = value; }
         }
-        public string Luong
+        public decimal Luong
         {
             get { return _Luong; }
             set { _Luong = value; }
@@ -59,7 +59,7 @@ namespace DTO_QuanLiTour
         public DTO_QLNguoiDung()
         {
         }
-        public DTO_QLNguoiDung(string tendangnhap, string matkhau, int tinhtrang, string ho, string ten, int namsinh, string gioitinh, string luong)
+        public DTO_QLNguoiDung(string tendangnhap, string matkhau, int tinhtrang, string ho, string ten, int namsinh, string gioitinh, decimal luong)
         {
             this.TenDangNhap = tendangnhap;
             this.MatKhau = matkhau;
@@ -70,5 +70,16 @@ namespace DTO_QuanLiTour
             this.GioiTinh = gioitinh;
             this.Luong = luong;
         }
+        public DTO_QLNguoiDung(string tendangnhap,int tinhtrang, string ho, string ten, int namsinh, string gioitinh, decimal luong)
+        {
+            this.TenDangNhap = tendangnhap;
+            this.TinhTrang = tinhtrang;
+            this.Ho = ho;
+            this.Ten = ten;
+            this.NamSinh = namsinh;
+            this.GioiTinh = gioitinh;
+            this.Luong = luong;
+        }
+
     }
 }

@@ -1,5 +1,148 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Travel" Class="DataQLNguoiDungDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Travel" Class="DAL_QuanLiTravelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-BGAMJEE;Initial Catalog=Travel;User ID=sa" SettingsObjectName="DAL_QuanLiTour.Properties.Settings" SettingsPropertyName="TravelConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CHITIETGIAVE" Member="CHITIETGIAVEs">
+    <Type Name="CHITIETGIAVE">
+      <Column Name="MALOAIKHACH" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MATOURDAT" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SOLUONGDUNG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="THANHTIEN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="LOAIKHACH_CHITIETGIAVE" Member="LOAIKHACH" ThisKey="MALOAIKHACH" OtherKey="MALOAIKHACH" Type="LOAIKHACH" IsForeignKey="true" />
+      <Association Name="TOURDAT_CHITIETGIAVE" Member="TOURDAT" ThisKey="MATOURDAT" OtherKey="MATOURDAT" Type="TOURDAT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CHITIETTHAMQUAN" Member="CHITIETTHAMQUANs">
+    <Type Name="CHITIETTHAMQUAN">
+      <Column Name="MADIADIEM" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MATOUR" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GHICHU" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="DIADIEMDULICH_CHITIETTHAMQUAN" Member="DIADIEMDULICH" ThisKey="MADIADIEM" OtherKey="MADIADIEM" Type="DIADIEMDULICH" IsForeignKey="true" />
+      <Association Name="TOUR_CHITIETTHAMQUAN" Member="TOUR" ThisKey="MATOUR" OtherKey="MATOUR" Type="TOUR" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CHUONGTRINHTOUR" Member="CHUONGTRINHTOURs">
+    <Type Name="CHUONGTRINHTOUR">
+      <Column Name="MACHUONGTRINH" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MATOUR" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MAKHACHSAN" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TENCHUONGTRINH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CHITIET" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="KHACHSAN_CHUONGTRINHTOUR" Member="KHACHSAN" ThisKey="MAKHACHSAN" OtherKey="MAKHACHSAN" Type="KHACHSAN" IsForeignKey="true" />
+      <Association Name="TOUR_CHUONGTRINHTOUR" Member="TOUR" ThisKey="MATOUR" OtherKey="MATOUR" Type="TOUR" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DANHSACHDICHVU" Member="DANHSACHDICHVUs">
+    <Type Name="DANHSACHDICHVU">
+      <Column Name="MADICHVU" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MATOUR" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SOLUONGDUNG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="THANHTIEN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="DICHVU_DANHSACHDICHVU" Member="DICHVU" ThisKey="MADICHVU" OtherKey="MADICHVU" Type="DICHVU" IsForeignKey="true" />
+      <Association Name="TOUR_DANHSACHDICHVU" Member="TOUR" ThisKey="MATOUR" OtherKey="MATOUR" Type="TOUR" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DANHSACHNGUOIDIKEM" Member="DANHSACHNGUOIDIKEMs">
+    <Type Name="DANHSACHNGUOIDIKEM">
+      <Column Name="MADANHSACH" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GIOITINH" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="NGAYSINH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QUOCTICH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PASSPORT" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="DANHSACHNGUOIDIKEM_TOURDAT" Member="TOURDATs" ThisKey="MADANHSACH" OtherKey="MADANHSACH" Type="TOURDAT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DIADIEMDULICH" Member="DIADIEMDULICHes">
+    <Type Name="DIADIEMDULICH">
+      <Column Name="MADIADIEM" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAQUOCGIA" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MATINH" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TENDIADIEM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="DIADIEMDULICH_CHITIETTHAMQUAN" Member="CHITIETTHAMQUANs" ThisKey="MADIADIEM" OtherKey="MADIADIEM" Type="CHITIETTHAMQUAN" />
+      <Association Name="QUOCGIA_DIADIEMDULICH" Member="QUOCGIA" ThisKey="MAQUOCGIA" OtherKey="MAQUOCGIA" Type="QUOCGIA" IsForeignKey="true" />
+      <Association Name="TINH_DIADIEMDULICH" Member="TINH" ThisKey="MATINH" OtherKey="MATINH" Type="TINH" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DICHVU" Member="DICHVUs">
+    <Type Name="DICHVU">
+      <Column Name="MADICHVU" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENDICHVU" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GIA" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="DICHVU_DANHSACHDICHVU" Member="DANHSACHDICHVUs" ThisKey="MADICHVU" OtherKey="MADICHVU" Type="DANHSACHDICHVU" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GIAVE" Member="GIAVEs">
+    <Type Name="GIAVE">
+      <Column Name="MAGIAVE" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MATOUR" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MALOAIKHACH" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="GIA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="LOAIKHACH_GIAVE" Member="LOAIKHACH" ThisKey="MALOAIKHACH" OtherKey="MALOAIKHACH" Type="LOAIKHACH" IsForeignKey="true" />
+      <Association Name="TOUR_GIAVE" Member="TOUR" ThisKey="MATOUR" OtherKey="MATOUR" Type="TOUR" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
+    <Type Name="KHACHHANG">
+      <Column Name="MAKHACHHANG" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENKHACHHANG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DIENTHOAI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NGAYSINH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="KHACHHANG_TOURDAT" Member="TOURDATs" ThisKey="MAKHACHHANG" OtherKey="MAKHACHHANG" Type="TOURDAT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHACHSAN" Member="KHACHSANs">
+    <Type Name="KHACHSAN">
+      <Column Name="MAKHACHSAN" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAQUOCGIA" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MATINH" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TENKHACHSAN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="KHACHSAN_CHUONGTRINHTOUR" Member="CHUONGTRINHTOURs" ThisKey="MAKHACHSAN" OtherKey="MAKHACHSAN" Type="CHUONGTRINHTOUR" />
+      <Association Name="QUOCGIA_KHACHSAN" Member="QUOCGIA" ThisKey="MAQUOCGIA" OtherKey="MAQUOCGIA" Type="QUOCGIA" IsForeignKey="true" />
+      <Association Name="TINH_KHACHSAN" Member="TINH" ThisKey="MATINH" OtherKey="MATINH" Type="TINH" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LICHKHOIHANH" Member="LICHKHOIHANHs">
+    <Type Name="LICHKHOIHANH">
+      <Column Name="MALICH" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MATOUR" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TENLICH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SOCHOTRONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LICHKHOIHANH_TOURDAT" Member="TOURDATs" ThisKey="MALICH" OtherKey="MALICH" Type="TOURDAT" />
+      <Association Name="TOUR_LICHKHOIHANH" Member="TOUR" ThisKey="MATOUR" OtherKey="MATOUR" Type="TOUR" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAIKHACH" Member="LOAIKHACHes">
+    <Type Name="LOAIKHACH">
+      <Column Name="MALOAIKHACH" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENLOAIKHACH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DOTUOI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LOAIKHACH_CHITIETGIAVE" Member="CHITIETGIAVEs" ThisKey="MALOAIKHACH" OtherKey="MALOAIKHACH" Type="CHITIETGIAVE" />
+      <Association Name="LOAIKHACH_GIAVE" Member="GIAVEs" ThisKey="MALOAIKHACH" OtherKey="MALOAIKHACH" Type="GIAVE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAITHANHTOAN" Member="LOAITHANHTOANs">
+    <Type Name="LOAITHANHTOAN">
+      <Column Name="MALOAITT" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENLOAITT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CHITIET" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAITOUR" Member="LOAITOURs">
+    <Type Name="LOAITOUR">
+      <Column Name="MALOAI" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENLOAI" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="LOAITOUR_TOUR" Member="TOURs" ThisKey="MALOAI" OtherKey="MALOAI" Type="TOUR" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QL_ManHinh" Member="QL_ManHinhs">
+    <Type Name="QL_ManHinh">
+      <Column Name="MaManHinh" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenManHinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="QL_ManHinh_QL_PhanQuyen" Member="QL_PhanQuyens" ThisKey="MaManHinh" OtherKey="MaManHinh" Type="QL_PhanQuyen" />
+    </Type>
+  </Table>
   <Table Name="dbo.QL_NguoiDung" Member="QL_NguoiDungs">
     <Type Name="QL_NguoiDung">
       <Column Name="TenDangNhap" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -10,6 +153,83 @@
       <Column Name="NamSinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
       <Column Name="Luong" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="QL_NguoiDung_QL_NguoiDungNhomNguoiDung" Member="QL_NguoiDungNhomNguoiDungs" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="QL_NguoiDungNhomNguoiDung" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QL_NguoiDungNhomNguoiDung" Member="QL_NguoiDungNhomNguoiDungs">
+    <Type Name="QL_NguoiDungNhomNguoiDung">
+      <Column Name="TenDangNhap" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNhom" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="QL_NguoiDung_QL_NguoiDungNhomNguoiDung" Member="QL_NguoiDung" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="QL_NguoiDung" IsForeignKey="true" />
+      <Association Name="QL_NhomNguoiDung_QL_NguoiDungNhomNguoiDung" Member="QL_NhomNguoiDung" ThisKey="MaNhom" OtherKey="MaNhom" Type="QL_NhomNguoiDung" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QL_NhomNguoiDung" Member="QL_NhomNguoiDungs">
+    <Type Name="QL_NhomNguoiDung">
+      <Column Name="MaNhom" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenNhom" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="QL_NhomNguoiDung_QL_NguoiDungNhomNguoiDung" Member="QL_NguoiDungNhomNguoiDungs" ThisKey="MaNhom" OtherKey="MaNhom" Type="QL_NguoiDungNhomNguoiDung" />
+      <Association Name="QL_NhomNguoiDung_QL_PhanQuyen" Member="QL_PhanQuyens" ThisKey="MaNhom" OtherKey="MaNhom" Type="QL_PhanQuyen" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QL_PhanQuyen" Member="QL_PhanQuyens">
+    <Type Name="QL_PhanQuyen">
+      <Column Name="MaNhom" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaManHinh" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CoQuyen" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="QL_ManHinh_QL_PhanQuyen" Member="QL_ManHinh" ThisKey="MaManHinh" OtherKey="MaManHinh" Type="QL_ManHinh" IsForeignKey="true" />
+      <Association Name="QL_NhomNguoiDung_QL_PhanQuyen" Member="QL_NhomNguoiDung" ThisKey="MaNhom" OtherKey="MaNhom" Type="QL_NhomNguoiDung" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QUOCGIA" Member="QUOCGIAs">
+    <Type Name="QUOCGIA">
+      <Column Name="MAQUOCGIA" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENQUOCGIA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="QUOCGIA_DIADIEMDULICH" Member="DIADIEMDULICHes" ThisKey="MAQUOCGIA" OtherKey="MAQUOCGIA" Type="DIADIEMDULICH" />
+      <Association Name="QUOCGIA_KHACHSAN" Member="KHACHSANs" ThisKey="MAQUOCGIA" OtherKey="MAQUOCGIA" Type="KHACHSAN" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TINH" Member="TINHs">
+    <Type Name="TINH">
+      <Column Name="MATINH" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENTINH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TINH_DIADIEMDULICH" Member="DIADIEMDULICHes" ThisKey="MATINH" OtherKey="MATINH" Type="DIADIEMDULICH" />
+      <Association Name="TINH_KHACHSAN" Member="KHACHSANs" ThisKey="MATINH" OtherKey="MATINH" Type="KHACHSAN" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TOUR" Member="TOURs">
+    <Type Name="TOUR">
+      <Column Name="MATOUR" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MALOAI" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TENTOUR" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SONGAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOCHO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HINH" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="TOUR_CHITIETTHAMQUAN" Member="CHITIETTHAMQUANs" ThisKey="MATOUR" OtherKey="MATOUR" Type="CHITIETTHAMQUAN" />
+      <Association Name="TOUR_CHUONGTRINHTOUR" Member="CHUONGTRINHTOURs" ThisKey="MATOUR" OtherKey="MATOUR" Type="CHUONGTRINHTOUR" />
+      <Association Name="TOUR_DANHSACHDICHVU" Member="DANHSACHDICHVUs" ThisKey="MATOUR" OtherKey="MATOUR" Type="DANHSACHDICHVU" />
+      <Association Name="TOUR_GIAVE" Member="GIAVEs" ThisKey="MATOUR" OtherKey="MATOUR" Type="GIAVE" />
+      <Association Name="TOUR_LICHKHOIHANH" Member="LICHKHOIHANHs" ThisKey="MATOUR" OtherKey="MATOUR" Type="LICHKHOIHANH" />
+      <Association Name="LOAITOUR_TOUR" Member="LOAITOUR" ThisKey="MALOAI" OtherKey="MALOAI" Type="LOAITOUR" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TOURDAT" Member="TOURDATs">
+    <Type Name="TOURDAT">
+      <Column Name="MATOURDAT" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MALICH" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MADANHSACH" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MAKHACHHANG" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MALOAITT" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DIEMDON" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NGAYDAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TONGTIEN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="TOURDAT_CHITIETGIAVE" Member="CHITIETGIAVEs" ThisKey="MATOURDAT" OtherKey="MATOURDAT" Type="CHITIETGIAVE" />
+      <Association Name="DANHSACHNGUOIDIKEM_TOURDAT" Member="DANHSACHNGUOIDIKEM" ThisKey="MADANHSACH" OtherKey="MADANHSACH" Type="DANHSACHNGUOIDIKEM" IsForeignKey="true" />
+      <Association Name="KHACHHANG_TOURDAT" Member="KHACHHANG" ThisKey="MAKHACHHANG" OtherKey="MAKHACHHANG" Type="KHACHHANG" IsForeignKey="true" />
+      <Association Name="LICHKHOIHANH_TOURDAT" Member="LICHKHOIHANH" ThisKey="MALICH" OtherKey="MALICH" Type="LICHKHOIHANH" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

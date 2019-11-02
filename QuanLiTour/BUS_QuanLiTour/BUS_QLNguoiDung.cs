@@ -22,9 +22,13 @@ namespace BUS_QuanLiTour
         {
             return dalNguoiDung.DeleteNguoiDung(id);
         }
-        public bool UpdateNguoiDung(string[] a)
+        public bool UpdateNguoiDung(DTO_QLNguoiDung a)
         {
             return dalNguoiDung.UpdateNguoiDung(a);
+        }
+        public bool AddNguoiDung(DTO_QLNguoiDung a)
+        {
+            return dalNguoiDung.AddNguoiDung(a);
         }
     }
 }

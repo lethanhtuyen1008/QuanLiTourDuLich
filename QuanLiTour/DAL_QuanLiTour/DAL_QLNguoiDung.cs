@@ -11,11 +11,10 @@ namespace DAL_QuanLiTour
 {
     public class DAL_QLNguoiDung
     {
-        DataQLNguoiDungDataContext db = new DataQLNguoiDungDataContext();
+        DAL_QuanLiTravelDataContext db = new DAL_QuanLiTravelDataContext();
         public DataTable getNguoiDung()
         {
             var a = db.QL_NguoiDungs.Select(t=>t);
-
             var resultTable = new DataTable();
             bool firstPass = true;
             foreach (var item in a)
@@ -31,17 +30,17 @@ namespace DAL_QuanLiTour
             }
             return resultTable;
         }
-        public bool UpdateNguoi1Dung(DTO_QLNguoiDung a)
+        public bool UpdateNguoiDung(DTO_QLNguoiDung a)
         {
             try
             {
                 QL_NguoiDung edit = db.QL_NguoiDungs.Where(p => p.TenDangNhap.Equals(a.TenDangNhap)).SingleOrDefault();
                 edit.TinhTrang = a.TinhTrang;
-                edit.GioiTinh = a.GioiTinh;
                 edit.Ho = a.Ho;
                 edit.Ten = a.Ten;
-                edit.Luong = int.Parse(a.Luong);
                 edit.NamSinh = a.NamSinh;
+                edit.GioiTinh = a.GioiTinh;
+                edit.Luong = a.Luong;
                 db.SubmitChanges();
                 return true;
             }
@@ -50,19 +49,24 @@ namespace DAL_QuanLiTour
                 return false;
             }
         }
-        public bool UpdateNguoiDung(string []a)
+        public bool AddNguoiDung(DTO_QLNguoiDung a)
         {
             try
             {
-               // string[] a = { txt_TenDangNhap.Text, "123", "1", txt_Ho.Text, txt_Ten.Text, txt_NamSinh.Text, cbo_GioiTinh.Text, txt_Luong.Text };
-                QL_NguoiDung edit = db.QL_NguoiDungs.Where(p => p.TenDangNhap.Equals(a[0])).SingleOrDefault();
-                edit.TinhTrang = int.Parse(a[2]);
-                edit.Ho = a[3];
-                edit.Ten = a[4];
-                edit.NamSinh = int.Parse(a[5]);
-                edit.GioiTinh = a[6];
-                edit.Luong = decimal.Parse(a[7]);
+                QL_NguoiDung insert = new QL_NguoiDung();
+
+                insert.TenDangNhap = a.TenDangNhap;
+                insert.MatKhau = "123";
+                insert.TinhTrang = a.TinhTrang;
+                insert.Ho = a.Ho;
+                insert.Ten = a.Ten;
+                insert.NamSinh = a.NamSinh;
+                insert.GioiTinh = a.GioiTinh;
+                insert.Luong = a.Luong;
+
+                db.QL_NguoiDungs.InsertOnSubmit(insert);
                 db.SubmitChanges();
+
                 return true;
             }
             catch

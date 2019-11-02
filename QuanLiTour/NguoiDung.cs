@@ -36,8 +36,8 @@ namespace QuanLiTour {
             if (dt.Rows.Count == 0)
                 return 0; // User không tồn tại
             else
-            if (dt.Rows[0][2] == null || int.Parse (dt.Rows[0][2].ToString ()) == 2) {
-                return 2; // Không hoạt động
+            if (dt.Rows[0][2] == null || int.Parse (dt.Rows[0][2].ToString ()) == 0) {
+                return 0; // Không hoạt động
             }
             return 1; // Đăng nhập thành công
         }

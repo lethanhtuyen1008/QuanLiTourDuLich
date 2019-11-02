@@ -101,7 +101,7 @@
             this.tableLayoutPanel_TacVuDatTour.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
             this.tableLayoutPanel_TacVuDatTour.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
             this.tableLayoutPanel_TacVuDatTour.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
-            this.tableLayoutPanel_TacVuDatTour.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148F));
+            this.tableLayoutPanel_TacVuDatTour.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
             this.tableLayoutPanel_TacVuDatTour.Controls.Add(this.btn_ThemTourDat, 0, 0);
             this.tableLayoutPanel_TacVuDatTour.Controls.Add(this.btn_SuaTourDat, 1, 0);
             this.tableLayoutPanel_TacVuDatTour.Controls.Add(this.btn_XoaTourDat, 2, 0);
@@ -125,7 +125,7 @@
             this.btn_ThemTourDat.Location = new System.Drawing.Point(4, 4);
             this.btn_ThemTourDat.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ThemTourDat.Name = "btn_ThemTourDat";
-            this.btn_ThemTourDat.Size = new System.Drawing.Size(174, 35);
+            this.btn_ThemTourDat.Size = new System.Drawing.Size(172, 35);
             this.btn_ThemTourDat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_ThemTourDat.Symbol = "";
             this.btn_ThemTourDat.SymbolColor = System.Drawing.Color.MediumAquamarine;
@@ -141,10 +141,10 @@
             this.btn_SuaTourDat.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btn_SuaTourDat.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             this.btn_SuaTourDat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_SuaTourDat.Location = new System.Drawing.Point(186, 4);
+            this.btn_SuaTourDat.Location = new System.Drawing.Point(184, 4);
             this.btn_SuaTourDat.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SuaTourDat.Name = "btn_SuaTourDat";
-            this.btn_SuaTourDat.Size = new System.Drawing.Size(185, 35);
+            this.btn_SuaTourDat.Size = new System.Drawing.Size(184, 35);
             this.btn_SuaTourDat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_SuaTourDat.Symbol = "";
             this.btn_SuaTourDat.SymbolColor = System.Drawing.Color.DodgerBlue;
@@ -160,7 +160,7 @@
             this.btn_XoaTourDat.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btn_XoaTourDat.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             this.btn_XoaTourDat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_XoaTourDat.Location = new System.Drawing.Point(379, 4);
+            this.btn_XoaTourDat.Location = new System.Drawing.Point(376, 4);
             this.btn_XoaTourDat.Margin = new System.Windows.Forms.Padding(4);
             this.btn_XoaTourDat.Name = "btn_XoaTourDat";
             this.btn_XoaTourDat.Size = new System.Drawing.Size(205, 35);
@@ -178,7 +178,7 @@
             this.btn_LuuTourDat.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btn_LuuTourDat.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             this.btn_LuuTourDat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_LuuTourDat.Location = new System.Drawing.Point(592, 4);
+            this.btn_LuuTourDat.Location = new System.Drawing.Point(589, 4);
             this.btn_LuuTourDat.Margin = new System.Windows.Forms.Padding(4);
             this.btn_LuuTourDat.Name = "btn_LuuTourDat";
             this.btn_LuuTourDat.Size = new System.Drawing.Size(205, 35);
@@ -196,7 +196,7 @@
             this.btn_TimTourDat.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btn_TimTourDat.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             this.btn_TimTourDat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_TimTourDat.Location = new System.Drawing.Point(805, 4);
+            this.btn_TimTourDat.Location = new System.Drawing.Point(802, 4);
             this.btn_TimTourDat.Margin = new System.Windows.Forms.Padding(4);
             this.btn_TimTourDat.Name = "btn_TimTourDat";
             this.btn_TimTourDat.Size = new System.Drawing.Size(189, 35);
@@ -214,7 +214,7 @@
             this.tableLayoutPanel_TTTourDat.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.92683F));
             this.tableLayoutPanel_TTTourDat.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.07317F));
             this.tableLayoutPanel_TTTourDat.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 183F));
-            this.tableLayoutPanel_TTTourDat.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 418F));
+            this.tableLayoutPanel_TTTourDat.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 421F));
             this.tableLayoutPanel_TTTourDat.Controls.Add(this.labelX1, 0, 0);
             this.tableLayoutPanel_TTTourDat.Controls.Add(this.labelX2, 0, 1);
             this.tableLayoutPanel_TTTourDat.Controls.Add(this.labelX3, 0, 2);
@@ -259,7 +259,7 @@
             this.labelX1.Location = new System.Drawing.Point(4, 4);
             this.labelX1.Margin = new System.Windows.Forms.Padding(4);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(171, 33);
+            this.labelX1.Size = new System.Drawing.Size(170, 33);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "Mã tour đặt";
             // 
@@ -273,7 +273,7 @@
             this.labelX2.Location = new System.Drawing.Point(4, 45);
             this.labelX2.Margin = new System.Windows.Forms.Padding(4);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(171, 35);
+            this.labelX2.Size = new System.Drawing.Size(170, 35);
             this.labelX2.TabIndex = 1;
             this.labelX2.Text = "Mã tour";
             // 
@@ -287,7 +287,7 @@
             this.labelX3.Location = new System.Drawing.Point(4, 88);
             this.labelX3.Margin = new System.Windows.Forms.Padding(4);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(171, 36);
+            this.labelX3.Size = new System.Drawing.Size(170, 36);
             this.labelX3.TabIndex = 2;
             this.labelX3.Text = "Mã lịch";
             // 
@@ -301,7 +301,7 @@
             this.labelX4.Location = new System.Drawing.Point(4, 132);
             this.labelX4.Margin = new System.Windows.Forms.Padding(4);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(171, 33);
+            this.labelX4.Size = new System.Drawing.Size(170, 33);
             this.labelX4.TabIndex = 3;
             this.labelX4.Text = "Mã danh sách";
             // 
@@ -312,7 +312,7 @@
             // 
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelX5.Location = new System.Drawing.Point(549, 4);
+            this.labelX5.Location = new System.Drawing.Point(546, 4);
             this.labelX5.Margin = new System.Windows.Forms.Padding(4);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(175, 33);
@@ -326,7 +326,7 @@
             // 
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelX6.Location = new System.Drawing.Point(549, 45);
+            this.labelX6.Location = new System.Drawing.Point(546, 45);
             this.labelX6.Margin = new System.Windows.Forms.Padding(4);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(175, 35);
@@ -340,7 +340,7 @@
             // 
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelX7.Location = new System.Drawing.Point(549, 88);
+            this.labelX7.Location = new System.Drawing.Point(546, 88);
             this.labelX7.Margin = new System.Windows.Forms.Padding(4);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(175, 36);
@@ -354,7 +354,7 @@
             // 
             this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelX8.Location = new System.Drawing.Point(549, 132);
+            this.labelX8.Location = new System.Drawing.Point(546, 132);
             this.labelX8.Margin = new System.Windows.Forms.Padding(4);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(175, 33);
@@ -367,7 +367,7 @@
             this.btn_TongTienTourDat.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btn_TongTienTourDat.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             this.btn_TongTienTourDat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_TongTienTourDat.Location = new System.Drawing.Point(549, 173);
+            this.btn_TongTienTourDat.Location = new System.Drawing.Point(546, 173);
             this.btn_TongTienTourDat.Margin = new System.Windows.Forms.Padding(4);
             this.btn_TongTienTourDat.Name = "btn_TongTienTourDat";
             this.btn_TongTienTourDat.Size = new System.Drawing.Size(175, 37);
@@ -384,12 +384,12 @@
             this.txt_DiemDon.Border.Class = "TextBoxBorder";
             this.txt_DiemDon.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_DiemDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_DiemDon.Location = new System.Drawing.Point(732, 45);
+            this.txt_DiemDon.Location = new System.Drawing.Point(729, 45);
             this.txt_DiemDon.Margin = new System.Windows.Forms.Padding(4);
             this.txt_DiemDon.Multiline = true;
             this.txt_DiemDon.Name = "txt_DiemDon";
             this.txt_DiemDon.PreventEnterBeep = true;
-            this.txt_DiemDon.Size = new System.Drawing.Size(411, 35);
+            this.txt_DiemDon.Size = new System.Drawing.Size(414, 35);
             this.txt_DiemDon.TabIndex = 9;
             // 
             // txt_NgayDat
@@ -400,12 +400,12 @@
             this.txt_NgayDat.Border.Class = "TextBoxBorder";
             this.txt_NgayDat.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_NgayDat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_NgayDat.Location = new System.Drawing.Point(732, 88);
+            this.txt_NgayDat.Location = new System.Drawing.Point(729, 88);
             this.txt_NgayDat.Margin = new System.Windows.Forms.Padding(4);
             this.txt_NgayDat.Multiline = true;
             this.txt_NgayDat.Name = "txt_NgayDat";
             this.txt_NgayDat.PreventEnterBeep = true;
-            this.txt_NgayDat.Size = new System.Drawing.Size(411, 36);
+            this.txt_NgayDat.Size = new System.Drawing.Size(414, 36);
             this.txt_NgayDat.TabIndex = 10;
             // 
             // txt_TrangThai
@@ -416,12 +416,12 @@
             this.txt_TrangThai.Border.Class = "TextBoxBorder";
             this.txt_TrangThai.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_TrangThai.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_TrangThai.Location = new System.Drawing.Point(732, 132);
+            this.txt_TrangThai.Location = new System.Drawing.Point(729, 132);
             this.txt_TrangThai.Margin = new System.Windows.Forms.Padding(4);
             this.txt_TrangThai.Multiline = true;
             this.txt_TrangThai.Name = "txt_TrangThai";
             this.txt_TrangThai.PreventEnterBeep = true;
-            this.txt_TrangThai.Size = new System.Drawing.Size(411, 33);
+            this.txt_TrangThai.Size = new System.Drawing.Size(414, 33);
             this.txt_TrangThai.TabIndex = 11;
             // 
             // cbo_MaLoaiTT
@@ -431,10 +431,10 @@
             this.cbo_MaLoaiTT.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbo_MaLoaiTT.FormattingEnabled = true;
             this.cbo_MaLoaiTT.ItemHeight = 14;
-            this.cbo_MaLoaiTT.Location = new System.Drawing.Point(732, 4);
+            this.cbo_MaLoaiTT.Location = new System.Drawing.Point(729, 4);
             this.cbo_MaLoaiTT.Margin = new System.Windows.Forms.Padding(4);
             this.cbo_MaLoaiTT.Name = "cbo_MaLoaiTT";
-            this.cbo_MaLoaiTT.Size = new System.Drawing.Size(411, 20);
+            this.cbo_MaLoaiTT.Size = new System.Drawing.Size(414, 20);
             this.cbo_MaLoaiTT.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_MaLoaiTT.TabIndex = 17;
             this.cbo_MaLoaiTT.DropDown += new System.EventHandler(this.cbo_MaLoaiTT_DropDown);
@@ -447,12 +447,12 @@
             this.txt_TongTien.Border.Class = "TextBoxBorder";
             this.txt_TongTien.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_TongTien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_TongTien.Location = new System.Drawing.Point(732, 173);
+            this.txt_TongTien.Location = new System.Drawing.Point(729, 173);
             this.txt_TongTien.Margin = new System.Windows.Forms.Padding(4);
             this.txt_TongTien.Multiline = true;
             this.txt_TongTien.Name = "txt_TongTien";
             this.txt_TongTien.PreventEnterBeep = true;
-            this.txt_TongTien.Size = new System.Drawing.Size(411, 37);
+            this.txt_TongTien.Size = new System.Drawing.Size(414, 37);
             this.txt_TongTien.TabIndex = 18;
             // 
             // labelX9
@@ -465,7 +465,7 @@
             this.labelX9.Location = new System.Drawing.Point(4, 173);
             this.labelX9.Margin = new System.Windows.Forms.Padding(4);
             this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(171, 37);
+            this.labelX9.Size = new System.Drawing.Size(170, 37);
             this.labelX9.TabIndex = 19;
             this.labelX9.Text = "Mã khách hàng";
             // 
@@ -476,10 +476,10 @@
             this.cbo_MaTourDat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbo_MaTourDat.FormattingEnabled = true;
             this.cbo_MaTourDat.ItemHeight = 14;
-            this.cbo_MaTourDat.Location = new System.Drawing.Point(183, 4);
+            this.cbo_MaTourDat.Location = new System.Drawing.Point(182, 4);
             this.cbo_MaTourDat.Margin = new System.Windows.Forms.Padding(4);
             this.cbo_MaTourDat.Name = "cbo_MaTourDat";
-            this.cbo_MaTourDat.Size = new System.Drawing.Size(358, 20);
+            this.cbo_MaTourDat.Size = new System.Drawing.Size(356, 20);
             this.cbo_MaTourDat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_MaTourDat.TabIndex = 20;
             // 
@@ -490,10 +490,10 @@
             this.cbo_MaTour.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbo_MaTour.FormattingEnabled = true;
             this.cbo_MaTour.ItemHeight = 14;
-            this.cbo_MaTour.Location = new System.Drawing.Point(183, 45);
+            this.cbo_MaTour.Location = new System.Drawing.Point(182, 45);
             this.cbo_MaTour.Margin = new System.Windows.Forms.Padding(4);
             this.cbo_MaTour.Name = "cbo_MaTour";
-            this.cbo_MaTour.Size = new System.Drawing.Size(358, 20);
+            this.cbo_MaTour.Size = new System.Drawing.Size(356, 20);
             this.cbo_MaTour.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_MaTour.TabIndex = 21;
             this.cbo_MaTour.DropDown += new System.EventHandler(this.cbo_MaTour_DropDown);
@@ -505,10 +505,10 @@
             this.cbo_MaLich.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbo_MaLich.FormattingEnabled = true;
             this.cbo_MaLich.ItemHeight = 14;
-            this.cbo_MaLich.Location = new System.Drawing.Point(183, 88);
+            this.cbo_MaLich.Location = new System.Drawing.Point(182, 88);
             this.cbo_MaLich.Margin = new System.Windows.Forms.Padding(4);
             this.cbo_MaLich.Name = "cbo_MaLich";
-            this.cbo_MaLich.Size = new System.Drawing.Size(358, 20);
+            this.cbo_MaLich.Size = new System.Drawing.Size(356, 20);
             this.cbo_MaLich.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_MaLich.TabIndex = 22;
             this.cbo_MaLich.DropDown += new System.EventHandler(this.cbo_MaLich_DropDown_1);
@@ -520,10 +520,10 @@
             this.cbo_MaDanhSach.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbo_MaDanhSach.FormattingEnabled = true;
             this.cbo_MaDanhSach.ItemHeight = 14;
-            this.cbo_MaDanhSach.Location = new System.Drawing.Point(183, 132);
+            this.cbo_MaDanhSach.Location = new System.Drawing.Point(182, 132);
             this.cbo_MaDanhSach.Margin = new System.Windows.Forms.Padding(4);
             this.cbo_MaDanhSach.Name = "cbo_MaDanhSach";
-            this.cbo_MaDanhSach.Size = new System.Drawing.Size(358, 20);
+            this.cbo_MaDanhSach.Size = new System.Drawing.Size(356, 20);
             this.cbo_MaDanhSach.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_MaDanhSach.TabIndex = 23;
             this.cbo_MaDanhSach.DropDown += new System.EventHandler(this.cbo_MaDanhSach_DropDown_1);
@@ -535,10 +535,10 @@
             this.cbo_MaKhachHang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbo_MaKhachHang.FormattingEnabled = true;
             this.cbo_MaKhachHang.ItemHeight = 14;
-            this.cbo_MaKhachHang.Location = new System.Drawing.Point(183, 173);
+            this.cbo_MaKhachHang.Location = new System.Drawing.Point(182, 173);
             this.cbo_MaKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.cbo_MaKhachHang.Name = "cbo_MaKhachHang";
-            this.cbo_MaKhachHang.Size = new System.Drawing.Size(358, 20);
+            this.cbo_MaKhachHang.Size = new System.Drawing.Size(356, 20);
             this.cbo_MaKhachHang.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_MaKhachHang.TabIndex = 24;
             this.cbo_MaKhachHang.DropDown += new System.EventHandler(this.cbo_MaKhachHang_DropDown_1);

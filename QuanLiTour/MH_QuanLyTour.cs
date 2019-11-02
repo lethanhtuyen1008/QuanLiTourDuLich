@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using BUS_QuanLiTour;
+using DTO_QuanLiTour;
+
 namespace QuanLiTour
 {
     public partial class MH_QuanLyTour : Form
     {
         XuLiData xuli = new XuLiData();
+        BUS_Tours busTours = new BUS_Tours();
         string imglocation = "";//string filename
         int set = 0;
         public MH_QuanLyTour()
@@ -21,8 +25,7 @@ namespace QuanLiTour
         }
         public void LoadData()
         {
-            DataTable a = xuli.getDatatable("SELECT MATOUR, MALOAI,TENTOUR, SONGAY, SOCHO FROM TOUR");
-            xuli.LoadDataToGirdView(dataGridView_QuanLyTour, a);
+            xuli.LoadDataToGirdView(dataGridView_QuanLyTour, busTours.getListTour());
         }
         private void MH_QuanLyTour_Load(object sender, EventArgs e)
         {
