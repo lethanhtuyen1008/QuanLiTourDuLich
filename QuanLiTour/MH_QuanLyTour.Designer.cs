@@ -31,11 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView_QuanLyTour = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.MATOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MALOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENTOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SONGAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOCHO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -49,18 +44,24 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.btn_ChonAnh = new DevComponents.DotNetBar.ButtonX();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Tour = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_ThemTour = new DevComponents.DotNetBar.ButtonX();
             this.btn_XoaTour = new DevComponents.DotNetBar.ButtonX();
             this.btnSuaTour = new DevComponents.DotNetBar.ButtonX();
             this.btn_HuyTour = new DevComponents.DotNetBar.ButtonX();
             this.btn_LuuTour = new DevComponents.DotNetBar.ButtonX();
+            this.MATOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MALOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENTOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SONGAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOCHO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hinh = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_QuanLyTour)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Tour)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,7 +92,8 @@
             this.MALOAI,
             this.TENTOUR,
             this.SONGAY,
-            this.SOCHO});
+            this.SOCHO,
+            this.Hinh});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,43 +110,13 @@
             this.dataGridView_QuanLyTour.Size = new System.Drawing.Size(1217, 410);
             this.dataGridView_QuanLyTour.TabIndex = 2;
             // 
-            // MATOUR
-            // 
-            this.MATOUR.DataPropertyName = "MATOUR";
-            this.MATOUR.HeaderText = "Mã tour";
-            this.MATOUR.Name = "MATOUR";
-            // 
-            // MALOAI
-            // 
-            this.MALOAI.DataPropertyName = "MALOAI";
-            this.MALOAI.HeaderText = "Mã loại";
-            this.MALOAI.Name = "MALOAI";
-            // 
-            // TENTOUR
-            // 
-            this.TENTOUR.DataPropertyName = "TENTOUR";
-            this.TENTOUR.HeaderText = "Tên tour";
-            this.TENTOUR.Name = "TENTOUR";
-            // 
-            // SONGAY
-            // 
-            this.SONGAY.DataPropertyName = "SONGAY";
-            this.SONGAY.HeaderText = "Số ngày";
-            this.SONGAY.Name = "SONGAY";
-            // 
-            // SOCHO
-            // 
-            this.SOCHO.DataPropertyName = "SOCHO";
-            this.SOCHO.HeaderText = "Số chỗ";
-            this.SOCHO.Name = "SOCHO";
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.91304F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.08696F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.pictureBox_Tour, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(150, 52);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
@@ -346,16 +318,16 @@
             this.btn_ChonAnh.Visible = false;
             this.btn_ChonAnh.Click += new System.EventHandler(this.btn_ChonAnh_Click);
             // 
-            // pictureBox1
+            // pictureBox_Tour
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(854, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(359, 199);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox_Tour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_Tour.Location = new System.Drawing.Point(854, 4);
+            this.pictureBox_Tour.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox_Tour.Name = "pictureBox_Tour";
+            this.pictureBox_Tour.Size = new System.Drawing.Size(359, 199);
+            this.pictureBox_Tour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Tour.TabIndex = 5;
+            this.pictureBox_Tour.TabStop = false;
             // 
             // tableLayoutPanel2
             // 
@@ -473,6 +445,44 @@
             this.btn_LuuTour.TextColor = System.Drawing.Color.White;
             this.btn_LuuTour.Click += new System.EventHandler(this.btn_LuuTour_Click);
             // 
+            // MATOUR
+            // 
+            this.MATOUR.DataPropertyName = "MATOUR";
+            this.MATOUR.HeaderText = "Mã tour";
+            this.MATOUR.Name = "MATOUR";
+            // 
+            // MALOAI
+            // 
+            this.MALOAI.DataPropertyName = "MALOAI";
+            this.MALOAI.HeaderText = "Mã loại";
+            this.MALOAI.Name = "MALOAI";
+            // 
+            // TENTOUR
+            // 
+            this.TENTOUR.DataPropertyName = "TENTOUR";
+            this.TENTOUR.HeaderText = "Tên tour";
+            this.TENTOUR.Name = "TENTOUR";
+            // 
+            // SONGAY
+            // 
+            this.SONGAY.DataPropertyName = "SONGAY";
+            this.SONGAY.HeaderText = "Số ngày";
+            this.SONGAY.Name = "SONGAY";
+            // 
+            // SOCHO
+            // 
+            this.SOCHO.DataPropertyName = "SOCHO";
+            this.SOCHO.HeaderText = "Số chỗ";
+            this.SOCHO.Name = "SOCHO";
+            // 
+            // Hinh
+            // 
+            this.Hinh.DataPropertyName = "Hinh";
+            this.Hinh.HeaderText = "Hình";
+            this.Hinh.Name = "Hinh";
+            this.Hinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Hinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // MH_QuanLyTour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -487,7 +497,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_QuanLyTour)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Tour)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -516,11 +526,12 @@
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.ButtonX btn_ChonAnh;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox_Tour;
         private System.Windows.Forms.DataGridViewTextBoxColumn MATOUR;
         private System.Windows.Forms.DataGridViewTextBoxColumn MALOAI;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENTOUR;
         private System.Windows.Forms.DataGridViewTextBoxColumn SONGAY;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOCHO;
+        private System.Windows.Forms.DataGridViewImageColumn Hinh;
     }
 }

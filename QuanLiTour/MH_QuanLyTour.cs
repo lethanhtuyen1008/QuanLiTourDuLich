@@ -26,10 +26,21 @@ namespace QuanLiTour
         public void LoadData()
         {
             xuli.LoadDataToGirdView(dataGridView_QuanLyTour, busTours.getListTour());
+
+        }
+        public void loaddatatoText()
+        {
+            int row = dataGridView_QuanLyTour.CurrentRow.Index; //lấy ra chỉ số của row đang đc chọn
+            byte data = byte.Parse(dataGridView_QuanLyTour.Rows[0].Cells[6].Value.ToString());
+
+            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
+
         }
         private void MH_QuanLyTour_Load(object sender, EventArgs e)
         {
+
             LoadData();
+            //loaddatatoText();
         }
         private void btn_ThemTour_Click(object sender, EventArgs e)
         {
@@ -48,11 +59,6 @@ namespace QuanLiTour
 
         private void btn_LuuTour_Click(object sender, EventArgs e)
         {
-            //đây ... trước hết thêm là ok nè
-            // nhưng sửa thiflaij khác 
-            // 1 : người dùng có chọn hình mới thì lấy cái hình mới đổi cái hìn cũ, còn nếu no k chọn hình ới thì giữ nguyeennhuw cũ..o khiểu k c ơi.ok
-            // khai báo hai cái biến.. click btn thêm la sao anh...saolaila2caithì img th
-           
             if (imglocation == "" && set ==0)
             {
                 string sqlstring = "UPDATE TOUR SET MALOAI=N'" + cbo_MaLoai.Text.Trim() + "', TENTOUR=N'" + txt_TenTour.Text.Trim() + "', SONGAY='" + txt_SoNgay.Text.Trim() + "', SOCHO='" + txt_SoCho.Text.Trim() + "' WHERE MATOUR='" + txt_MaTour.Text.Trim() + "' ";
@@ -97,14 +103,13 @@ namespace QuanLiTour
             if (open.ShowDialog() == DialogResult.OK)
             {
                 imglocation = open.FileName.ToString();
-                pictureBox1.ImageLocation = imglocation;
+                pictureBox_Tour.ImageLocation = imglocation;
                 set = 1;
             }
         }
 
         private void cbo_MaLoai_DropDown(object sender, EventArgs e)
         {
-             // cái j muốn sài vueets kaij cho nhớ...KONHOAAAAAAAAAAAAAAAAA
             xuli.loadComboBox(cbo_MaLoai,"SELECT * FROM LOAITOUR","TENLOAI","MALOAI");
         }
 
