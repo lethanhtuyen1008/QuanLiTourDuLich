@@ -12,6 +12,8 @@ using DevExpress.DXBinding;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Controls;
 using DevExpress.XtraBars.Ribbon;
+
+
 using PhanQuyen;
 
 namespace QuanLiTour {

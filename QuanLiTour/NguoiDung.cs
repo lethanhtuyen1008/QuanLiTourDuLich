@@ -41,10 +41,16 @@ namespace QuanLiTour {
             }
             return 1; // Đăng nhập thành công
         }
-        public DataTable GetServerName () {
-            SqlDataSourceEnumerator instance = SqlDataSourceEnumerator.Instance;
-            System.Data.DataTable table = instance.GetDataSources ();
-            return table;
+        public List<string> GetServerName () {
+            List<string> _list = new List<string>();
+            DataTable dt = new DataTable();
+            dt = SqlDataSourceEnumerator.Instance.GetDataSources();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                string ten = dt.Rows[i].ItemArray[0].ToString();
+                _list.Add(ten);
+            }
+            return _list;
         }
         public List<string> GetDatabaseName (string pServerName, string pUser, string pPass) {
             List<string> _list = new List<string> ();
@@ -54,7 +60,6 @@ namespace QuanLiTour {
                 da.Fill (dt);
                 foreach (System.Data.DataRow row in dt.Rows) {
                     foreach (System.Data.DataColumn col in dt.Columns) {
-                        //MessageBox.Show(row[col].ToString());
                         _list.Add (row[col].ToString ());
                     }
                 }

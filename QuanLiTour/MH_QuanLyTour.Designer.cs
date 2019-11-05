@@ -31,6 +31,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView_QuanLyTour = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.MATOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MALOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENTOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SONGAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOCHO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hinh = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -51,12 +57,6 @@
             this.btnSuaTour = new DevComponents.DotNetBar.ButtonX();
             this.btn_HuyTour = new DevComponents.DotNetBar.ButtonX();
             this.btn_LuuTour = new DevComponents.DotNetBar.ButtonX();
-            this.MATOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MALOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENTOUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SONGAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOCHO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hinh = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_QuanLyTour)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
@@ -110,6 +110,44 @@
             this.dataGridView_QuanLyTour.Size = new System.Drawing.Size(1217, 410);
             this.dataGridView_QuanLyTour.TabIndex = 2;
             // 
+            // MATOUR
+            // 
+            this.MATOUR.DataPropertyName = "MATOUR";
+            this.MATOUR.HeaderText = "Mã tour";
+            this.MATOUR.Name = "MATOUR";
+            // 
+            // MALOAI
+            // 
+            this.MALOAI.DataPropertyName = "MALOAI";
+            this.MALOAI.HeaderText = "Mã loại";
+            this.MALOAI.Name = "MALOAI";
+            // 
+            // TENTOUR
+            // 
+            this.TENTOUR.DataPropertyName = "TENTOUR";
+            this.TENTOUR.HeaderText = "Tên tour";
+            this.TENTOUR.Name = "TENTOUR";
+            // 
+            // SONGAY
+            // 
+            this.SONGAY.DataPropertyName = "SONGAY";
+            this.SONGAY.HeaderText = "Số ngày";
+            this.SONGAY.Name = "SONGAY";
+            // 
+            // SOCHO
+            // 
+            this.SOCHO.DataPropertyName = "SOCHO";
+            this.SOCHO.HeaderText = "Số chỗ";
+            this.SOCHO.Name = "SOCHO";
+            // 
+            // Hinh
+            // 
+            this.Hinh.DataPropertyName = "Hinh";
+            this.Hinh.HeaderText = "Hình";
+            this.Hinh.Name = "Hinh";
+            this.Hinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Hinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
@@ -132,7 +170,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.82927F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.17073F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 354F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 355F));
             this.tableLayoutPanel4.Controls.Add(this.labelX2, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.labelX5, 2, 1);
             this.tableLayoutPanel4.Controls.Add(this.txt_MaTour, 1, 0);
@@ -175,7 +213,7 @@
             // 
             // 
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.Location = new System.Drawing.Point(403, 45);
+            this.labelX5.Location = new System.Drawing.Point(402, 45);
             this.labelX5.Margin = new System.Windows.Forms.Padding(4);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(80, 34);
@@ -195,7 +233,7 @@
             this.txt_MaTour.Multiline = true;
             this.txt_MaTour.Name = "txt_MaTour";
             this.txt_MaTour.PreventEnterBeep = true;
-            this.txt_MaTour.Size = new System.Drawing.Size(284, 33);
+            this.txt_MaTour.Size = new System.Drawing.Size(283, 33);
             this.txt_MaTour.TabIndex = 5;
             // 
             // txt_TenTour
@@ -211,7 +249,7 @@
             this.txt_TenTour.Multiline = true;
             this.txt_TenTour.Name = "txt_TenTour";
             this.txt_TenTour.PreventEnterBeep = true;
-            this.txt_TenTour.Size = new System.Drawing.Size(284, 37);
+            this.txt_TenTour.Size = new System.Drawing.Size(283, 37);
             this.txt_TenTour.TabIndex = 7;
             // 
             // txt_SoNgay
@@ -222,12 +260,12 @@
             this.txt_SoNgay.Border.Class = "TextBoxBorder";
             this.txt_SoNgay.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_SoNgay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_SoNgay.Location = new System.Drawing.Point(491, 4);
+            this.txt_SoNgay.Location = new System.Drawing.Point(490, 4);
             this.txt_SoNgay.Margin = new System.Windows.Forms.Padding(4);
             this.txt_SoNgay.Multiline = true;
             this.txt_SoNgay.Name = "txt_SoNgay";
             this.txt_SoNgay.PreventEnterBeep = true;
-            this.txt_SoNgay.Size = new System.Drawing.Size(347, 33);
+            this.txt_SoNgay.Size = new System.Drawing.Size(348, 33);
             this.txt_SoNgay.TabIndex = 8;
             // 
             // txt_SoCho
@@ -238,12 +276,12 @@
             this.txt_SoCho.Border.Class = "TextBoxBorder";
             this.txt_SoCho.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_SoCho.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_SoCho.Location = new System.Drawing.Point(491, 45);
+            this.txt_SoCho.Location = new System.Drawing.Point(490, 45);
             this.txt_SoCho.Margin = new System.Windows.Forms.Padding(4);
             this.txt_SoCho.Multiline = true;
             this.txt_SoCho.Name = "txt_SoCho";
             this.txt_SoCho.PreventEnterBeep = true;
-            this.txt_SoCho.Size = new System.Drawing.Size(347, 34);
+            this.txt_SoCho.Size = new System.Drawing.Size(348, 34);
             this.txt_SoCho.TabIndex = 9;
             // 
             // cbo_MaLoai
@@ -257,7 +295,7 @@
             this.cbo_MaLoai.Location = new System.Drawing.Point(111, 45);
             this.cbo_MaLoai.Margin = new System.Windows.Forms.Padding(4);
             this.cbo_MaLoai.Name = "cbo_MaLoai";
-            this.cbo_MaLoai.Size = new System.Drawing.Size(284, 36);
+            this.cbo_MaLoai.Size = new System.Drawing.Size(283, 36);
             this.cbo_MaLoai.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_MaLoai.TabIndex = 10;
             this.cbo_MaLoai.DropDown += new System.EventHandler(this.cbo_MaLoai_DropDown);
@@ -269,7 +307,7 @@
             // 
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(403, 4);
+            this.labelX4.Location = new System.Drawing.Point(402, 4);
             this.labelX4.Margin = new System.Windows.Forms.Padding(4);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(80, 33);
@@ -307,7 +345,7 @@
             this.btn_ChonAnh.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_ChonAnh.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btn_ChonAnh.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.btn_ChonAnh.Location = new System.Drawing.Point(491, 87);
+            this.btn_ChonAnh.Location = new System.Drawing.Point(490, 87);
             this.btn_ChonAnh.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ChonAnh.Name = "btn_ChonAnh";
             this.btn_ChonAnh.Size = new System.Drawing.Size(347, 37);
@@ -444,44 +482,6 @@
             this.btn_LuuTour.Text = "    Lưu";
             this.btn_LuuTour.TextColor = System.Drawing.Color.White;
             this.btn_LuuTour.Click += new System.EventHandler(this.btn_LuuTour_Click);
-            // 
-            // MATOUR
-            // 
-            this.MATOUR.DataPropertyName = "MATOUR";
-            this.MATOUR.HeaderText = "Mã tour";
-            this.MATOUR.Name = "MATOUR";
-            // 
-            // MALOAI
-            // 
-            this.MALOAI.DataPropertyName = "MALOAI";
-            this.MALOAI.HeaderText = "Mã loại";
-            this.MALOAI.Name = "MALOAI";
-            // 
-            // TENTOUR
-            // 
-            this.TENTOUR.DataPropertyName = "TENTOUR";
-            this.TENTOUR.HeaderText = "Tên tour";
-            this.TENTOUR.Name = "TENTOUR";
-            // 
-            // SONGAY
-            // 
-            this.SONGAY.DataPropertyName = "SONGAY";
-            this.SONGAY.HeaderText = "Số ngày";
-            this.SONGAY.Name = "SONGAY";
-            // 
-            // SOCHO
-            // 
-            this.SOCHO.DataPropertyName = "SOCHO";
-            this.SOCHO.HeaderText = "Số chỗ";
-            this.SOCHO.Name = "SOCHO";
-            // 
-            // Hinh
-            // 
-            this.Hinh.DataPropertyName = "Hinh";
-            this.Hinh.HeaderText = "Hình";
-            this.Hinh.Name = "Hinh";
-            this.Hinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Hinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // MH_QuanLyTour
             // 

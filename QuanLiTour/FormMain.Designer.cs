@@ -180,7 +180,7 @@
             this.ribbonPage_NhanSu,
             this.ribbonPage_BaoCao});
             this.ribbonControl_menu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl_menu.Size = new System.Drawing.Size(1370, 144);
+            this.ribbonControl_menu.Size = new System.Drawing.Size(1370, 177);
             // 
             // btn_ThongTin
             // 
@@ -368,7 +368,7 @@
             this.btn_Admin.Id = 23;
             this.btn_Admin.ImageOptions.SvgImage = global::QuanLiTour.Properties.Resources.admin;
             this.btn_Admin.Name = "btn_Admin";
-            this.btn_Admin.Tag = "MH001";
+            this.btn_Admin.Tag = "MH002";
             this.btn_Admin.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btn_Admin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Admin_ItemClick);
             // 
@@ -647,7 +647,7 @@
             this.panel1.Controls.Add(this.lbl_MatKhau);
             this.panel1.Controls.Add(this.txt_TenDangNhap);
             this.panel1.Controls.Add(this.lbl_TenDangNhap);
-            this.panel1.Location = new System.Drawing.Point(405, 214);
+            this.panel1.Location = new System.Drawing.Point(420, 222);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(703, 364);
             this.panel1.TabIndex = 2;
@@ -679,7 +679,7 @@
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseFont = true;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 738);
             this.Controls.Add(this.panel1);

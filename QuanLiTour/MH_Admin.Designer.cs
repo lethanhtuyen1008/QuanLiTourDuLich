@@ -100,7 +100,7 @@
             this.tableLayoutPanel_TacVuNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 237F));
             this.tableLayoutPanel_TacVuNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
             this.tableLayoutPanel_TacVuNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
-            this.tableLayoutPanel_TacVuNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 273F));
+            this.tableLayoutPanel_TacVuNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 274F));
             this.tableLayoutPanel_TacVuNguoiDung.Controls.Add(this.btn_XoaNguoiDung, 0, 0);
             this.tableLayoutPanel_TacVuNguoiDung.Controls.Add(this.btn_SuaNguoiDung, 0, 0);
             this.tableLayoutPanel_TacVuNguoiDung.Controls.Add(this.btn_ThemNguoiDung, 0, 0);
@@ -123,7 +123,7 @@
             this.btn_XoaNguoiDung.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btn_XoaNguoiDung.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             this.btn_XoaNguoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_XoaNguoiDung.Location = new System.Drawing.Point(362, 2);
+            this.btn_XoaNguoiDung.Location = new System.Drawing.Point(361, 2);
             this.btn_XoaNguoiDung.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_XoaNguoiDung.Name = "btn_XoaNguoiDung";
             this.btn_XoaNguoiDung.Size = new System.Drawing.Size(231, 43);
@@ -145,7 +145,7 @@
             this.btn_SuaNguoiDung.Location = new System.Drawing.Point(185, 2);
             this.btn_SuaNguoiDung.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_SuaNguoiDung.Name = "btn_SuaNguoiDung";
-            this.btn_SuaNguoiDung.Size = new System.Drawing.Size(171, 43);
+            this.btn_SuaNguoiDung.Size = new System.Drawing.Size(170, 43);
             this.btn_SuaNguoiDung.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_SuaNguoiDung.Symbol = "";
             this.btn_SuaNguoiDung.SymbolColor = System.Drawing.Color.DodgerBlue;
@@ -178,7 +178,7 @@
             this.btn_Tim.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Tim.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btn_Tim.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.btn_Tim.Location = new System.Drawing.Point(755, 2);
+            this.btn_Tim.Location = new System.Drawing.Point(754, 2);
             this.btn_Tim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Tim.Name = "btn_Tim";
             this.btn_Tim.Size = new System.Drawing.Size(127, 41);
@@ -196,7 +196,7 @@
             this.btn_Luu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Luu.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btn_Luu.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.btn_Luu.Location = new System.Drawing.Point(599, 2);
+            this.btn_Luu.Location = new System.Drawing.Point(598, 2);
             this.btn_Luu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Luu.Name = "btn_Luu";
             this.btn_Luu.Size = new System.Drawing.Size(135, 41);
@@ -214,7 +214,7 @@
             // 
             this.txt_Tim.Border.Class = "TextBoxBorder";
             this.txt_Tim.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_Tim.Location = new System.Drawing.Point(892, 2);
+            this.txt_Tim.Location = new System.Drawing.Point(891, 2);
             this.txt_Tim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Tim.Multiline = true;
             this.txt_Tim.Name = "txt_Tim";
@@ -231,7 +231,7 @@
             this.tableLayoutPanel_TTNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 244F));
             this.tableLayoutPanel_TTNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 247F));
             this.tableLayoutPanel_TTNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 203F));
-            this.tableLayoutPanel_TTNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 302F));
+            this.tableLayoutPanel_TTNguoiDung.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 303F));
             this.tableLayoutPanel_TTNguoiDung.Controls.Add(this.cbo_TinhTrang, 0, 2);
             this.tableLayoutPanel_TTNguoiDung.Controls.Add(this.lblTinhTrang, 0, 2);
             this.tableLayoutPanel_TTNguoiDung.Controls.Add(this.txt_TenDangNhap, 1, 0);
@@ -274,7 +274,7 @@
             this.cbo_TinhTrang.Location = new System.Drawing.Point(152, 80);
             this.cbo_TinhTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbo_TinhTrang.Name = "cbo_TinhTrang";
-            this.cbo_TinhTrang.Size = new System.Drawing.Size(349, 36);
+            this.cbo_TinhTrang.Size = new System.Drawing.Size(348, 36);
             this.cbo_TinhTrang.Sorted = true;
             this.cbo_TinhTrang.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_TinhTrang.TabIndex = 17;
@@ -318,7 +318,7 @@
             this.txt_TenDangNhap.Multiline = true;
             this.txt_TenDangNhap.Name = "txt_TenDangNhap";
             this.txt_TenDangNhap.PreventEnterBeep = true;
-            this.txt_TenDangNhap.Size = new System.Drawing.Size(349, 35);
+            this.txt_TenDangNhap.Size = new System.Drawing.Size(348, 35);
             this.txt_TenDangNhap.TabIndex = 1;
             this.txt_TenDangNhap.Tag = "1";
             // 
@@ -347,10 +347,10 @@
             this.cbo_GioiTinh.Items.AddRange(new object[] {
             this.Nam,
             this.Nu});
-            this.cbo_GioiTinh.Location = new System.Drawing.Point(1201, 41);
+            this.cbo_GioiTinh.Location = new System.Drawing.Point(1200, 41);
             this.cbo_GioiTinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbo_GioiTinh.Name = "cbo_GioiTinh";
-            this.cbo_GioiTinh.Size = new System.Drawing.Size(297, 36);
+            this.cbo_GioiTinh.Size = new System.Drawing.Size(298, 36);
             this.cbo_GioiTinh.Sorted = true;
             this.cbo_GioiTinh.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_GioiTinh.TabIndex = 13;
@@ -370,7 +370,7 @@
             // 
             // 
             this.lbl_GioiTinh.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_GioiTinh.Location = new System.Drawing.Point(998, 41);
+            this.lbl_GioiTinh.Location = new System.Drawing.Point(997, 41);
             this.lbl_GioiTinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbl_GioiTinh.Name = "lbl_GioiTinh";
             this.lbl_GioiTinh.Size = new System.Drawing.Size(99, 33);
@@ -383,7 +383,7 @@
             // 
             // 
             this.lbl_Luong.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Luong.Location = new System.Drawing.Point(998, 2);
+            this.lbl_Luong.Location = new System.Drawing.Point(997, 2);
             this.lbl_Luong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbl_Luong.Name = "lbl_Luong";
             this.lbl_Luong.Size = new System.Drawing.Size(99, 30);
@@ -399,12 +399,12 @@
             this.txt_Luong.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_Luong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_Luong.Enabled = false;
-            this.txt_Luong.Location = new System.Drawing.Point(1201, 2);
+            this.txt_Luong.Location = new System.Drawing.Point(1200, 2);
             this.txt_Luong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Luong.Multiline = true;
             this.txt_Luong.Name = "txt_Luong";
             this.txt_Luong.PreventEnterBeep = true;
-            this.txt_Luong.Size = new System.Drawing.Size(297, 35);
+            this.txt_Luong.Size = new System.Drawing.Size(298, 35);
             this.txt_Luong.TabIndex = 12;
             this.txt_Luong.Tag = "1";
             // 
@@ -414,7 +414,7 @@
             // 
             // 
             this.lbl_NamSinh.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_NamSinh.Location = new System.Drawing.Point(507, 80);
+            this.lbl_NamSinh.Location = new System.Drawing.Point(506, 80);
             this.lbl_NamSinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbl_NamSinh.Name = "lbl_NamSinh";
             this.lbl_NamSinh.Size = new System.Drawing.Size(99, 34);
@@ -430,7 +430,7 @@
             this.txt_NamSinh.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_NamSinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_NamSinh.Enabled = false;
-            this.txt_NamSinh.Location = new System.Drawing.Point(751, 80);
+            this.txt_NamSinh.Location = new System.Drawing.Point(750, 80);
             this.txt_NamSinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_NamSinh.Multiline = true;
             this.txt_NamSinh.Name = "txt_NamSinh";
@@ -446,7 +446,7 @@
             // 
             this.lbl_HoDem.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_HoDem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_HoDem.Location = new System.Drawing.Point(507, 2);
+            this.lbl_HoDem.Location = new System.Drawing.Point(506, 2);
             this.lbl_HoDem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbl_HoDem.Name = "lbl_HoDem";
             this.lbl_HoDem.Size = new System.Drawing.Size(238, 35);
@@ -460,7 +460,7 @@
             // 
             this.lbl_Ten.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Ten.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_Ten.Location = new System.Drawing.Point(507, 41);
+            this.lbl_Ten.Location = new System.Drawing.Point(506, 41);
             this.lbl_Ten.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbl_Ten.Name = "lbl_Ten";
             this.lbl_Ten.Size = new System.Drawing.Size(238, 35);
@@ -476,7 +476,7 @@
             this.txt_Ho.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_Ho.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_Ho.Enabled = false;
-            this.txt_Ho.Location = new System.Drawing.Point(751, 2);
+            this.txt_Ho.Location = new System.Drawing.Point(750, 2);
             this.txt_Ho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Ho.Multiline = true;
             this.txt_Ho.Name = "txt_Ho";
@@ -494,7 +494,7 @@
             this.txt_Ten.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_Ten.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_Ten.Enabled = false;
-            this.txt_Ten.Location = new System.Drawing.Point(751, 41);
+            this.txt_Ten.Location = new System.Drawing.Point(750, 41);
             this.txt_Ten.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Ten.Multiline = true;
             this.txt_Ten.Name = "txt_Ten";
@@ -532,7 +532,7 @@
             this.txt_MatKhau.Name = "txt_MatKhau";
             this.txt_MatKhau.PasswordChar = '*';
             this.txt_MatKhau.PreventEnterBeep = true;
-            this.txt_MatKhau.Size = new System.Drawing.Size(349, 35);
+            this.txt_MatKhau.Size = new System.Drawing.Size(348, 35);
             this.txt_MatKhau.TabIndex = 16;
             this.txt_MatKhau.Tag = "1";
             // 
