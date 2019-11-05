@@ -19,7 +19,7 @@ namespace QuanLiTour {
             InitializeComponent ();
         }
         public void LoadData () {
-            xuli.LoadDataToGirdView(dataGridView_NguoiDung,busNguoiDung.getListNguoiDung() );
+            xuli.LoadDataToGirdView(dataGridView_NguoiDung,busNguoiDung.getListNguoiDung());
             loaddataToText ();
         }
         private void Admin_Load (object sender, EventArgs e) {

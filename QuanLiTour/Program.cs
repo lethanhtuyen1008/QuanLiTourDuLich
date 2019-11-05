@@ -16,7 +16,7 @@ namespace QuanLiTour
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MH_QuanLyTour());
+            Application.Run(new FormMain());
         }
     }
 }

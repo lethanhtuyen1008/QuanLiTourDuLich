@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionsDAL.cs" />
+    <Compile Include="DAL_KhachHang.cs" />
     <Compile Include="DAL_QLNguoiDung.cs" />
     <Compile Include="DAL_QuanLiTravel.designer.cs">
       <AutoGen>True</AutoGen>

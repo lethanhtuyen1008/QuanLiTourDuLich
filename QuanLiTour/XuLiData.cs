@@ -51,7 +51,7 @@ namespace QuanLiTour {
         }
         public void MoTextBox (Panel a) {
             foreach (Control item in a.Controls)
-                if (item.Tag != null)
+                if (item.GetType() == typeof(TextBox))
                     item.Enabled = true;
         }
         public void MoVaXoaTextBox (Panel a) {
@@ -68,14 +68,14 @@ namespace QuanLiTour {
                 if (item.Tag != null)
                     item.Enabled = false;
         }
-        public string GetCountRowData(DataGridView a, int cotlay){
+        public int GetCountRowData(DataGridView a, int cotlay){
             int count = 0;
             count = a.Rows.Count;//dem all cac dong datagrid roi dem gan cho count
             int dongcuoi = count - 2;
             string iddongcuoi = a.Rows[dongcuoi].Cells[cotlay].Value.ToString().Trim(); //row là dong cell là cột
             String Str = a.Rows[dongcuoi].Cells[0].Value.ToString().Trim(); //row là dong cell là cột;
             string Str3 = (int.Parse(Str.Substring(Str.Length - 1, 1)) + 1).ToString();
-            return Str3;
+            return int.Parse(Str3);
         }
     }
 }

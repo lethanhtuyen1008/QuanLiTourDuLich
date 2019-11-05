@@ -12,8 +12,6 @@ using DevExpress.DXBinding;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Controls;
 using DevExpress.XtraBars.Ribbon;
-
-
 using PhanQuyen;
 
 namespace QuanLiTour {
@@ -119,6 +117,29 @@ namespace QuanLiTour {
         private void btn_TourDatGanDay_ItemClick(object sender, ItemClickEventArgs e)
         {
             MH_DatTour a = new MH_DatTour();
+            showForm(a);
+        }
+
+        private void btn_DanhSachTourDong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void btn_QLKhachHang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            MH_KhachHang a = new MH_KhachHang();
+            showForm(a);
+        }
+
+        private void btn_KhachSan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            MH_KhachSan a = new MH_KhachSan();
+            showForm(a);
+        }
+
+        private void btn_ChiTietTour_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            MH_ChiTietTour a = new MH_ChiTietTour();
             showForm(a);
         }
     }

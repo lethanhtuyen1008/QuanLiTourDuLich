@@ -38,17 +38,9 @@ namespace QuanLiTour {
             xuli.MoVaXoaTextBox (tableLayoutPanel_ThongTinNhom);
             txt_MaNhom.Enabled = false;
             dataGridView_NhomNguoiDung.Enabled = true;
-            //giờ lấy số dòn của datagirdview trừ đi 1..
-            int dongcuoicung = dataGridView_NhomNguoiDung.RowCount - 2;
-            string manhomdongcuoi = dataGridView_NhomNguoiDung.Rows[dongcuoicung].Cells[0].Value.ToString().Trim(); //row là dong cell là cột
-            //MessageBox.Show(manhomdongcuoi);
-            String Str = dataGridView_NhomNguoiDung.Rows[dongcuoicung].Cells[0].Value.ToString().Trim(); //row là dong cell là cột;
-            string Str3 = Str.Substring(Str.Length-1,1);//xuat ra so cuoi
-            //MessageBox.Show(Str3);
-            string a = xuli.GetCountRowData(dataGridView_NhomNguoiDung, 0);//sẽ là sô 6 vì co 1 dòng dư
-            //MessageBox.Show(a.ToString());
+            int a = xuli.GetCountRowData(dataGridView_NhomNguoiDung, 0);
             String MaNh;
-            if (Str3.Length < 10)
+            if (a < 10)
             {
                 MaNh = "NH00" + a;
             }

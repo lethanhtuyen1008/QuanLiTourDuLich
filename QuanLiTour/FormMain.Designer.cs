@@ -59,12 +59,16 @@
             this.btn_PhanQuyen = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Admin = new DevExpress.XtraBars.BarButtonItem();
             this.btn_NhomNguoiDung = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_QLKhachHang = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_KhachSan = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ChiTietTour = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage_HeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup_TacVuTour = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage_QuanLiTour = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup_DanhSachTour = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup_TacVu = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage_DatTour = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup_QLDatTour = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage_DichVu = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -76,6 +80,8 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage_BaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.sf = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.lbl_TenDangNhap = new DevComponents.DotNetBar.LabelX();
             this.txt_TenDangNhap = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lbl_MatKhau = new DevComponents.DotNetBar.LabelX();
@@ -166,9 +172,12 @@
             this.barButtonItem6,
             this.btn_PhanQuyen,
             this.btn_Admin,
-            this.btn_NhomNguoiDung});
+            this.btn_NhomNguoiDung,
+            this.btn_QLKhachHang,
+            this.btn_KhachSan,
+            this.btn_ChiTietTour});
             this.ribbonControl_menu.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl_menu.MaxItemId = 27;
+            this.ribbonControl_menu.MaxItemId = 30;
             this.ribbonControl_menu.Name = "ribbonControl_menu";
             this.ribbonControl_menu.PageHeaderItemLinks.Add(this.btn_DangXuat);
             this.ribbonControl_menu.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -178,9 +187,10 @@
             this.ribbonPage_DichVu,
             this.ribbonPage_ThongKe,
             this.ribbonPage_NhanSu,
-            this.ribbonPage_BaoCao});
+            this.ribbonPage_BaoCao,
+            this.sf});
             this.ribbonControl_menu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl_menu.Size = new System.Drawing.Size(1370, 177);
+            this.ribbonControl_menu.Size = new System.Drawing.Size(1370, 144);
             // 
             // btn_ThongTin
             // 
@@ -220,6 +230,7 @@
             this.btn_DanhSachTourDong.Name = "btn_DanhSachTourDong";
             this.btn_DanhSachTourDong.Tag = "MH002";
             this.btn_DanhSachTourDong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btn_DanhSachTourDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DanhSachTourDong_ItemClick);
             // 
             // btn_ThemTour
             // 
@@ -368,7 +379,7 @@
             this.btn_Admin.Id = 23;
             this.btn_Admin.ImageOptions.SvgImage = global::QuanLiTour.Properties.Resources.admin;
             this.btn_Admin.Name = "btn_Admin";
-            this.btn_Admin.Tag = "MH002";
+            this.btn_Admin.Tag = "MH001";
             this.btn_Admin.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btn_Admin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Admin_ItemClick);
             // 
@@ -382,6 +393,39 @@
             this.btn_NhomNguoiDung.Tag = "MH001";
             this.btn_NhomNguoiDung.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btn_NhomNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_NhomNguoiDung_ItemClick_1);
+            // 
+            // btn_QLKhachHang
+            // 
+            this.btn_QLKhachHang.Caption = "Khách hàng";
+            this.btn_QLKhachHang.Id = 27;
+            this.btn_QLKhachHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_QLKhachHang.ImageOptions.Image")));
+            this.btn_QLKhachHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_QLKhachHang.ImageOptions.LargeImage")));
+            this.btn_QLKhachHang.Name = "btn_QLKhachHang";
+            this.btn_QLKhachHang.Tag = "MH002";
+            this.btn_QLKhachHang.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btn_QLKhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_QLKhachHang_ItemClick);
+            // 
+            // btn_KhachSan
+            // 
+            this.btn_KhachSan.Caption = "Khách sạn";
+            this.btn_KhachSan.Id = 28;
+            this.btn_KhachSan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_KhachSan.ImageOptions.Image")));
+            this.btn_KhachSan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_KhachSan.ImageOptions.LargeImage")));
+            this.btn_KhachSan.Name = "btn_KhachSan";
+            this.btn_KhachSan.Tag = "MH002";
+            this.btn_KhachSan.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btn_KhachSan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_KhachSan_ItemClick);
+            // 
+            // btn_ChiTietTour
+            // 
+            this.btn_ChiTietTour.Caption = "Chi tiết tour";
+            this.btn_ChiTietTour.Id = 29;
+            this.btn_ChiTietTour.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ChiTietTour.ImageOptions.Image")));
+            this.btn_ChiTietTour.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_ChiTietTour.ImageOptions.LargeImage")));
+            this.btn_ChiTietTour.Name = "btn_ChiTietTour";
+            this.btn_ChiTietTour.Tag = "MH002";
+            this.btn_ChiTietTour.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btn_ChiTietTour.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ChiTietTour_ItemClick);
             // 
             // ribbonPage_HeThong
             // 
@@ -416,7 +460,8 @@
             // 
             this.ribbonPage_QuanLiTour.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup_DanhSachTour,
-            this.ribbonPageGroup_TacVu});
+            this.ribbonPageGroup_TacVu,
+            this.ribbonPageGroup11});
             this.ribbonPage_QuanLiTour.ImageUri.Uri = "AlignHorizontalTop";
             this.ribbonPage_QuanLiTour.Name = "ribbonPage_QuanLiTour";
             this.ribbonPage_QuanLiTour.Tag = "MH002";
@@ -428,6 +473,7 @@
             this.ribbonPageGroup_DanhSachTour.ImageUri.Uri = "AlignJustify";
             this.ribbonPageGroup_DanhSachTour.ItemLinks.Add(this.btn_DanhSachTourMo);
             this.ribbonPageGroup_DanhSachTour.ItemLinks.Add(this.btn_DanhSachTourDong);
+            this.ribbonPageGroup_DanhSachTour.ItemLinks.Add(this.btn_QLKhachHang);
             this.ribbonPageGroup_DanhSachTour.Name = "ribbonPageGroup_DanhSachTour";
             this.ribbonPageGroup_DanhSachTour.Tag = "MH002";
             this.ribbonPageGroup_DanhSachTour.Text = "Danh sách Tour";
@@ -442,6 +488,13 @@
             this.ribbonPageGroup_TacVu.Tag = "MH002";
             this.ribbonPageGroup_TacVu.Text = "Tác vụ tour";
             this.ribbonPageGroup_TacVu.Visible = false;
+            // 
+            // ribbonPageGroup11
+            // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.btn_ChiTietTour);
+            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.ribbonPageGroup11.Tag = "MH002";
+            this.ribbonPageGroup11.Text = "ribbonPageGroup11";
             // 
             // ribbonPage_DatTour
             // 
@@ -473,9 +526,10 @@
             // 
             // ribbonPageGroup4
             // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.btn_KhachSan);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Tag = "MH002";
-            this.ribbonPageGroup4.Text = "Nhà hàng";
+            this.ribbonPageGroup4.Text = "Khách sạn";
             this.ribbonPageGroup4.Visible = false;
             // 
             // ribbonPage_ThongKe
@@ -537,6 +591,21 @@
             this.ribbonPageGroup7.Tag = "MH002";
             this.ribbonPageGroup7.Text = "Báo cáo gần đây";
             this.ribbonPageGroup7.Visible = false;
+            // 
+            // sf
+            // 
+            this.sf.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup9});
+            this.sf.ImageUri.Uri = "Currency";
+            this.sf.Name = "sf";
+            this.sf.Tag = "MH002";
+            this.sf.Text = "Khách hàng";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Tag = "MH002";
+            this.ribbonPageGroup9.Text = "ribbonPageGroup9";
             // 
             // lbl_TenDangNhap
             // 
@@ -647,7 +716,7 @@
             this.panel1.Controls.Add(this.lbl_MatKhau);
             this.panel1.Controls.Add(this.txt_TenDangNhap);
             this.panel1.Controls.Add(this.lbl_TenDangNhap);
-            this.panel1.Location = new System.Drawing.Point(420, 222);
+            this.panel1.Location = new System.Drawing.Point(405, 214);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(703, 364);
             this.panel1.TabIndex = 2;
@@ -679,7 +748,7 @@
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseFont = true;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 738);
             this.Controls.Add(this.panel1);
@@ -758,6 +827,12 @@
         private DevExpress.XtraBars.BarButtonItem btn_PhanQuyen;
         private DevExpress.XtraBars.BarButtonItem btn_Admin;
         private DevExpress.XtraBars.BarButtonItem btn_NhomNguoiDung;
+        private DevExpress.XtraBars.BarButtonItem btn_QLKhachHang;
+        private DevExpress.XtraBars.Ribbon.RibbonPage sf;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.BarButtonItem btn_KhachSan;
+        private DevExpress.XtraBars.BarButtonItem btn_ChiTietTour;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
 
 
 
