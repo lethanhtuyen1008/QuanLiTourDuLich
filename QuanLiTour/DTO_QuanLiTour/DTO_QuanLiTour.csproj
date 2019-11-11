@@ -39,7 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO_ChuongTrinhTour.cs" />
     <Compile Include="DTO_KhachHang.cs" />
     <Compile Include="DTO_QLNguoiDung.cs" />
     <Compile Include="DTO_Tours.cs" />

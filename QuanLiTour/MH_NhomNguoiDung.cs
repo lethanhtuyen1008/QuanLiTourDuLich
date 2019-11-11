@@ -38,7 +38,16 @@ namespace QuanLiTour {
             xuli.MoVaXoaTextBox (tableLayoutPanel_ThongTinNhom);
             txt_MaNhom.Enabled = false;
             dataGridView_NhomNguoiDung.Enabled = true;
-            string MaNh = xuli.GetCountRowData(dataGridView_NhomNguoiDung, 0, "NH");
+            int a = xuli.GetCountRowData(dataGridView_NhomNguoiDung, 0);
+            String MaNh;
+            if (a < 10)
+            {
+                MaNh = "NH00" + a;
+            }
+            else//
+            {
+                MaNh = "NH0" + a;
+            }
             txt_MaNhom.Text=MaNh;
         }
 

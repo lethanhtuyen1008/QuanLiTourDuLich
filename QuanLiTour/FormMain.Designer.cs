@@ -190,7 +190,7 @@
             this.ribbonPage_BaoCao,
             this.sf});
             this.ribbonControl_menu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl_menu.Size = new System.Drawing.Size(1370, 177);
+            this.ribbonControl_menu.Size = new System.Drawing.Size(1370, 144);
             // 
             // btn_ThongTin
             // 
@@ -367,8 +367,6 @@
             // 
             this.btn_PhanQuyen.Caption = "Phân quyền";
             this.btn_PhanQuyen.Id = 21;
-            this.btn_PhanQuyen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_PhanQuyen.ImageOptions.Image")));
-            this.btn_PhanQuyen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_PhanQuyen.ImageOptions.LargeImage")));
             this.btn_PhanQuyen.ImageOptions.SvgImage = global::QuanLiTour.Properties.Resources.edit;
             this.btn_PhanQuyen.Name = "btn_PhanQuyen";
             this.btn_PhanQuyen.Tag = "MH001";
@@ -750,7 +748,7 @@
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Appearance.Options.UseFont = true;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 738);
             this.Controls.Add(this.panel1);

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using DAL_QuanLiTour;
-using DTO_QuanLiTour;
 namespace BUS_QuanLiTour
 {
     public class BUS_Tours
@@ -14,22 +13,6 @@ namespace BUS_QuanLiTour
         public DataTable getListTour()
         {
             return dalTour.getListTour();
-        }
-        public bool addTours(DTO_Tours  a)
-        {
-            return dalTour.addTours(a);
-        }
-        public Byte[] getImageTour(string matour)
-        {
-            return dalTour.getImageTour(matour);
-        }
-        public bool updateTours(DTO_Tours a)
-        {
-            return dalTour.updateTours(a);
-        }
-        public bool deleteTour(string a)
-        {
-            return dalTour.deleteTour(a);
         }
     }
 }

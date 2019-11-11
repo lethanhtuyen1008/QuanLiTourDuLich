@@ -64,8 +64,17 @@ namespace QuanLiTour
             txt_DiaChi.Enabled = true;
             check = true;
             dataGridView_KhachHang.Enabled = false;
-            string maKH = xuli.GetCountRowData(dataGridView_KhachHang, 0, "KH");
-            cbo_MaKhachHang.Text = maKH;
+            int a = xuli.GetCountRowData(dataGridView_KhachHang, 0);
+            string MaKH;
+            if (a < 10)
+            {
+                MaKH = "KH00" + a;
+            }
+            else//
+            {
+                MaKH = "KH0" + a;
+            }
+            cbo_MaKhachHang.Text = MaKH;
         }
 
         private void btn_TimKhachHang_Click(object sender, EventArgs e)

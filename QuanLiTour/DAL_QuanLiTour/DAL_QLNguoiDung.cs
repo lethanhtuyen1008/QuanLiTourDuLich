@@ -63,7 +63,7 @@ namespace DAL_QuanLiTour
                 insert.NamSinh = a.NamSinh;
                 insert.GioiTinh = a.GioiTinh;
                 insert.Luong = a.Luong;
-                
+
                 db.QL_NguoiDungs.InsertOnSubmit(insert);
                 db.SubmitChanges();
 

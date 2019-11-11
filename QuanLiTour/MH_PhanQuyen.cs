@@ -52,10 +52,5 @@ namespace QuanLiTour {
             DataTable b = xuli.getDatatable ("select QL_NguoiDung.TenDangNhap,QL_NguoiDung.MatKhau,QL_NguoiDung.TinhTrang from QL_NguoiDung,QL_NguoiDungNhomNguoiDung where QL_NguoiDung.TenDangNhap = QL_NguoiDungNhomNguoiDung.TenDangNhap and QL_NguoiDungNhomNguoiDung.MaNhom = '" + cbo_NhomNguoiDung.SelectedValue.ToString () + "'");
             xuli.LoadDataToGirdView (dataGridView_NHomNguoiDung, b);
         }
-
-        private void dataGridView_NguoiDung_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

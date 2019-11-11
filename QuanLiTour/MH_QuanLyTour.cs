@@ -8,10 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
 using BUS_QuanLiTour;
 using DTO_QuanLiTour;
-using System.Drawing.Imaging;
 
 namespace QuanLiTour
 {
@@ -19,8 +17,8 @@ namespace QuanLiTour
     {
         XuLiData xuli = new XuLiData();
         BUS_Tours busTours = new BUS_Tours();
-        BUS_ChuongTrinhTour busCTTour = new BUS_ChuongTrinhTour();
         string imglocation = "";//string filename
+        int set = 0;
         public MH_QuanLyTour()
         {
             InitializeComponent();
@@ -33,82 +31,63 @@ namespace QuanLiTour
         public void loaddatatoText()
         {
             int row = dataGridView_QuanLyTour.CurrentRow.Index; //lấy ra chỉ số của row đang đc chọn
-            string data = dataGridView_QuanLyTour.Rows[row].Cells[0].Value.ToString();
-            //MessageBox.Show(data);
-            //MemoryStream memo = new MemoryStream(busTours.getImageTour(data));
-            txt_MaTour.DataBindings.Clear();
-            txt_MaTour.DataBindings.Add("Text", dataGridView_QuanLyTour.DataSource, "MATOUR");
+            byte data = byte.Parse(dataGridView_QuanLyTour.Rows[0].Cells[6].Value.ToString());
 
-            cbo_MaLoai.DataBindings.Clear();
-            cbo_MaLoai.DataBindings.Add("Text", dataGridView_QuanLyTour.DataSource, "MALOAI");
+            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
 
-            txt_TenTour.DataBindings.Clear();
-            txt_TenTour.DataBindings.Add("Text", dataGridView_QuanLyTour.DataSource, "TENTOUR");
-
-            txt_SoCho.DataBindings.Clear();
-            txt_SoCho.DataBindings.Add("Text", dataGridView_QuanLyTour.DataSource, "SOCHO");
-
-            txt_SoNgay.DataBindings.Clear();
-            txt_SoNgay.DataBindings.Add("Text", dataGridView_QuanLyTour.DataSource, "SONGAY");
         }
-
         private void MH_QuanLyTour_Load(object sender, EventArgs e)
         {
+
             LoadData();
-            loaddatatoText();
-            xuli.loadComboBox(cbo_MaLoai, "SELECT * FROM LOAITOUR", "TENLOAI", "MALOAI");
+            //loaddatatoText();
         }
-        bool check = true;
         private void btn_ThemTour_Click(object sender, EventArgs e)
         {
-            xuli.MoVaXoaTextBox(tableLayoutPanel_TTTours);
-            string matour = xuli.GetCountRowData(dataGridView_QuanLyTour, 0, "MT");
             btn_ChonAnh.Visible = true;
-            check = true;
-            txt_MaTour.Text = matour;
-            txt_MaTour.Enabled = false;
         }
 
         private void btnSuaTour_Click(object sender, EventArgs e)
         {
             btn_ChonAnh.Visible = true;
-            check = false;
-            txt_MaTour.Enabled = false;
         }
 
         private void btn_XoaTour_Click(object sender, EventArgs e)
         {
-            int row = dataGridView_QuanLyTour.CurrentRow.Index; //lấy ra chỉ số của row đang đc chọn
-            string data = dataGridView_QuanLyTour.Rows[row].Cells[0].Value.ToString();
-            if (busTours.deleteTour(data)) MessageBox.Show("Xóa thành công tour: " + data);
-            else MessageBox.Show("Xóa không thành công tour: " + data);
-            LoadData();
+
         }
 
         private void btn_LuuTour_Click(object sender, EventArgs e)
         {
-            if (check == true)
+            if (imglocation == "" && set ==0)
             {
-                MemoryStream stream = new MemoryStream();
-                pictureBox_Tour.Image.Save(stream, ImageFormat.Jpeg);
-                DTO_Tours add = new DTO_Tours(txt_MaTour.Text.Trim(), cbo_MaLoai.SelectedValue.ToString(), txt_TenTour.Text, int.Parse(txt_SoNgay.Text), int.Parse(txt_SoCho.Text), stream.ToArray());
-                if (busTours.addTours(add))
-                    MessageBox.Show("Thêm tour thành công");
-                else
-                    MessageBox.Show("Thêm tour không thành công");
+                string sqlstring = "UPDATE TOUR SET MALOAI=N'" + cbo_MaLoai.Text.Trim() + "', TENTOUR=N'" + txt_TenTour.Text.Trim() + "', SONGAY='" + txt_SoNgay.Text.Trim() + "', SOCHO='" + txt_SoCho.Text.Trim() + "' WHERE MATOUR='" + txt_MaTour.Text.Trim() + "' ";
+                MessageBox.Show(sqlstring);
+                xuli.RunCommand(sqlstring); 
             }
             else
-            {
-                MemoryStream stream = new MemoryStream();
-                pictureBox_Tour.Image.Save(stream, ImageFormat.Jpeg);
-                DTO_Tours add = new DTO_Tours(txt_MaTour.Text.Trim(), cbo_MaLoai.SelectedValue.ToString(), txt_TenTour.Text, int.Parse(txt_SoNgay.Text), int.Parse(txt_SoCho.Text), stream.ToArray());
-                if (busTours.updateTours(add))
-                    MessageBox.Show("Cập nhật tour thành công");
+                if (imglocation != "" && set == 1)
+                {
+                    byte[] images = null;
+                    FileStream Stream = new FileStream(imglocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader brs = new BinaryReader(Stream);
+                    images = brs.ReadBytes((int)Stream.Length);
+                    string sqlstring = "UPDATE TOUR SET MALOAI=N'" + cbo_MaLoai.Text.Trim() + "', TENTOUR=N'" + txt_TenTour.Text.Trim() + "', SONGAY='" + txt_SoNgay.Text.Trim() + "', SOCHO='" + txt_SoCho.Text.Trim() + "', HINH = '" + images.ToString() + "' WHERE MATOUR='" + txt_MaTour.Text.Trim() + "' ";
+                    MessageBox.Show(sqlstring);
+                    xuli.RunCommand(sqlstring);
+                }
                 else
-                    MessageBox.Show("Cập nhật tour không thành công");
-            }
+                    {
+                        byte[] images = null;
+                        FileStream Stream = new FileStream(imglocation, FileMode.Open, FileAccess.Read);
+                        BinaryReader brs = new BinaryReader(Stream);
+                        images = brs.ReadBytes((int)Stream.Length);
+                        string sqlstring = "INSERT INTO TOUR(MATOUR, MALOAI,TENTOUR, SONGAY, SOCHO, HINH) VALUES('" + txt_MaTour.Text.Trim() + "', '" + cbo_MaLoai.Text.Trim() + "', '" + txt_TenTour.Text.Trim() + "', '" + txt_SoNgay.Text.Trim() + "', '" + txt_SoCho.Text.Trim() + "', '" + images.ToString() + "')";
+                        MessageBox.Show(sqlstring);
+                        xuli.RunCommand(sqlstring);
+                    }
             btn_ChonAnh.Visible = false;
-            LoadData();
+            set = 0;
         }
 
         private void btn_HuyTour_Click(object sender, EventArgs e)
@@ -125,6 +104,7 @@ namespace QuanLiTour
             {
                 imglocation = open.FileName.ToString();
                 pictureBox_Tour.ImageLocation = imglocation;
+                set = 1;
             }
         }
 
@@ -136,28 +116,6 @@ namespace QuanLiTour
         private void cbo_MaLoai_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void dataGridView_QuanLyTour_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int row = dataGridView_QuanLyTour.CurrentRow.Index; //lấy ra chỉ số của row đang đc chọn
-            string data = dataGridView_QuanLyTour.Rows[row].Cells[0].Value.ToString();
-            //MessageBox.Show(data);
-            MemoryStream memo = new MemoryStream(busTours.getImageTour(data));
-            Image img = Image.FromStream(memo);
-            if (img == null)
-            {
-                return;
-            }
-            pictureBox_Tour.Image = img;
-        }
-
-        private void btn_ChuongTrinhTour_Click(object sender, EventArgs e)
-        {
-            int row = dataGridView_QuanLyTour.CurrentRow.Index; //lấy ra chỉ số của row đang đc chọn
-            string data = dataGridView_QuanLyTour.Rows[row].Cells[0].Value.ToString();
-            MH_ChuongTrinhTour frm = new MH_ChuongTrinhTour(data);
-            frm.Show();
         }
     }
 }
