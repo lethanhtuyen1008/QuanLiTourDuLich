@@ -102,7 +102,7 @@ namespace DAL_QuanLiTour
     #endregion
 		
 		public DAL_QuanLiTravelDataContext() : 
-				base(global::DAL_QuanLiTour.Properties.Settings.Default.TravelConnectionString1, mappingSource)
+				base(global::DAL_QuanLiTour.Properties.Settings.Default.TravelConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
