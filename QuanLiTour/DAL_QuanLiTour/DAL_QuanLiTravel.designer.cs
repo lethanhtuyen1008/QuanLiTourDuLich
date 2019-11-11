@@ -33,6 +33,9 @@ namespace DAL_QuanLiTour
     partial void InsertCHITIETGIAVE(CHITIETGIAVE instance);
     partial void UpdateCHITIETGIAVE(CHITIETGIAVE instance);
     partial void DeleteCHITIETGIAVE(CHITIETGIAVE instance);
+    partial void InsertTOURDAT(TOURDAT instance);
+    partial void UpdateTOURDAT(TOURDAT instance);
+    partial void DeleteTOURDAT(TOURDAT instance);
     partial void InsertCHITIETTHAMQUAN(CHITIETTHAMQUAN instance);
     partial void UpdateCHITIETTHAMQUAN(CHITIETTHAMQUAN instance);
     partial void DeleteCHITIETTHAMQUAN(CHITIETTHAMQUAN instance);
@@ -96,13 +99,10 @@ namespace DAL_QuanLiTour
     partial void InsertTOUR(TOUR instance);
     partial void UpdateTOUR(TOUR instance);
     partial void DeleteTOUR(TOUR instance);
-    partial void InsertTOURDAT(TOURDAT instance);
-    partial void UpdateTOURDAT(TOURDAT instance);
-    partial void DeleteTOURDAT(TOURDAT instance);
     #endregion
 		
 		public DAL_QuanLiTravelDataContext() : 
-				base(global::DAL_QuanLiTour.Properties.Settings.Default.TravelConnectionString, mappingSource)
+				base(global::DAL_QuanLiTour.Properties.Settings.Default.TravelConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -136,6 +136,14 @@ namespace DAL_QuanLiTour
 			get
 			{
 				return this.GetTable<CHITIETGIAVE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TOURDAT> TOURDATs
+		{
+			get
+			{
+				return this.GetTable<TOURDAT>();
 			}
 		}
 		
@@ -306,14 +314,6 @@ namespace DAL_QuanLiTour
 				return this.GetTable<TOUR>();
 			}
 		}
-		
-		public System.Data.Linq.Table<TOURDAT> TOURDATs
-		{
-			get
-			{
-				return this.GetTable<TOURDAT>();
-			}
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CHITIETGIAVE")]
@@ -330,9 +330,9 @@ namespace DAL_QuanLiTour
 		
 		private System.Nullable<double> _THANHTIEN;
 		
-		private EntityRef<LOAIKHACH> _LOAIKHACH;
-		
 		private EntityRef<TOURDAT> _TOURDAT;
+		
+		private EntityRef<LOAIKHACH> _LOAIKHACH;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -350,8 +350,8 @@ namespace DAL_QuanLiTour
 		
 		public CHITIETGIAVE()
 		{
-			this._LOAIKHACH = default(EntityRef<LOAIKHACH>);
 			this._TOURDAT = default(EntityRef<TOURDAT>);
+			this._LOAIKHACH = default(EntityRef<LOAIKHACH>);
 			OnCreated();
 		}
 		
@@ -443,40 +443,6 @@ namespace DAL_QuanLiTour
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAIKHACH_CHITIETGIAVE", Storage="_LOAIKHACH", ThisKey="MALOAIKHACH", OtherKey="MALOAIKHACH", IsForeignKey=true)]
-		public LOAIKHACH LOAIKHACH
-		{
-			get
-			{
-				return this._LOAIKHACH.Entity;
-			}
-			set
-			{
-				LOAIKHACH previousValue = this._LOAIKHACH.Entity;
-				if (((previousValue != value) 
-							|| (this._LOAIKHACH.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._LOAIKHACH.Entity = null;
-						previousValue.CHITIETGIAVEs.Remove(this);
-					}
-					this._LOAIKHACH.Entity = value;
-					if ((value != null))
-					{
-						value.CHITIETGIAVEs.Add(this);
-						this._MALOAIKHACH = value.MALOAIKHACH;
-					}
-					else
-					{
-						this._MALOAIKHACH = default(string);
-					}
-					this.SendPropertyChanged("LOAIKHACH");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TOURDAT_CHITIETGIAVE", Storage="_TOURDAT", ThisKey="MATOURDAT", OtherKey="MATOURDAT", IsForeignKey=true)]
 		public TOURDAT TOURDAT
 		{
@@ -511,6 +477,40 @@ namespace DAL_QuanLiTour
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAIKHACH_CHITIETGIAVE", Storage="_LOAIKHACH", ThisKey="MALOAIKHACH", OtherKey="MALOAIKHACH", IsForeignKey=true)]
+		public LOAIKHACH LOAIKHACH
+		{
+			get
+			{
+				return this._LOAIKHACH.Entity;
+			}
+			set
+			{
+				LOAIKHACH previousValue = this._LOAIKHACH.Entity;
+				if (((previousValue != value) 
+							|| (this._LOAIKHACH.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LOAIKHACH.Entity = null;
+						previousValue.CHITIETGIAVEs.Remove(this);
+					}
+					this._LOAIKHACH.Entity = value;
+					if ((value != null))
+					{
+						value.CHITIETGIAVEs.Add(this);
+						this._MALOAIKHACH = value.MALOAIKHACH;
+					}
+					else
+					{
+						this._MALOAIKHACH = default(string);
+					}
+					this.SendPropertyChanged("LOAIKHACH");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -529,6 +529,439 @@ namespace DAL_QuanLiTour
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOURDAT")]
+	public partial class TOURDAT : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MATOURDAT;
+		
+		private string _MALICH;
+		
+		private string _MADANHSACH;
+		
+		private string _MAKHACHHANG;
+		
+		private string _MALOAITT;
+		
+		private string _DIEMDON;
+		
+		private System.Nullable<System.DateTime> _NGAYDAT;
+		
+		private string _TRANGTHAI;
+		
+		private System.Nullable<double> _TONGTIEN;
+		
+		private EntitySet<CHITIETGIAVE> _CHITIETGIAVEs;
+		
+		private EntitySet<DANHSACHNGUOIDIKEM> _DANHSACHNGUOIDIKEMs;
+		
+		private EntityRef<KHACHHANG> _KHACHHANG;
+		
+		private EntityRef<LICHKHOIHANH> _LICHKHOIHANH;
+		
+		private EntityRef<LOAITHANHTOAN> _LOAITHANHTOAN;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMATOURDATChanging(string value);
+    partial void OnMATOURDATChanged();
+    partial void OnMALICHChanging(string value);
+    partial void OnMALICHChanged();
+    partial void OnMADANHSACHChanging(string value);
+    partial void OnMADANHSACHChanged();
+    partial void OnMAKHACHHANGChanging(string value);
+    partial void OnMAKHACHHANGChanged();
+    partial void OnMALOAITTChanging(string value);
+    partial void OnMALOAITTChanged();
+    partial void OnDIEMDONChanging(string value);
+    partial void OnDIEMDONChanged();
+    partial void OnNGAYDATChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYDATChanged();
+    partial void OnTRANGTHAIChanging(string value);
+    partial void OnTRANGTHAIChanged();
+    partial void OnTONGTIENChanging(System.Nullable<double> value);
+    partial void OnTONGTIENChanged();
+    #endregion
+		
+		public TOURDAT()
+		{
+			this._CHITIETGIAVEs = new EntitySet<CHITIETGIAVE>(new Action<CHITIETGIAVE>(this.attach_CHITIETGIAVEs), new Action<CHITIETGIAVE>(this.detach_CHITIETGIAVEs));
+			this._DANHSACHNGUOIDIKEMs = new EntitySet<DANHSACHNGUOIDIKEM>(new Action<DANHSACHNGUOIDIKEM>(this.attach_DANHSACHNGUOIDIKEMs), new Action<DANHSACHNGUOIDIKEM>(this.detach_DANHSACHNGUOIDIKEMs));
+			this._KHACHHANG = default(EntityRef<KHACHHANG>);
+			this._LICHKHOIHANH = default(EntityRef<LICHKHOIHANH>);
+			this._LOAITHANHTOAN = default(EntityRef<LOAITHANHTOAN>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATOURDAT", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MATOURDAT
+		{
+			get
+			{
+				return this._MATOURDAT;
+			}
+			set
+			{
+				if ((this._MATOURDAT != value))
+				{
+					this.OnMATOURDATChanging(value);
+					this.SendPropertyChanging();
+					this._MATOURDAT = value;
+					this.SendPropertyChanged("MATOURDAT");
+					this.OnMATOURDATChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MALICH", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string MALICH
+		{
+			get
+			{
+				return this._MALICH;
+			}
+			set
+			{
+				if ((this._MALICH != value))
+				{
+					if (this._LICHKHOIHANH.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMALICHChanging(value);
+					this.SendPropertyChanging();
+					this._MALICH = value;
+					this.SendPropertyChanged("MALICH");
+					this.OnMALICHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADANHSACH", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string MADANHSACH
+		{
+			get
+			{
+				return this._MADANHSACH;
+			}
+			set
+			{
+				if ((this._MADANHSACH != value))
+				{
+					this.OnMADANHSACHChanging(value);
+					this.SendPropertyChanging();
+					this._MADANHSACH = value;
+					this.SendPropertyChanged("MADANHSACH");
+					this.OnMADANHSACHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKHACHHANG", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string MAKHACHHANG
+		{
+			get
+			{
+				return this._MAKHACHHANG;
+			}
+			set
+			{
+				if ((this._MAKHACHHANG != value))
+				{
+					if (this._KHACHHANG.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMAKHACHHANGChanging(value);
+					this.SendPropertyChanging();
+					this._MAKHACHHANG = value;
+					this.SendPropertyChanged("MAKHACHHANG");
+					this.OnMAKHACHHANGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MALOAITT", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string MALOAITT
+		{
+			get
+			{
+				return this._MALOAITT;
+			}
+			set
+			{
+				if ((this._MALOAITT != value))
+				{
+					if (this._LOAITHANHTOAN.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMALOAITTChanging(value);
+					this.SendPropertyChanging();
+					this._MALOAITT = value;
+					this.SendPropertyChanged("MALOAITT");
+					this.OnMALOAITTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIEMDON", DbType="NVarChar(50)")]
+		public string DIEMDON
+		{
+			get
+			{
+				return this._DIEMDON;
+			}
+			set
+			{
+				if ((this._DIEMDON != value))
+				{
+					this.OnDIEMDONChanging(value);
+					this.SendPropertyChanging();
+					this._DIEMDON = value;
+					this.SendPropertyChanged("DIEMDON");
+					this.OnDIEMDONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYDAT", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYDAT
+		{
+			get
+			{
+				return this._NGAYDAT;
+			}
+			set
+			{
+				if ((this._NGAYDAT != value))
+				{
+					this.OnNGAYDATChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYDAT = value;
+					this.SendPropertyChanged("NGAYDAT");
+					this.OnNGAYDATChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRANGTHAI", DbType="NVarChar(50)")]
+		public string TRANGTHAI
+		{
+			get
+			{
+				return this._TRANGTHAI;
+			}
+			set
+			{
+				if ((this._TRANGTHAI != value))
+				{
+					this.OnTRANGTHAIChanging(value);
+					this.SendPropertyChanging();
+					this._TRANGTHAI = value;
+					this.SendPropertyChanged("TRANGTHAI");
+					this.OnTRANGTHAIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TONGTIEN", DbType="Float")]
+		public System.Nullable<double> TONGTIEN
+		{
+			get
+			{
+				return this._TONGTIEN;
+			}
+			set
+			{
+				if ((this._TONGTIEN != value))
+				{
+					this.OnTONGTIENChanging(value);
+					this.SendPropertyChanging();
+					this._TONGTIEN = value;
+					this.SendPropertyChanged("TONGTIEN");
+					this.OnTONGTIENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TOURDAT_CHITIETGIAVE", Storage="_CHITIETGIAVEs", ThisKey="MATOURDAT", OtherKey="MATOURDAT")]
+		public EntitySet<CHITIETGIAVE> CHITIETGIAVEs
+		{
+			get
+			{
+				return this._CHITIETGIAVEs;
+			}
+			set
+			{
+				this._CHITIETGIAVEs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TOURDAT_DANHSACHNGUOIDIKEM", Storage="_DANHSACHNGUOIDIKEMs", ThisKey="MATOURDAT", OtherKey="MATOURDAT")]
+		public EntitySet<DANHSACHNGUOIDIKEM> DANHSACHNGUOIDIKEMs
+		{
+			get
+			{
+				return this._DANHSACHNGUOIDIKEMs;
+			}
+			set
+			{
+				this._DANHSACHNGUOIDIKEMs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_TOURDAT", Storage="_KHACHHANG", ThisKey="MAKHACHHANG", OtherKey="MAKHACHHANG", IsForeignKey=true)]
+		public KHACHHANG KHACHHANG
+		{
+			get
+			{
+				return this._KHACHHANG.Entity;
+			}
+			set
+			{
+				KHACHHANG previousValue = this._KHACHHANG.Entity;
+				if (((previousValue != value) 
+							|| (this._KHACHHANG.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._KHACHHANG.Entity = null;
+						previousValue.TOURDATs.Remove(this);
+					}
+					this._KHACHHANG.Entity = value;
+					if ((value != null))
+					{
+						value.TOURDATs.Add(this);
+						this._MAKHACHHANG = value.MAKHACHHANG;
+					}
+					else
+					{
+						this._MAKHACHHANG = default(string);
+					}
+					this.SendPropertyChanged("KHACHHANG");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LICHKHOIHANH_TOURDAT", Storage="_LICHKHOIHANH", ThisKey="MALICH", OtherKey="MALICH", IsForeignKey=true)]
+		public LICHKHOIHANH LICHKHOIHANH
+		{
+			get
+			{
+				return this._LICHKHOIHANH.Entity;
+			}
+			set
+			{
+				LICHKHOIHANH previousValue = this._LICHKHOIHANH.Entity;
+				if (((previousValue != value) 
+							|| (this._LICHKHOIHANH.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LICHKHOIHANH.Entity = null;
+						previousValue.TOURDATs.Remove(this);
+					}
+					this._LICHKHOIHANH.Entity = value;
+					if ((value != null))
+					{
+						value.TOURDATs.Add(this);
+						this._MALICH = value.MALICH;
+					}
+					else
+					{
+						this._MALICH = default(string);
+					}
+					this.SendPropertyChanged("LICHKHOIHANH");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAITHANHTOAN_TOURDAT", Storage="_LOAITHANHTOAN", ThisKey="MALOAITT", OtherKey="MALOAITT", IsForeignKey=true)]
+		public LOAITHANHTOAN LOAITHANHTOAN
+		{
+			get
+			{
+				return this._LOAITHANHTOAN.Entity;
+			}
+			set
+			{
+				LOAITHANHTOAN previousValue = this._LOAITHANHTOAN.Entity;
+				if (((previousValue != value) 
+							|| (this._LOAITHANHTOAN.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LOAITHANHTOAN.Entity = null;
+						previousValue.TOURDATs.Remove(this);
+					}
+					this._LOAITHANHTOAN.Entity = value;
+					if ((value != null))
+					{
+						value.TOURDATs.Add(this);
+						this._MALOAITT = value.MALOAITT;
+					}
+					else
+					{
+						this._MALOAITT = default(string);
+					}
+					this.SendPropertyChanged("LOAITHANHTOAN");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CHITIETGIAVEs(CHITIETGIAVE entity)
+		{
+			this.SendPropertyChanging();
+			entity.TOURDAT = this;
+		}
+		
+		private void detach_CHITIETGIAVEs(CHITIETGIAVE entity)
+		{
+			this.SendPropertyChanging();
+			entity.TOURDAT = null;
+		}
+		
+		private void attach_DANHSACHNGUOIDIKEMs(DANHSACHNGUOIDIKEM entity)
+		{
+			this.SendPropertyChanging();
+			entity.TOURDAT = this;
+		}
+		
+		private void detach_DANHSACHNGUOIDIKEMs(DANHSACHNGUOIDIKEM entity)
+		{
+			this.SendPropertyChanging();
+			entity.TOURDAT = null;
 		}
 	}
 	
@@ -1212,6 +1645,8 @@ namespace DAL_QuanLiTour
 		
 		private string _MADANHSACH;
 		
+		private string _MATOURDAT;
+		
 		private string _TEN;
 		
 		private string _GIOITINH;
@@ -1222,7 +1657,7 @@ namespace DAL_QuanLiTour
 		
 		private string _PASSPORT;
 		
-		private EntitySet<TOURDAT> _TOURDATs;
+		private EntityRef<TOURDAT> _TOURDAT;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1230,6 +1665,8 @@ namespace DAL_QuanLiTour
     partial void OnCreated();
     partial void OnMADANHSACHChanging(string value);
     partial void OnMADANHSACHChanged();
+    partial void OnMATOURDATChanging(string value);
+    partial void OnMATOURDATChanged();
     partial void OnTENChanging(string value);
     partial void OnTENChanged();
     partial void OnGIOITINHChanging(string value);
@@ -1244,7 +1681,7 @@ namespace DAL_QuanLiTour
 		
 		public DANHSACHNGUOIDIKEM()
 		{
-			this._TOURDATs = new EntitySet<TOURDAT>(new Action<TOURDAT>(this.attach_TOURDATs), new Action<TOURDAT>(this.detach_TOURDATs));
+			this._TOURDAT = default(EntityRef<TOURDAT>);
 			OnCreated();
 		}
 		
@@ -1264,6 +1701,30 @@ namespace DAL_QuanLiTour
 					this._MADANHSACH = value;
 					this.SendPropertyChanged("MADANHSACH");
 					this.OnMADANHSACHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATOURDAT", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string MATOURDAT
+		{
+			get
+			{
+				return this._MATOURDAT;
+			}
+			set
+			{
+				if ((this._MATOURDAT != value))
+				{
+					if (this._TOURDAT.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMATOURDATChanging(value);
+					this.SendPropertyChanging();
+					this._MATOURDAT = value;
+					this.SendPropertyChanged("MATOURDAT");
+					this.OnMATOURDATChanged();
 				}
 			}
 		}
@@ -1368,16 +1829,37 @@ namespace DAL_QuanLiTour
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DANHSACHNGUOIDIKEM_TOURDAT", Storage="_TOURDATs", ThisKey="MADANHSACH", OtherKey="MADANHSACH")]
-		public EntitySet<TOURDAT> TOURDATs
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TOURDAT_DANHSACHNGUOIDIKEM", Storage="_TOURDAT", ThisKey="MATOURDAT", OtherKey="MATOURDAT", IsForeignKey=true)]
+		public TOURDAT TOURDAT
 		{
 			get
 			{
-				return this._TOURDATs;
+				return this._TOURDAT.Entity;
 			}
 			set
 			{
-				this._TOURDATs.Assign(value);
+				TOURDAT previousValue = this._TOURDAT.Entity;
+				if (((previousValue != value) 
+							|| (this._TOURDAT.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TOURDAT.Entity = null;
+						previousValue.DANHSACHNGUOIDIKEMs.Remove(this);
+					}
+					this._TOURDAT.Entity = value;
+					if ((value != null))
+					{
+						value.DANHSACHNGUOIDIKEMs.Add(this);
+						this._MATOURDAT = value.MATOURDAT;
+					}
+					else
+					{
+						this._MATOURDAT = default(string);
+					}
+					this.SendPropertyChanged("TOURDAT");
+				}
 			}
 		}
 		
@@ -1399,18 +1881,6 @@ namespace DAL_QuanLiTour
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_TOURDATs(TOURDAT entity)
-		{
-			this.SendPropertyChanging();
-			entity.DANHSACHNGUOIDIKEM = this;
-		}
-		
-		private void detach_TOURDATs(TOURDAT entity)
-		{
-			this.SendPropertyChanging();
-			entity.DANHSACHNGUOIDIKEM = null;
 		}
 	}
 	
@@ -1668,7 +2138,7 @@ namespace DAL_QuanLiTour
 		
 		private string _TENDICHVU;
 		
-		private System.Nullable<decimal> _GIA;
+		private System.Nullable<double> _GIA;
 		
 		private EntitySet<DANHSACHDICHVU> _DANHSACHDICHVUs;
 		
@@ -1680,7 +2150,7 @@ namespace DAL_QuanLiTour
     partial void OnMADICHVUChanged();
     partial void OnTENDICHVUChanging(string value);
     partial void OnTENDICHVUChanged();
-    partial void OnGIAChanging(System.Nullable<decimal> value);
+    partial void OnGIAChanging(System.Nullable<double> value);
     partial void OnGIAChanged();
     #endregion
 		
@@ -1730,8 +2200,8 @@ namespace DAL_QuanLiTour
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIA", DbType="Money")]
-		public System.Nullable<decimal> GIA
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIA", DbType="Float")]
+		public System.Nullable<double> GIA
 		{
 			get
 			{
@@ -2230,15 +2700,11 @@ namespace DAL_QuanLiTour
 		
 		private string _MAKHACHSAN;
 		
-		private string _MAQUOCGIA;
-		
 		private string _MATINH;
 		
 		private string _TENKHACHSAN;
 		
 		private EntitySet<CHUONGTRINHTOUR> _CHUONGTRINHTOURs;
-		
-		private EntityRef<QUOCGIA> _QUOCGIA;
 		
 		private EntityRef<TINH> _TINH;
 		
@@ -2248,8 +2714,6 @@ namespace DAL_QuanLiTour
     partial void OnCreated();
     partial void OnMAKHACHSANChanging(string value);
     partial void OnMAKHACHSANChanged();
-    partial void OnMAQUOCGIAChanging(string value);
-    partial void OnMAQUOCGIAChanged();
     partial void OnMATINHChanging(string value);
     partial void OnMATINHChanged();
     partial void OnTENKHACHSANChanging(string value);
@@ -2259,7 +2723,6 @@ namespace DAL_QuanLiTour
 		public KHACHSAN()
 		{
 			this._CHUONGTRINHTOURs = new EntitySet<CHUONGTRINHTOUR>(new Action<CHUONGTRINHTOUR>(this.attach_CHUONGTRINHTOURs), new Action<CHUONGTRINHTOUR>(this.detach_CHUONGTRINHTOURs));
-			this._QUOCGIA = default(EntityRef<QUOCGIA>);
 			this._TINH = default(EntityRef<TINH>);
 			OnCreated();
 		}
@@ -2280,30 +2743,6 @@ namespace DAL_QuanLiTour
 					this._MAKHACHSAN = value;
 					this.SendPropertyChanged("MAKHACHSAN");
 					this.OnMAKHACHSANChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAQUOCGIA", DbType="NChar(10) NOT NULL", CanBeNull=false)]
-		public string MAQUOCGIA
-		{
-			get
-			{
-				return this._MAQUOCGIA;
-			}
-			set
-			{
-				if ((this._MAQUOCGIA != value))
-				{
-					if (this._QUOCGIA.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMAQUOCGIAChanging(value);
-					this.SendPropertyChanging();
-					this._MAQUOCGIA = value;
-					this.SendPropertyChanged("MAQUOCGIA");
-					this.OnMAQUOCGIAChanged();
 				}
 			}
 		}
@@ -2362,40 +2801,6 @@ namespace DAL_QuanLiTour
 			set
 			{
 				this._CHUONGTRINHTOURs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QUOCGIA_KHACHSAN", Storage="_QUOCGIA", ThisKey="MAQUOCGIA", OtherKey="MAQUOCGIA", IsForeignKey=true)]
-		public QUOCGIA QUOCGIA
-		{
-			get
-			{
-				return this._QUOCGIA.Entity;
-			}
-			set
-			{
-				QUOCGIA previousValue = this._QUOCGIA.Entity;
-				if (((previousValue != value) 
-							|| (this._QUOCGIA.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._QUOCGIA.Entity = null;
-						previousValue.KHACHSANs.Remove(this);
-					}
-					this._QUOCGIA.Entity = value;
-					if ((value != null))
-					{
-						value.KHACHSANs.Add(this);
-						this._MAQUOCGIA = value.MAQUOCGIA;
-					}
-					else
-					{
-						this._MAQUOCGIA = default(string);
-					}
-					this.SendPropertyChanged("QUOCGIA");
-				}
 			}
 		}
 		
@@ -2480,6 +2885,8 @@ namespace DAL_QuanLiTour
 		
 		private System.Nullable<int> _SOCHOTRONG;
 		
+		private System.Nullable<System.DateTime> _LICHKHOIHANH1;
+		
 		private EntitySet<TOURDAT> _TOURDATs;
 		
 		private EntityRef<TOUR> _TOUR;
@@ -2496,6 +2903,8 @@ namespace DAL_QuanLiTour
     partial void OnTENLICHChanged();
     partial void OnSOCHOTRONGChanging(System.Nullable<int> value);
     partial void OnSOCHOTRONGChanged();
+    partial void OnLICHKHOIHANH1Changing(System.Nullable<System.DateTime> value);
+    partial void OnLICHKHOIHANH1Changed();
     #endregion
 		
 		public LICHKHOIHANH()
@@ -2585,6 +2994,26 @@ namespace DAL_QuanLiTour
 					this._SOCHOTRONG = value;
 					this.SendPropertyChanged("SOCHOTRONG");
 					this.OnSOCHOTRONGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="LICHKHOIHANH", Storage="_LICHKHOIHANH1", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LICHKHOIHANH1
+		{
+			get
+			{
+				return this._LICHKHOIHANH1;
+			}
+			set
+			{
+				if ((this._LICHKHOIHANH1 != value))
+				{
+					this.OnLICHKHOIHANH1Changing(value);
+					this.SendPropertyChanging();
+					this._LICHKHOIHANH1 = value;
+					this.SendPropertyChanged("LICHKHOIHANH1");
+					this.OnLICHKHOIHANH1Changed();
 				}
 			}
 		}
@@ -2847,6 +3276,8 @@ namespace DAL_QuanLiTour
 		
 		private string _CHITIET;
 		
+		private EntitySet<TOURDAT> _TOURDATs;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2861,6 +3292,7 @@ namespace DAL_QuanLiTour
 		
 		public LOAITHANHTOAN()
 		{
+			this._TOURDATs = new EntitySet<TOURDAT>(new Action<TOURDAT>(this.attach_TOURDATs), new Action<TOURDAT>(this.detach_TOURDATs));
 			OnCreated();
 		}
 		
@@ -2924,6 +3356,19 @@ namespace DAL_QuanLiTour
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAITHANHTOAN_TOURDAT", Storage="_TOURDATs", ThisKey="MALOAITT", OtherKey="MALOAITT")]
+		public EntitySet<TOURDAT> TOURDATs
+		{
+			get
+			{
+				return this._TOURDATs;
+			}
+			set
+			{
+				this._TOURDATs.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2942,6 +3387,18 @@ namespace DAL_QuanLiTour
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_TOURDATs(TOURDAT entity)
+		{
+			this.SendPropertyChanging();
+			entity.LOAITHANHTOAN = this;
+		}
+		
+		private void detach_TOURDATs(TOURDAT entity)
+		{
+			this.SendPropertyChanging();
+			entity.LOAITHANHTOAN = null;
 		}
 	}
 	
@@ -3189,11 +3646,11 @@ namespace DAL_QuanLiTour
 		
 		private string _Ten;
 		
+		private System.Nullable<decimal> _Luong;
+		
 		private System.Nullable<int> _NamSinh;
 		
 		private string _GioiTinh;
-		
-		private System.Nullable<decimal> _Luong;
 		
 		private EntitySet<QL_NguoiDungNhomNguoiDung> _QL_NguoiDungNhomNguoiDungs;
 		
@@ -3211,12 +3668,12 @@ namespace DAL_QuanLiTour
     partial void OnHoChanged();
     partial void OnTenChanging(string value);
     partial void OnTenChanged();
+    partial void OnLuongChanging(System.Nullable<decimal> value);
+    partial void OnLuongChanged();
     partial void OnNamSinhChanging(System.Nullable<int> value);
     partial void OnNamSinhChanged();
     partial void OnGioiTinhChanging(string value);
     partial void OnGioiTinhChanged();
-    partial void OnLuongChanging(System.Nullable<decimal> value);
-    partial void OnLuongChanged();
     #endregion
 		
 		public QL_NguoiDung()
@@ -3325,6 +3782,26 @@ namespace DAL_QuanLiTour
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Luong", DbType="Money")]
+		public System.Nullable<decimal> Luong
+		{
+			get
+			{
+				return this._Luong;
+			}
+			set
+			{
+				if ((this._Luong != value))
+				{
+					this.OnLuongChanging(value);
+					this.SendPropertyChanging();
+					this._Luong = value;
+					this.SendPropertyChanged("Luong");
+					this.OnLuongChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamSinh", DbType="Int")]
 		public System.Nullable<int> NamSinh
 		{
@@ -3361,26 +3838,6 @@ namespace DAL_QuanLiTour
 					this._GioiTinh = value;
 					this.SendPropertyChanged("GioiTinh");
 					this.OnGioiTinhChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Luong", DbType="Money")]
-		public System.Nullable<decimal> Luong
-		{
-			get
-			{
-				return this._Luong;
-			}
-			set
-			{
-				if ((this._Luong != value))
-				{
-					this.OnLuongChanging(value);
-					this.SendPropertyChanging();
-					this._Luong = value;
-					this.SendPropertyChanged("Luong");
-					this.OnLuongChanged();
 				}
 			}
 		}
@@ -3993,8 +4450,6 @@ namespace DAL_QuanLiTour
 		
 		private EntitySet<DIADIEMDULICH> _DIADIEMDULICHes;
 		
-		private EntitySet<KHACHSAN> _KHACHSANs;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -4008,7 +4463,6 @@ namespace DAL_QuanLiTour
 		public QUOCGIA()
 		{
 			this._DIADIEMDULICHes = new EntitySet<DIADIEMDULICH>(new Action<DIADIEMDULICH>(this.attach_DIADIEMDULICHes), new Action<DIADIEMDULICH>(this.detach_DIADIEMDULICHes));
-			this._KHACHSANs = new EntitySet<KHACHSAN>(new Action<KHACHSAN>(this.attach_KHACHSANs), new Action<KHACHSAN>(this.detach_KHACHSANs));
 			OnCreated();
 		}
 		
@@ -4065,19 +4519,6 @@ namespace DAL_QuanLiTour
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QUOCGIA_KHACHSAN", Storage="_KHACHSANs", ThisKey="MAQUOCGIA", OtherKey="MAQUOCGIA")]
-		public EntitySet<KHACHSAN> KHACHSANs
-		{
-			get
-			{
-				return this._KHACHSANs;
-			}
-			set
-			{
-				this._KHACHSANs.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -4105,18 +4546,6 @@ namespace DAL_QuanLiTour
 		}
 		
 		private void detach_DIADIEMDULICHes(DIADIEMDULICH entity)
-		{
-			this.SendPropertyChanging();
-			entity.QUOCGIA = null;
-		}
-		
-		private void attach_KHACHSANs(KHACHSAN entity)
-		{
-			this.SendPropertyChanging();
-			entity.QUOCGIA = this;
-		}
-		
-		private void detach_KHACHSANs(KHACHSAN entity)
 		{
 			this.SendPropertyChanging();
 			entity.QUOCGIA = null;
@@ -4625,411 +5054,6 @@ namespace DAL_QuanLiTour
 		{
 			this.SendPropertyChanging();
 			entity.TOUR = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TOURDAT")]
-	public partial class TOURDAT : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _MATOURDAT;
-		
-		private string _MALICH;
-		
-		private string _MADANHSACH;
-		
-		private string _MAKHACHHANG;
-		
-		private string _MALOAITT;
-		
-		private string _DIEMDON;
-		
-		private System.Nullable<System.DateTime> _NGAYDAT;
-		
-		private string _TRANGTHAI;
-		
-		private System.Nullable<double> _TONGTIEN;
-		
-		private EntitySet<CHITIETGIAVE> _CHITIETGIAVEs;
-		
-		private EntityRef<DANHSACHNGUOIDIKEM> _DANHSACHNGUOIDIKEM;
-		
-		private EntityRef<KHACHHANG> _KHACHHANG;
-		
-		private EntityRef<LICHKHOIHANH> _LICHKHOIHANH;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMATOURDATChanging(string value);
-    partial void OnMATOURDATChanged();
-    partial void OnMALICHChanging(string value);
-    partial void OnMALICHChanged();
-    partial void OnMADANHSACHChanging(string value);
-    partial void OnMADANHSACHChanged();
-    partial void OnMAKHACHHANGChanging(string value);
-    partial void OnMAKHACHHANGChanged();
-    partial void OnMALOAITTChanging(string value);
-    partial void OnMALOAITTChanged();
-    partial void OnDIEMDONChanging(string value);
-    partial void OnDIEMDONChanged();
-    partial void OnNGAYDATChanging(System.Nullable<System.DateTime> value);
-    partial void OnNGAYDATChanged();
-    partial void OnTRANGTHAIChanging(string value);
-    partial void OnTRANGTHAIChanged();
-    partial void OnTONGTIENChanging(System.Nullable<double> value);
-    partial void OnTONGTIENChanged();
-    #endregion
-		
-		public TOURDAT()
-		{
-			this._CHITIETGIAVEs = new EntitySet<CHITIETGIAVE>(new Action<CHITIETGIAVE>(this.attach_CHITIETGIAVEs), new Action<CHITIETGIAVE>(this.detach_CHITIETGIAVEs));
-			this._DANHSACHNGUOIDIKEM = default(EntityRef<DANHSACHNGUOIDIKEM>);
-			this._KHACHHANG = default(EntityRef<KHACHHANG>);
-			this._LICHKHOIHANH = default(EntityRef<LICHKHOIHANH>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATOURDAT", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MATOURDAT
-		{
-			get
-			{
-				return this._MATOURDAT;
-			}
-			set
-			{
-				if ((this._MATOURDAT != value))
-				{
-					this.OnMATOURDATChanging(value);
-					this.SendPropertyChanging();
-					this._MATOURDAT = value;
-					this.SendPropertyChanged("MATOURDAT");
-					this.OnMATOURDATChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MALICH", DbType="NChar(10) NOT NULL", CanBeNull=false)]
-		public string MALICH
-		{
-			get
-			{
-				return this._MALICH;
-			}
-			set
-			{
-				if ((this._MALICH != value))
-				{
-					if (this._LICHKHOIHANH.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMALICHChanging(value);
-					this.SendPropertyChanging();
-					this._MALICH = value;
-					this.SendPropertyChanged("MALICH");
-					this.OnMALICHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADANHSACH", DbType="NChar(10) NOT NULL", CanBeNull=false)]
-		public string MADANHSACH
-		{
-			get
-			{
-				return this._MADANHSACH;
-			}
-			set
-			{
-				if ((this._MADANHSACH != value))
-				{
-					if (this._DANHSACHNGUOIDIKEM.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMADANHSACHChanging(value);
-					this.SendPropertyChanging();
-					this._MADANHSACH = value;
-					this.SendPropertyChanged("MADANHSACH");
-					this.OnMADANHSACHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKHACHHANG", DbType="NChar(10) NOT NULL", CanBeNull=false)]
-		public string MAKHACHHANG
-		{
-			get
-			{
-				return this._MAKHACHHANG;
-			}
-			set
-			{
-				if ((this._MAKHACHHANG != value))
-				{
-					if (this._KHACHHANG.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMAKHACHHANGChanging(value);
-					this.SendPropertyChanging();
-					this._MAKHACHHANG = value;
-					this.SendPropertyChanged("MAKHACHHANG");
-					this.OnMAKHACHHANGChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MALOAITT", DbType="NChar(10) NOT NULL", CanBeNull=false)]
-		public string MALOAITT
-		{
-			get
-			{
-				return this._MALOAITT;
-			}
-			set
-			{
-				if ((this._MALOAITT != value))
-				{
-					this.OnMALOAITTChanging(value);
-					this.SendPropertyChanging();
-					this._MALOAITT = value;
-					this.SendPropertyChanged("MALOAITT");
-					this.OnMALOAITTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIEMDON", DbType="NVarChar(50)")]
-		public string DIEMDON
-		{
-			get
-			{
-				return this._DIEMDON;
-			}
-			set
-			{
-				if ((this._DIEMDON != value))
-				{
-					this.OnDIEMDONChanging(value);
-					this.SendPropertyChanging();
-					this._DIEMDON = value;
-					this.SendPropertyChanged("DIEMDON");
-					this.OnDIEMDONChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYDAT", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYDAT
-		{
-			get
-			{
-				return this._NGAYDAT;
-			}
-			set
-			{
-				if ((this._NGAYDAT != value))
-				{
-					this.OnNGAYDATChanging(value);
-					this.SendPropertyChanging();
-					this._NGAYDAT = value;
-					this.SendPropertyChanged("NGAYDAT");
-					this.OnNGAYDATChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRANGTHAI", DbType="NVarChar(50)")]
-		public string TRANGTHAI
-		{
-			get
-			{
-				return this._TRANGTHAI;
-			}
-			set
-			{
-				if ((this._TRANGTHAI != value))
-				{
-					this.OnTRANGTHAIChanging(value);
-					this.SendPropertyChanging();
-					this._TRANGTHAI = value;
-					this.SendPropertyChanged("TRANGTHAI");
-					this.OnTRANGTHAIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TONGTIEN", DbType="Float")]
-		public System.Nullable<double> TONGTIEN
-		{
-			get
-			{
-				return this._TONGTIEN;
-			}
-			set
-			{
-				if ((this._TONGTIEN != value))
-				{
-					this.OnTONGTIENChanging(value);
-					this.SendPropertyChanging();
-					this._TONGTIEN = value;
-					this.SendPropertyChanged("TONGTIEN");
-					this.OnTONGTIENChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TOURDAT_CHITIETGIAVE", Storage="_CHITIETGIAVEs", ThisKey="MATOURDAT", OtherKey="MATOURDAT")]
-		public EntitySet<CHITIETGIAVE> CHITIETGIAVEs
-		{
-			get
-			{
-				return this._CHITIETGIAVEs;
-			}
-			set
-			{
-				this._CHITIETGIAVEs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DANHSACHNGUOIDIKEM_TOURDAT", Storage="_DANHSACHNGUOIDIKEM", ThisKey="MADANHSACH", OtherKey="MADANHSACH", IsForeignKey=true)]
-		public DANHSACHNGUOIDIKEM DANHSACHNGUOIDIKEM
-		{
-			get
-			{
-				return this._DANHSACHNGUOIDIKEM.Entity;
-			}
-			set
-			{
-				DANHSACHNGUOIDIKEM previousValue = this._DANHSACHNGUOIDIKEM.Entity;
-				if (((previousValue != value) 
-							|| (this._DANHSACHNGUOIDIKEM.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DANHSACHNGUOIDIKEM.Entity = null;
-						previousValue.TOURDATs.Remove(this);
-					}
-					this._DANHSACHNGUOIDIKEM.Entity = value;
-					if ((value != null))
-					{
-						value.TOURDATs.Add(this);
-						this._MADANHSACH = value.MADANHSACH;
-					}
-					else
-					{
-						this._MADANHSACH = default(string);
-					}
-					this.SendPropertyChanged("DANHSACHNGUOIDIKEM");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_TOURDAT", Storage="_KHACHHANG", ThisKey="MAKHACHHANG", OtherKey="MAKHACHHANG", IsForeignKey=true)]
-		public KHACHHANG KHACHHANG
-		{
-			get
-			{
-				return this._KHACHHANG.Entity;
-			}
-			set
-			{
-				KHACHHANG previousValue = this._KHACHHANG.Entity;
-				if (((previousValue != value) 
-							|| (this._KHACHHANG.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._KHACHHANG.Entity = null;
-						previousValue.TOURDATs.Remove(this);
-					}
-					this._KHACHHANG.Entity = value;
-					if ((value != null))
-					{
-						value.TOURDATs.Add(this);
-						this._MAKHACHHANG = value.MAKHACHHANG;
-					}
-					else
-					{
-						this._MAKHACHHANG = default(string);
-					}
-					this.SendPropertyChanged("KHACHHANG");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LICHKHOIHANH_TOURDAT", Storage="_LICHKHOIHANH", ThisKey="MALICH", OtherKey="MALICH", IsForeignKey=true)]
-		public LICHKHOIHANH LICHKHOIHANH
-		{
-			get
-			{
-				return this._LICHKHOIHANH.Entity;
-			}
-			set
-			{
-				LICHKHOIHANH previousValue = this._LICHKHOIHANH.Entity;
-				if (((previousValue != value) 
-							|| (this._LICHKHOIHANH.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._LICHKHOIHANH.Entity = null;
-						previousValue.TOURDATs.Remove(this);
-					}
-					this._LICHKHOIHANH.Entity = value;
-					if ((value != null))
-					{
-						value.TOURDATs.Add(this);
-						this._MALICH = value.MALICH;
-					}
-					else
-					{
-						this._MALICH = default(string);
-					}
-					this.SendPropertyChanged("LICHKHOIHANH");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_CHITIETGIAVEs(CHITIETGIAVE entity)
-		{
-			this.SendPropertyChanging();
-			entity.TOURDAT = this;
-		}
-		
-		private void detach_CHITIETGIAVEs(CHITIETGIAVE entity)
-		{
-			this.SendPropertyChanging();
-			entity.TOURDAT = null;
 		}
 	}
 }

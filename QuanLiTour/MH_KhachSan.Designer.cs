@@ -36,24 +36,24 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel_TacVuKhachSan = new System.Windows.Forms.TableLayoutPanel();
             this.button_ThemKhachSan = new DevComponents.DotNetBar.ButtonX();
-            this.tableLayoutPanel_TTKhachSan = new System.Windows.Forms.TableLayoutPanel();
-            this.txt_TenKhachSan = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.cbo_MaTinh = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.cbo_MaKhachSan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_SuaKhachSan = new DevComponents.DotNetBar.ButtonX();
             this.btn_XoaKhachSan = new DevComponents.DotNetBar.ButtonX();
             this.btn_LuuKhachSan = new DevComponents.DotNetBar.ButtonX();
             this.btn_TimKhachSan = new DevComponents.DotNetBar.ButtonX();
             this.txt_TimKhachSan = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel_TTKhachSan = new System.Windows.Forms.TableLayoutPanel();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.cbo_MaKhachSan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cbo_MaTinh = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.txt_TenKhachSan = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_KhachSan)).BeginInit();
             this.tableLayoutPanel_TacVuKhachSan.SuspendLayout();
-            this.tableLayoutPanel_TTKhachSan.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel_TTKhachSan.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -122,7 +122,7 @@
             this.tableLayoutPanel_TacVuKhachSan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
             this.tableLayoutPanel_TacVuKhachSan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
             this.tableLayoutPanel_TacVuKhachSan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel_TacVuKhachSan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
+            this.tableLayoutPanel_TacVuKhachSan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
             this.tableLayoutPanel_TacVuKhachSan.Controls.Add(this.button_ThemKhachSan, 0, 0);
             this.tableLayoutPanel_TacVuKhachSan.Controls.Add(this.btn_SuaKhachSan, 1, 0);
             this.tableLayoutPanel_TacVuKhachSan.Controls.Add(this.btn_XoaKhachSan, 2, 0);
@@ -136,7 +136,6 @@
             this.tableLayoutPanel_TacVuKhachSan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_TacVuKhachSan.Size = new System.Drawing.Size(903, 41);
             this.tableLayoutPanel_TacVuKhachSan.TabIndex = 3;
-            this.tableLayoutPanel_TacVuKhachSan.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // button_ThemKhachSan
             // 
@@ -146,13 +145,106 @@
             this.button_ThemKhachSan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_ThemKhachSan.Location = new System.Drawing.Point(3, 3);
             this.button_ThemKhachSan.Name = "button_ThemKhachSan";
-            this.button_ThemKhachSan.Size = new System.Drawing.Size(149, 35);
+            this.button_ThemKhachSan.Size = new System.Drawing.Size(148, 35);
             this.button_ThemKhachSan.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.button_ThemKhachSan.Symbol = "";
             this.button_ThemKhachSan.SymbolColor = System.Drawing.Color.MediumTurquoise;
             this.button_ThemKhachSan.TabIndex = 1;
             this.button_ThemKhachSan.Text = "    Thêm";
             this.button_ThemKhachSan.TextColor = System.Drawing.Color.Black;
+            // 
+            // btn_SuaKhachSan
+            // 
+            this.btn_SuaKhachSan.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_SuaKhachSan.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_SuaKhachSan.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.btn_SuaKhachSan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_SuaKhachSan.Location = new System.Drawing.Point(157, 3);
+            this.btn_SuaKhachSan.Name = "btn_SuaKhachSan";
+            this.btn_SuaKhachSan.Size = new System.Drawing.Size(156, 35);
+            this.btn_SuaKhachSan.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_SuaKhachSan.Symbol = "";
+            this.btn_SuaKhachSan.SymbolColor = System.Drawing.Color.MediumAquamarine;
+            this.btn_SuaKhachSan.TabIndex = 2;
+            this.btn_SuaKhachSan.Text = "    Sửa";
+            this.btn_SuaKhachSan.TextColor = System.Drawing.Color.White;
+            // 
+            // btn_XoaKhachSan
+            // 
+            this.btn_XoaKhachSan.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_XoaKhachSan.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_XoaKhachSan.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.btn_XoaKhachSan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_XoaKhachSan.Location = new System.Drawing.Point(319, 3);
+            this.btn_XoaKhachSan.Name = "btn_XoaKhachSan";
+            this.btn_XoaKhachSan.Size = new System.Drawing.Size(150, 35);
+            this.btn_XoaKhachSan.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_XoaKhachSan.Symbol = "";
+            this.btn_XoaKhachSan.SymbolColor = System.Drawing.Color.Red;
+            this.btn_XoaKhachSan.TabIndex = 3;
+            this.btn_XoaKhachSan.Text = "    Xóa";
+            this.btn_XoaKhachSan.TextColor = System.Drawing.Color.White;
+            // 
+            // btn_LuuKhachSan
+            // 
+            this.btn_LuuKhachSan.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_LuuKhachSan.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_LuuKhachSan.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.btn_LuuKhachSan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_LuuKhachSan.Location = new System.Drawing.Point(475, 3);
+            this.btn_LuuKhachSan.Name = "btn_LuuKhachSan";
+            this.btn_LuuKhachSan.Size = new System.Drawing.Size(155, 35);
+            this.btn_LuuKhachSan.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_LuuKhachSan.Symbol = "";
+            this.btn_LuuKhachSan.SymbolColor = System.Drawing.Color.White;
+            this.btn_LuuKhachSan.TabIndex = 4;
+            this.btn_LuuKhachSan.Text = "    Lưu";
+            this.btn_LuuKhachSan.TextColor = System.Drawing.Color.White;
+            // 
+            // btn_TimKhachSan
+            // 
+            this.btn_TimKhachSan.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_TimKhachSan.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_TimKhachSan.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.btn_TimKhachSan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_TimKhachSan.Location = new System.Drawing.Point(636, 3);
+            this.btn_TimKhachSan.Name = "btn_TimKhachSan";
+            this.btn_TimKhachSan.Size = new System.Drawing.Size(144, 35);
+            this.btn_TimKhachSan.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_TimKhachSan.Symbol = "";
+            this.btn_TimKhachSan.SymbolColor = System.Drawing.Color.Aqua;
+            this.btn_TimKhachSan.TabIndex = 5;
+            this.btn_TimKhachSan.Text = "    Tìm";
+            this.btn_TimKhachSan.TextColor = System.Drawing.Color.White;
+            // 
+            // txt_TimKhachSan
+            // 
+            // 
+            // 
+            // 
+            this.txt_TimKhachSan.Border.Class = "TextBoxBorder";
+            this.txt_TimKhachSan.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_TimKhachSan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_TimKhachSan.Location = new System.Drawing.Point(786, 3);
+            this.txt_TimKhachSan.Multiline = true;
+            this.txt_TimKhachSan.Name = "txt_TimKhachSan";
+            this.txt_TimKhachSan.PreventEnterBeep = true;
+            this.txt_TimKhachSan.Size = new System.Drawing.Size(114, 35);
+            this.txt_TimKhachSan.TabIndex = 6;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 280F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel_TTKhachSan, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(143, 50);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(903, 150);
+            this.tableLayoutPanel3.TabIndex = 2;
             // 
             // tableLayoutPanel_TTKhachSan
             // 
@@ -176,6 +268,71 @@
             this.tableLayoutPanel_TTKhachSan.Size = new System.Drawing.Size(617, 144);
             this.tableLayoutPanel_TTKhachSan.TabIndex = 0;
             // 
+            // labelX1
+            // 
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelX1.Location = new System.Drawing.Point(3, 3);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(120, 35);
+            this.labelX1.TabIndex = 0;
+            this.labelX1.Text = "Mã khách sạn";
+            // 
+            // labelX2
+            // 
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelX2.Location = new System.Drawing.Point(3, 44);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(120, 35);
+            this.labelX2.TabIndex = 1;
+            this.labelX2.Text = "Mã tỉnh";
+            // 
+            // labelX3
+            // 
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelX3.Location = new System.Drawing.Point(3, 85);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(120, 37);
+            this.labelX3.TabIndex = 2;
+            this.labelX3.Text = "Tên khách sạn";
+            // 
+            // cbo_MaKhachSan
+            // 
+            this.cbo_MaKhachSan.DisplayMember = "Text";
+            this.cbo_MaKhachSan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbo_MaKhachSan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbo_MaKhachSan.FormattingEnabled = true;
+            this.cbo_MaKhachSan.ItemHeight = 30;
+            this.cbo_MaKhachSan.Location = new System.Drawing.Point(129, 3);
+            this.cbo_MaKhachSan.Name = "cbo_MaKhachSan";
+            this.cbo_MaKhachSan.Size = new System.Drawing.Size(485, 36);
+            this.cbo_MaKhachSan.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbo_MaKhachSan.TabIndex = 3;
+            // 
+            // cbo_MaTinh
+            // 
+            this.cbo_MaTinh.DisplayMember = "Text";
+            this.cbo_MaTinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbo_MaTinh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbo_MaTinh.FormattingEnabled = true;
+            this.cbo_MaTinh.ItemHeight = 30;
+            this.cbo_MaTinh.Location = new System.Drawing.Point(129, 44);
+            this.cbo_MaTinh.Name = "cbo_MaTinh";
+            this.cbo_MaTinh.Size = new System.Drawing.Size(485, 36);
+            this.cbo_MaTinh.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbo_MaTinh.TabIndex = 4;
+            // 
             // txt_TenKhachSan
             // 
             // 
@@ -191,164 +348,6 @@
             this.txt_TenKhachSan.Size = new System.Drawing.Size(485, 37);
             this.txt_TenKhachSan.TabIndex = 5;
             // 
-            // cbo_MaTinh
-            // 
-            this.cbo_MaTinh.DisplayMember = "Text";
-            this.cbo_MaTinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbo_MaTinh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbo_MaTinh.FormattingEnabled = true;
-            this.cbo_MaTinh.ItemHeight = 30;
-            this.cbo_MaTinh.Location = new System.Drawing.Point(129, 44);
-            this.cbo_MaTinh.Name = "cbo_MaTinh";
-            this.cbo_MaTinh.Size = new System.Drawing.Size(485, 36);
-            this.cbo_MaTinh.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbo_MaTinh.TabIndex = 4;
-            // 
-            // cbo_MaKhachSan
-            // 
-            this.cbo_MaKhachSan.DisplayMember = "Text";
-            this.cbo_MaKhachSan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbo_MaKhachSan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbo_MaKhachSan.FormattingEnabled = true;
-            this.cbo_MaKhachSan.ItemHeight = 30;
-            this.cbo_MaKhachSan.Location = new System.Drawing.Point(129, 3);
-            this.cbo_MaKhachSan.Name = "cbo_MaKhachSan";
-            this.cbo_MaKhachSan.Size = new System.Drawing.Size(485, 36);
-            this.cbo_MaKhachSan.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbo_MaKhachSan.TabIndex = 3;
-            // 
-            // labelX3
-            // 
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelX3.Location = new System.Drawing.Point(3, 85);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(120, 37);
-            this.labelX3.TabIndex = 2;
-            this.labelX3.Text = "Tên khách sạn";
-            // 
-            // labelX2
-            // 
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelX2.Location = new System.Drawing.Point(3, 44);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(120, 35);
-            this.labelX2.TabIndex = 1;
-            this.labelX2.Text = "Mã tỉnh";
-            // 
-            // labelX1
-            // 
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelX1.Location = new System.Drawing.Point(3, 3);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(120, 35);
-            this.labelX1.TabIndex = 0;
-            this.labelX1.Text = "Mã khách sạn";
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 280F));
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel_TTKhachSan, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(143, 50);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(903, 150);
-            this.tableLayoutPanel3.TabIndex = 2;
-            // 
-            // btn_SuaKhachSan
-            // 
-            this.btn_SuaKhachSan.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_SuaKhachSan.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_SuaKhachSan.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.btn_SuaKhachSan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_SuaKhachSan.Location = new System.Drawing.Point(158, 3);
-            this.btn_SuaKhachSan.Name = "btn_SuaKhachSan";
-            this.btn_SuaKhachSan.Size = new System.Drawing.Size(158, 35);
-            this.btn_SuaKhachSan.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_SuaKhachSan.Symbol = "";
-            this.btn_SuaKhachSan.SymbolColor = System.Drawing.Color.MediumAquamarine;
-            this.btn_SuaKhachSan.TabIndex = 2;
-            this.btn_SuaKhachSan.Text = "    Sửa";
-            this.btn_SuaKhachSan.TextColor = System.Drawing.Color.White;
-            // 
-            // btn_XoaKhachSan
-            // 
-            this.btn_XoaKhachSan.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_XoaKhachSan.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_XoaKhachSan.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.btn_XoaKhachSan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_XoaKhachSan.Location = new System.Drawing.Point(322, 3);
-            this.btn_XoaKhachSan.Name = "btn_XoaKhachSan";
-            this.btn_XoaKhachSan.Size = new System.Drawing.Size(150, 35);
-            this.btn_XoaKhachSan.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_XoaKhachSan.Symbol = "";
-            this.btn_XoaKhachSan.SymbolColor = System.Drawing.Color.Red;
-            this.btn_XoaKhachSan.TabIndex = 3;
-            this.btn_XoaKhachSan.Text = "    Xóa";
-            this.btn_XoaKhachSan.TextColor = System.Drawing.Color.White;
-            // 
-            // btn_LuuKhachSan
-            // 
-            this.btn_LuuKhachSan.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_LuuKhachSan.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_LuuKhachSan.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.btn_LuuKhachSan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_LuuKhachSan.Location = new System.Drawing.Point(478, 3);
-            this.btn_LuuKhachSan.Name = "btn_LuuKhachSan";
-            this.btn_LuuKhachSan.Size = new System.Drawing.Size(155, 35);
-            this.btn_LuuKhachSan.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_LuuKhachSan.Symbol = "";
-            this.btn_LuuKhachSan.SymbolColor = System.Drawing.Color.White;
-            this.btn_LuuKhachSan.TabIndex = 4;
-            this.btn_LuuKhachSan.Text = "    Lưu";
-            this.btn_LuuKhachSan.TextColor = System.Drawing.Color.White;
-            // 
-            // btn_TimKhachSan
-            // 
-            this.btn_TimKhachSan.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_TimKhachSan.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_TimKhachSan.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.btn_TimKhachSan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_TimKhachSan.Location = new System.Drawing.Point(639, 3);
-            this.btn_TimKhachSan.Name = "btn_TimKhachSan";
-            this.btn_TimKhachSan.Size = new System.Drawing.Size(144, 35);
-            this.btn_TimKhachSan.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_TimKhachSan.Symbol = "";
-            this.btn_TimKhachSan.SymbolColor = System.Drawing.Color.Aqua;
-            this.btn_TimKhachSan.TabIndex = 5;
-            this.btn_TimKhachSan.Text = "    Tìm";
-            this.btn_TimKhachSan.TextColor = System.Drawing.Color.White;
-            // 
-            // txt_TimKhachSan
-            // 
-            // 
-            // 
-            // 
-            this.txt_TimKhachSan.Border.Class = "TextBoxBorder";
-            this.txt_TimKhachSan.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_TimKhachSan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_TimKhachSan.Location = new System.Drawing.Point(789, 3);
-            this.txt_TimKhachSan.Multiline = true;
-            this.txt_TimKhachSan.Name = "txt_TimKhachSan";
-            this.txt_TimKhachSan.PreventEnterBeep = true;
-            this.txt_TimKhachSan.Size = new System.Drawing.Size(111, 35);
-            this.txt_TimKhachSan.TabIndex = 6;
-            // 
             // MH_KhachSan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,11 +356,12 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MH_KhachSan";
             this.Text = "MH_KhachSan";
+            this.Load += new System.EventHandler(this.MH_KhachSan_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_KhachSan)).EndInit();
             this.tableLayoutPanel_TacVuKhachSan.ResumeLayout(false);
-            this.tableLayoutPanel_TTKhachSan.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel_TTKhachSan.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

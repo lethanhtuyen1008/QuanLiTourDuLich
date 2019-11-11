@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO_KhachHang.cs" />
+    <Compile Include="DTO_KhachSan.cs" />
     <Compile Include="DTO_QLNguoiDung.cs" />
     <Compile Include="DTO_Tours.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

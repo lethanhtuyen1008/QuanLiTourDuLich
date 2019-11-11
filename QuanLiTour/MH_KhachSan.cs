@@ -7,24 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS_QuanLiTour;
+using DTO_QuanLiTour;
 
 namespace QuanLiTour
 {
     public partial class MH_KhachSan : Form
     {
+        BUS_KhachSan busks = new BUS_KhachSan();
         public MH_KhachSan()
         {
             InitializeComponent();
         }
 
-        private void tableLayoutPanel_TacVuKhachSan_Paint(object sender, PaintEventArgs e)
+        private void MH_KhachSan_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+            dataGridView_KhachSan.DataSource = busks.getKhachSan();
+        }  
     }
 }
